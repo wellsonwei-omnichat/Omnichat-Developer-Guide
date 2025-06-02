@@ -20,55 +20,138 @@ Notification Open API Module
 
 ## Endpoint
 
-**POST** <https://open-api.omnichat.ai/v1/notification-messages>
+**POST** [https://open-api.omnichat.ai/v1/notification-messages](https://open-api.omnichat.ai/v1/notification-messages)
 
 ## Request Body
 
-| Field         | Type                         | Required | Description             |
-| :------------ | :--------------------------- | :------- | :---------------------- |
-| notifications | Array of Notification Object | Y        | Available size: 1 ~ 100 |
+| Field         | Type                         | Required | Description              |
+| :------------ | :--------------------------- | :------- | :----------------------- |
+| notifications | Array of Notification Object | Y        | Available size: 1 \~ 100 |
 
 ### Notification Object
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Field",
-    "h-1": "Type",
-    "h-2": "Required",
-    "h-3": "Description",
-    "0-0": "platform",
-    "0-1": "String",
-    "0-2": "Y",
-    "0-3": "Messaging Platform  \n  \nSupported values:  \n  \n- `line`",
-    "1-0": "channelId",
-    "1-1": "String",
-    "1-2": "Y",
-    "1-3": "Messaging Platform Channel ID",
-    "2-0": "to",
-    "2-1": "String",
-    "2-2": "Y",
-    "2-3": "Contact's phone number  \n  \nSupported format: (Country Code) + (Phone Number)",
-    "3-0": "settingId",
-    "3-1": "String",
-    "3-2": "Y",
-    "3-3": "Contains LON-related and SMS-related settings  \n`Find this ID from Omnichat Admin Console`",
-    "4-0": "valueMap",
-    "4-1": "Object",
-    "4-2": "Y",
-    "4-3": "Key-value object used to replace in the both LON & SMS messages  \n  \nRef for LON: [Supported values](https://fluorescent-skunk-876.notion.site/Omnichat-LINE-506da09fb6ae4822a9fa06887be43c59)"
-  },
-  "cols": 4,
-  "rows": 5,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
 
+      <th>
+        Type
+      </th>
+
+      <th>
+        Required
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        platform
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Messaging Platform  
+
+        Supported values:  
+
+        * `line`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        channelId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Messaging Platform Channel ID
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        to
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact's phone number  
+
+        Supported format: (Country Code) + (Phone Number)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        settingId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contains LON-related and SMS-related settings\
+        `Find this ID from Omnichat Admin Console`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        valueMap
+      </td>
+
+      <td>
+        Object
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Key-value object used to replace in the both LON & SMS messages  
+
+        Ref for LON: [Supported values](https://fluorescent-skunk-876.notion.site/Omnichat-LINE-506da09fb6ae4822a9fa06887be43c59)
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ## Request Example
 
