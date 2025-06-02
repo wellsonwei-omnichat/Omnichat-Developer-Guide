@@ -20,12 +20,12 @@ There are two types of order events:
 
 ### `order/create`
 
-Use this event to send newly created orders. Omnichat will insert the order into our system.  
+Use this event to send newly created orders. Omnichat will insert the order into our system.\
 If the order number already exists, the event will be ignored and no updates will be made.
 
 ### `order/update`
 
-Use this event to send updated order data. Omnichat will update the corresponding record in our system.  
+Use this event to send updated order data. Omnichat will update the corresponding record in our system.\
 If the order number does not exist, the event will be ignored and no record will be created.
 
 > ⚠️ **Note:** If you are using Omnichat for the first time, please make sure to complete the **Order History Import** before sending update events.
