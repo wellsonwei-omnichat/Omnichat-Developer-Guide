@@ -16,42 +16,11 @@ Here is the steps of the configuration:
 
 1. In the Omnichat Admin Panel, navigate to **Settings** on the left menu, then find **Webhook Settings** and click to enter the page.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/f1bc5a5-image.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "200px",
-      "border": true
-    }
-  ]
-}
-[/block]
-
+<Image align="center" className="border" width="200px" border={true} src="https://files.readme.io/f1bc5a5-image.png" />
 
 2. In the **Webhook Settings** page, click the **Create Webhook** button.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/9fd80a8-image.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
-
+<Image align="center" className="border" border={true} src="https://files.readme.io/9fd80a8-image.png" />
 
 3. Fulfill the form and click **Save**:
 
@@ -65,57 +34,12 @@ Here is the steps of the configuration:
 
    v. Finally, choose the topics you want to subscribe to.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/baaf407-image.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
-
+<Image align="center" className="border" border={true} src="https://files.readme.io/baaf407-image.png" />
 
 4. After saving, a success message will be displayed.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/714c6a6-image.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "sizing": "500px",
-      "border": true
-    }
-  ]
-}
-[/block]
-
+<Image align="center" className="border" width="500px" border={true} src="https://files.readme.io/714c6a6-image.png" />
 
 5. You can obtain the **Signature Secret** in your subscription data.
 
-[block:image]
-{
-  "images": [
-    {
-      "image": [
-        "https://files.readme.io/20f39fe-image.png",
-        null,
-        ""
-      ],
-      "align": "center",
-      "border": true
-    }
-  ]
-}
-[/block]
+<Image align="center" className="border" border={true} src="https://files.readme.io/20f39fe-image.png" />
