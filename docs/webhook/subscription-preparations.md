@@ -18,10 +18,10 @@ You must first develop an API endpoint that supports two types of requests, one 
 
 Whenever you add a new webhook subscription in the Omnichat Admin Panel, Omnichat will send a **GET** request to your endpoint URL to validate the endpoint's validity. This request includes the following parameters appended to the endpoint URL:
 
-| Parameter    | Example Value | Description                                 |
-| :----------- | :------------ | :------------------------------------------ |
-| verify_token | KRuk32ccaF    | The Verification Token you set up.          |
-| challenge    | 3vU6S2ThsY    | A random string that you must return to us. |
+| Parameter     | Example Value | Description                                 |
+| :------------ | :------------ | :------------------------------------------ |
+| verify\_token | KRuk32ccaF    | The Verification Token you set up.          |
+| challenge     | 3vU6S2ThsY    | A random string that you must return to us. |
 
 ### Request Example
 
@@ -35,8 +35,8 @@ GET https://www.example.com/webhook?verify_token=KRuk32ccaF&challenge=3vU6S2ThsY
 
 Each time your endpoint receives a validation request, you must perform the following logic:
 
-- Confirm that the value of **verify_token** matches the one you've set.
-- Return the value of **challenge** in the response body with **200 OK** status to us.
+* Confirm that the value of **verify\_token** matches the one you've set.
+* Return the value of **challenge** in the response body with **200 OK** status to us.
 
 When Omnichat receives the **challenge** value and confirm that it matches the value at the time of the request, the subscription is considered successful; otherwise, it's a failure.
 
