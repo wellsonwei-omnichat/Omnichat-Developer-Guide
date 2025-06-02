@@ -14,7 +14,7 @@ next:
 
 ## Endpoint
 
-POST https\://{your-api-domain}/order-pickup-info
+POST https\://\{your-api-domain}/order-pickup-info
 
 ## Request Body
 
@@ -55,7 +55,7 @@ Return HTTP status 400 with empty body if orderId is invalid.
 
 ## Endpoint
 
-POST https\://{your-api-domain}/order-confirmation-info
+POST https\://\{your-api-domain}/order-confirmation-info
 
 ## Request body
 
@@ -96,7 +96,7 @@ Return HTTP status 400 with empty body if orderId is invalid.
 
 ## Endpoint
 
-POST https\://{your-api-domain}/change-pickup
+POST https\://\{your-api-domain}/change-pickup
 
 ## Request Body
 
@@ -137,7 +137,7 @@ Return HTTP status 400 with empty body if orderId is invalid.
 
 ## Endpoint
 
-POST https\://{your-api-domain}/check-orders
+POST https\://\{your-api-domain}/check-orders
 
 ## Request Body
 
@@ -179,7 +179,7 @@ Return HTTP status 400 with empty body if phone or email is invalid.
 
 ## Endpoint
 
-POST https\://{your-api-domain}/check-inventory
+POST https\://\{your-api-domain}/check-inventory
 
 ## Request Body
 
@@ -193,11 +193,7 @@ POST https\://{your-api-domain}/check-inventory
 
 ## Response Body
 
-
-
 ***
-
-
 
 ### Success Case
 
