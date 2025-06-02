@@ -14,7 +14,7 @@ next:
 
 ## Endpoint
 
-**PUT** <https://open-api.omnichat.ai/v1/third-party-orders>
+**PUT** [https://open-api.omnichat.ai/v1/third-party-orders](https://open-api.omnichat.ai/v1/third-party-orders)
 
 ## Request body
 
