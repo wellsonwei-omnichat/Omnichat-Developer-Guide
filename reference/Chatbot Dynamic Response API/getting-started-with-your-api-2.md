@@ -22,7 +22,7 @@ Dynamic and can be defined by you.
 
 Please provide your API access token (Long-lived without expiration) and Omnichat will put the API token in Authorization header using the Bearer schema.
 
-> **Authorization: Bearer {API-TOKEN}**
+> **Authorization: Bearer `{API-TOKEN}`**
 
 ## Request Method
 
@@ -201,104 +201,165 @@ Response body: Empty
 
 ### Properties
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Field Name",
-    "h-1": "Data Type",
-    "h-2": "Required",
-    "h-3": "Description",
-    "h-4": "Example",
-    "0-0": "type",
-    "0-1": "String",
-    "0-2": "Y",
-    "0-3": "Response message type.  \n  \nSupported values:  \n- **text**: Text message  \n- **image**: Image message  \n- **carousel**: Carousel messages  \n- **optionList**: For WhatsApp only",
-    "0-4": "text",
-    "1-0": "text",
-    "1-1": "String",
-    "1-2": "Y if type=text",
-    "1-3": "For WhatsApp:  \nYou can pass in “text” field as caption for type=image  \n  \nMax length: 4096 characters",
-    "1-4": "Your shipment tracking code is TS000001",
-    "2-0": "image",
-    "2-1": "String",
-    "2-2": "Y if type=image",
-    "2-3": "Image URL of the response message",
-    "2-4": "`https://www.example.com/image.png`",
-    "3-0": "carousel",
-    "3-1": "Array of Carousel Object",
-    "3-2": "Y if type=carousel",
-    "3-3": "Carousel message content  \n(Noted: For WhatsApp, it will be sent as image & text message separately)",
-    "3-4": "",
-    "4-0": "optionList",
-    "4-1": "Option List Object",
-    "4-2": "Y if type=optionList",
-    "4-3": "For WhatsApp only",
-    "4-4": ""
-  },
-  "cols": 5,
-  "rows": 5,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
-
-
+<HTMLBlock>{`
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+  <th style="border: 1px solid #ddd; padding: 8px;">Field Name</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Data Type</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Required</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>type</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Response message type.  </p>
+<p>Supported values:  </p>
+<ul>
+<li><strong>text</strong>: Text message  </li>
+<li><strong>image</strong>: Image message  </li>
+<li><strong>carousel</strong>: Carousel messages  </li>
+<li><strong>optionList</strong>: For WhatsApp only</li>
+</ul>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>text</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>text</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y if type=text</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>For WhatsApp:<br>You can pass in “text” field as caption for type=image  </p>
+<p>Max length: 4096 characters</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Your shipment tracking code is TS000001</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>image</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y if type=image</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Image URL of the response message</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p><code>https://www.example.com/image.png</code></p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>carousel</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Array of Carousel Object</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y if type=carousel</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Carousel message content<br>(Noted: For WhatsApp, it will be sent as image &amp; text message separately)</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>optionList</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Option List Object</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y if type=optionList</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>For WhatsApp only</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+</tbody>
+</table>
+`}</HTMLBlock>
 ***
 
 #### Carousel Object
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Field Name",
-    "h-1": "Data Type",
-    "h-2": "Required",
-    "h-3": "Description",
-    "h-4": "Example",
-    "0-0": "image",
-    "0-1": "String",
-    "0-2": "Y",
-    "0-3": "Carousel message image",
-    "0-4": "`https://www.example.com/image.png`",
-    "1-0": "title",
-    "1-1": "String",
-    "1-2": "Y",
-    "1-3": "For WhatsApp, max length is 4096 characters (combined with “title” field) and it will be bold",
-    "1-4": "Moisturizing Mask",
-    "2-0": "text",
-    "2-1": "String",
-    "2-2": "Y",
-    "2-3": "For WhatsApp, max length is 4096 characters (combined with “title” field)",
-    "2-4": "On sales 20% off",
-    "3-0": "buttons",
-    "3-1": "Array of Button Object",
-    "3-2": "Y",
-    "3-3": "For WhatsApp, you can have up to 3 buttons.",
-    "3-4": "",
-    "4-0": "url",
-    "4-1": "String",
-    "4-2": "Y",
-    "4-3": "Link of clicking message image.  \nNot supported in WhatsApp.",
-    "4-4": "`https://www.example.com`"
-  },
-  "cols": 5,
-  "rows": 5,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
-
-
+<HTMLBlock>{`
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+  <th style="border: 1px solid #ddd; padding: 8px;">Field Name</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Data Type</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Required</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>image</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Carousel message image</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p><code>https://www.example.com/image.png</code></p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>title</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>For WhatsApp, max length is 4096 characters (combined with “title” field) and it will be bold</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Moisturizing Mask</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>text</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>For WhatsApp, max length is 4096 characters (combined with “title” field)</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>On sales 20% off</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>buttons</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Array of Button Object</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>For WhatsApp, you can have up to 3 buttons.</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>url</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Link of clicking message image.<br>Not supported in WhatsApp.</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p><code>https://www.example.com</code></p>
+</td>
+</tr>
+</tbody>
+</table>
+`}</HTMLBlock>
 ***
 
 #### LINE Image Carousel Object
@@ -313,129 +374,226 @@ Response body: Empty
 
 #### Button Object
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Field Name",
-    "h-1": "Data Type",
-    "h-2": "Required",
-    "h-3": "Description",
-    "h-4": "Example",
-    "0-0": "type",
-    "0-1": "String",
-    "0-2": "Y",
-    "0-3": "Button type:  \nSupported values:  \n- **postback**: trigger chatbot message  \n- **url**: website link  \n- **message**: send a text message  \n  \nFor WhatsApp, if use type=url, the url will append to the message body",
-    "0-4": "postback",
-    "1-0": "title",
-    "1-1": "String",
-    "1-2": "Y",
-    "1-3": "Message title  \n  \nFor WhatsApp, max length: 20 characters",
-    "1-4": "More Info",
-    "2-0": "blockId",
-    "2-1": "String",
-    "2-2": "Y if type=postback",
-    "2-3": "Bot Block ID in Omnichat system",
-    "2-4": "8d1f060f-3e0d-4f52-9837-4920e9b4406d",
-    "3-0": "tags",
-    "3-1": "Array of String",
-    "3-2": "N",
-    "3-3": "Tags to be added when user clicks the button",
-    "3-4": "[“Mask”]",
-    "4-0": "attribute",
-    "4-1": "Attribute Object",
-    "4-2": "N",
-    "4-3": "Attributes to be added when user clicks the button",
-    "4-4": "",
-    "5-0": "url",
-    "5-1": "String",
-    "5-2": "Y if type=url",
-    "5-3": "Message sent to the user when clicking the button",
-    "5-4": "",
-    "6-0": "message",
-    "6-1": "String",
-    "6-2": "Y if type=message",
-    "6-3": "",
-    "6-4": "",
-    "7-0": "style",
-    "7-1": "String",
-    "7-2": "Y for LINE carousel image",
-    "7-3": "Button style  \n  \nSupported values:  \n- **primary**  \n- **secondary**",
-    "7-4": "",
-    "8-0": "color",
-    "8-1": "String",
-    "8-2": "Y for LINE carousel image",
-    "8-3": "Button color hex code",
-    "8-4": ""
-  },
-  "cols": 5,
-  "rows": 9,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
-
-
+ <HTMLBlock>{`
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+  <th style="border: 1px solid #ddd; padding: 8px;">Field Name</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Data Type</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Required</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>type</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Button type:<br>Supported values:  </p>
+<ul>
+<li><strong>postback</strong>: trigger chatbot message  </li>
+<li><strong>url</strong>: website link  </li>
+<li><strong>message</strong>: send a text message</li>
+</ul>
+<p>For WhatsApp, if use type=url, the url will append to the message body</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>postback</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>title</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Message title  </p>
+<p>For WhatsApp, max length: 20 characters</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>More Info</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>blockId</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y if type=postback</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Bot Block ID in Omnichat system</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>8d1f060f-3e0d-4f52-9837-4920e9b4406d</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>tags</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Array of String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>N</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Tags to be added when user clicks the button</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>[“Mask”]</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>attribute</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Attribute Object</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>N</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Attributes to be added when user clicks the button</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>url</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y if type=url</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Message sent to the user when clicking the button</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>message</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y if type=message</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>style</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y for LINE carousel image</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Button style  </p>
+<p>Supported values:  </p>
+<ul>
+<li><strong>primary</strong>  </li>
+<li><strong>secondary</strong></li>
+</ul>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>color</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y for LINE carousel image</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Button color hex code</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+</tbody>
+</table>
+`}</HTMLBlock>
 ***
 
 #### Action Object
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Field Name",
-    "h-1": "Data Type",
-    "h-2": "Required",
-    "h-3": "Description",
-    "h-4": "Example",
-    "0-0": "type",
-    "0-1": "String",
-    "0-2": "Y",
-    "0-3": "Button type  \n  \nSupported values:  \n- **postback**: trigger chatbot message  \n- **url**: website link  \n- **message**: send a text message",
-    "0-4": "postback",
-    "1-0": "blockId",
-    "1-1": "String",
-    "1-2": "Y if type=postback",
-    "1-3": "Bot Block ID in Omnichat system",
-    "1-4": "",
-    "2-0": "tags",
-    "2-1": "Array of String",
-    "2-2": "N",
-    "2-3": "Tags to be added when user clicks the button",
-    "2-4": "",
-    "3-0": "attribute",
-    "3-1": "Attribute Object",
-    "3-2": "N",
-    "3-3": "Attributes to be added when user clicks the button",
-    "3-4": "",
-    "4-0": "url",
-    "4-1": "String",
-    "4-2": "Y if type=url",
-    "4-3": "",
-    "4-4": "",
-    "5-0": "message",
-    "5-1": "String",
-    "5-2": "Y if type=message",
-    "5-3": "The Message sent to users when clicking",
-    "5-4": ""
-  },
-  "cols": 5,
-  "rows": 6,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
-
-
+<HTMLBlock>{`
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+  <th style="border: 1px solid #ddd; padding: 8px;">Field Name</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Data Type</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Required</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>type</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Button type  </p>
+<p>Supported values:  </p>
+<ul>
+<li><strong>postback</strong>: trigger chatbot message  </li>
+<li><strong>url</strong>: website link  </li>
+<li><strong>message</strong>: send a text message</li>
+</ul>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>postback</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>blockId</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y if type=postback</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Bot Block ID in Omnichat system</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>tags</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Array of String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>N</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Tags to be added when user clicks the button</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>attribute</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Attribute Object</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>N</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Attributes to be added when user clicks the button</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>url</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y if type=url</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>message</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y if type=message</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>The Message sent to users when clicking</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+</tbody>
+</table>
+`}</HTMLBlock>
 ***
 
 #### Attribute Object
@@ -449,99 +607,158 @@ Response body: Empty
 
 #### Option List Object
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Field Name",
-    "h-1": "Data Type",
-    "h-2": "Required",
-    "h-3": "Description",
-    "h-4": "Example",
-    "0-0": "text",
-    "0-1": "String",
-    "0-2": "Y",
-    "0-3": "Message body  \nMax length: 1024 characters",
-    "0-4": "",
-    "1-0": "buttonTitle",
-    "1-1": "String",
-    "1-2": "Y",
-    "1-3": "Option list button title  \nMax length: 20 characters",
-    "1-4": "",
-    "2-0": "options",
-    "2-1": "Array of Option Object",
-    "2-2": "Y",
-    "2-3": "Options",
-    "2-4": ""
-  },
-  "cols": 5,
-  "rows": 3,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
-
+<HTMLBlock>{`
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+  <th style="border: 1px solid #ddd; padding: 8px;">Field Name</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Data Type</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Required</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>text</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Message body<br>Max length: 1024 characters</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>buttonTitle</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Option list button title<br>Max length: 20 characters</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>options</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Array of Option Object</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Options</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+</tbody>
+</table>
+`}</HTMLBlock>
 
 ***
 
 #### Option Object
 
-[block:parameters]
-{
-  "data": {
-    "h-0": "Field Name",
-    "h-1": "Data Type",
-    "h-2": "Required",
-    "h-3": "Description",
-    "h-4": "Example",
-    "0-0": "type",
-    "0-1": "String",
-    "0-2": "Y",
-    "0-3": "Button type  \n  \nSupported values:  \n- **postback**: trigger chatbot message",
-    "0-4": "postback",
-    "1-0": "title",
-    "1-1": "String",
-    "1-2": "Y",
-    "1-3": "Option title  \nMax length: 24 characters",
-    "1-4": "Option 1",
-    "2-0": "description",
-    "2-1": "String",
-    "2-2": "Y",
-    "2-3": "Option description  \nMax length: 72 characters",
-    "2-4": "Option 1 Description",
-    "3-0": "botId",
-    "3-1": "String",
-    "3-2": "Y",
-    "3-3": "Chatbot ID in Omnichat system",
-    "3-4": "8d1f060f-3e0d-4f52-9837-4920e9b4406d",
-    "4-0": "blockId",
-    "4-1": "String",
-    "4-2": "Y",
-    "4-3": "Chatbot Block ID in Omnichat system",
-    "4-4": "8d1f060f-3e0d-4f52-9837-4920e9b4406d",
-    "5-0": "tags",
-    "5-1": "Array of String",
-    "5-2": "N",
-    "5-3": "Tags to be added when user clicks the button",
-    "5-4": "[“Mask”]",
-    "6-0": "attribute",
-    "6-1": "Attribute Object",
-    "6-2": "N",
-    "6-3": "Attributes to be added when user clicks the button",
-    "6-4": ""
-  },
-  "cols": 5,
-  "rows": 7,
-  "align": [
-    "left",
-    "left",
-    "left",
-    "left",
-    "left"
-  ]
-}
-[/block]
+<HTMLBlock>{`
+<table style="width: 100%; border-collapse: collapse;">
+<thead>
+<tr>
+  <th style="border: 1px solid #ddd; padding: 8px;">Field Name</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Data Type</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Required</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Description</th>
+  <th style="border: 1px solid #ddd; padding: 8px;">Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>type</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Button type  </p>
+<p>Supported values:  </p>
+<ul>
+<li><strong>postback</strong>: trigger chatbot message</li>
+</ul>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>postback</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>title</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Option title<br>Max length: 24 characters</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Option 1</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>description</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Option description<br>Max length: 72 characters</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Option 1 Description</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>botId</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Chatbot ID in Omnichat system</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>8d1f060f-3e0d-4f52-9837-4920e9b4406d</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>blockId</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Y</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Chatbot Block ID in Omnichat system</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>8d1f060f-3e0d-4f52-9837-4920e9b4406d</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>tags</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Array of String</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>N</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Tags to be added when user clicks the button</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>[“Mask”]</p>
+</td>
+</tr>
+<tr>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>attribute</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Attribute Object</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>N</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"><p>Attributes to be added when user clicks the button</p>
+</td>
+  <td style="border: 1px solid #ddd; padding: 8px;"></td>
+</tr>
+</tbody>
+</table>
+`}</HTMLBlock>
