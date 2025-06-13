@@ -77,7 +77,7 @@ Note: Bulk operations (e.g., importing customers) temporarily do not support sen
       </td>
 
       <td>
-        Platform name\
+        Platform name
         Possible values: **line**, **facebook**, **instagram**, or **whatsapp**
       </td>
     </tr>
@@ -98,7 +98,7 @@ Note: Bulk operations (e.g., importing customers) temporarily do not support sen
       </td>
 
       <td>
-        Social Messenger Channel User ID  
+        Social Messenger Channel User ID
 
         * LINE: LINE User ID
         * Facebook: Facebook PSID
@@ -220,7 +220,7 @@ Note: Bulk operations (e.g., importing customers) temporarily do not support sen
       </td>
 
       <td>
-        Contact platform name\
+        Contact platform name
         (The value could be one of **line**, **facebook**, **instagram**, or **whatsapp**)
       </td>
     </tr>
@@ -287,7 +287,7 @@ Events related to this topic occur when customers within the social platform cha
       </td>
 
       <td>
-        Platform identifier\
+        Platform identifier
         (Currently only support **line**)
       </td>
     </tr>
@@ -372,9 +372,9 @@ Events related to this topic occur when
       </td>
 
       <td>
-        Messaging Platform.  
+        Messaging Platform.
 
-        Supported values:  
+        Supported values:
 
         * `line`
         * `whatsapp`
@@ -395,7 +395,7 @@ Events related to this topic occur when
       </td>
 
       <td>
-        Messaging Platform Channel ID.  
+        Messaging Platform Channel ID.
 
         * For `line` → LINE Messaging Channel ID
         * For `whatsapp` → WhatsApp Business Phone Number
@@ -416,7 +416,7 @@ Events related to this topic occur when
       </td>
 
       <td>
-        Customer's User ID.  
+        Customer's User ID.
 
         * For `line` → LINE User ID
         * For `whatsapp` → WhatsApp Phone Number
@@ -592,6 +592,24 @@ Events related to this topic occur when
         Nullable
       </td>
     </tr>
+
+    <tr>
+      <td>
+        agentPhotoUrl
+      </td>
+
+      <td>
+        The agent's photo
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Nullable
+      </td>
+    </tr>
   </tbody>
 </Table>
 
@@ -670,7 +688,7 @@ The various **statuses** are explained below:
       </td>
 
       <td>
-        Contact platform name\
+        Contact platform name
         (The value could be one of **line**, **facebook**, **instagram**, or **whatsapp**)
       </td>
     </tr>
@@ -831,7 +849,7 @@ Events related to this topic occur when customers complete the WhatsApp Flow for
       </td>
 
       <td>
-        The original response from WhatsApp\
+        The original response from WhatsApp
         See **interactive.nfm\_reply.response\_json** in [Meta Offical Doc](https://developers.facebook.com/docs/whatsapp/flows/reference/flowswebhooks)
       </td>
     </tr>
@@ -880,7 +898,7 @@ Events related to this topic occur when Omnichat fails to receive the LON webhoo
       </td>
 
       <td>
-        The ID of `Notification Message`, each call has 1 triggerId\
+        The ID of `Notification Message`, each call has 1 triggerId
         See [https://developers.omnichat.ai/docs/send-notification-messages-to-contacts](https://developers.omnichat.ai/docs/send-notification-messages-to-contacts)
       </td>
     </tr>
@@ -1009,7 +1027,7 @@ Events related to this topic occur when a chat-related ticket is updated.
       </td>
 
       <td>
-        Flag used to determine if the ticket is related to a collaboration chat\
+        Flag used to determine if the ticket is related to a collaboration chat
         `This flag is editable`
       </td>
     </tr>
@@ -1020,12 +1038,12 @@ Events related to this topic occur when a chat-related ticket is updated.
       </td>
 
       <td>
-        Supported values:\
-        -`webchat`\
-        -`line`\
-        -`whatsapp`\
-        -`wechat`\
-        -`instagram`\
+        Supported values:
+        -`webchat`
+        -`line`
+        -`whatsapp`
+        -`wechat`
+        -`instagram`
         -`facebook`
       </td>
     </tr>
@@ -1056,9 +1074,9 @@ Events related to this topic occur when a chat-related ticket is updated.
       </td>
 
       <td>
-        Supported values:\
-        -`Open`\
-        -`InProgress`\
+        Supported values:
+        -`Open`
+        -`InProgress`
         -`Closed`
       </td>
     </tr>
@@ -1079,7 +1097,7 @@ Events related to this topic occur when a chat-related ticket is updated.
       </td>
 
       <td>
-        Closed time when the ticket status is set to `Closed`.\
+        Closed time when the ticket status is set to `Closed`.
         Always be `null` for `ticket/create` webhook
       </td>
     </tr>
@@ -1090,11 +1108,11 @@ Events related to this topic occur when a chat-related ticket is updated.
       </td>
 
       <td>
-        Refer to these `actionType`\
-        -`FOLLOW_UP_FROM_OPEN`\
-        -`FOLLOW_UP_FROM_CHATBOT`\
-        -`REOPEN`\
-        -`NINEONEAPP_SYNC`\
+        Refer to these `actionType`
+        -`FOLLOW_UP_FROM_OPEN`
+        -`FOLLOW_UP_FROM_CHATBOT`
+        -`REOPEN`
+        -`NINEONEAPP_SYNC`
         -`WHATSAPP_ADD_CONVERSATION`
       </td>
     </tr>
@@ -1115,7 +1133,7 @@ Events related to this topic occur when a chat-related ticket is updated.
       </td>
 
       <td>
-        List of `Agent Logs`\
+        List of `Agent Logs`
         Default is an empty array
       </td>
     </tr>
@@ -1164,15 +1182,15 @@ Events related to this topic occur when a chat-related ticket is updated.
       </td>
 
       <td>
-        `NEW_ROOM` : New conversation created\
-        `FOLLOW_UP_FROM_OPEN` : Agent follows up the conversation from open case\
-        `FOLLOW_UP_FROM_CHATBOT` : Agent follows up the conversation from open chatbot case\
-        `TAKE_OVER` : Agent takes over the conversation from another agent\
-        `PASS` : The conversation is passed to another agent\
-        `REOPEN` : The conversation is reopened\
-        `NINEONEAPP_SYNC` : Agent follows up via 91App data sync\
-        `OMO_OVERWRITE` : Agent is changed due to users scan the OMO QRCode\
-        `WHATSAPP_ADD_CONVERSATION` : A new WhatsApp conversation is created by the agent\
+        `NEW_ROOM` : New conversation created
+        `FOLLOW_UP_FROM_OPEN` : Agent follows up the conversation from open case
+        `FOLLOW_UP_FROM_CHATBOT` : Agent follows up the conversation from open chatbot case
+        `TAKE_OVER` : Agent takes over the conversation from another agent
+        `PASS` : The conversation is passed to another agent
+        `REOPEN` : The conversation is reopened
+        `NINEONEAPP_SYNC` : Agent follows up via 91App data sync
+        `OMO_OVERWRITE` : Agent is changed due to users scan the OMO QRCode
+        `WHATSAPP_ADD_CONVERSATION` : A new WhatsApp conversation is created by the agent
         `OMO_CLOSE_ASSIGN` : The bound sales agent becomes the follow-up agent when the conversation is closed
       </td>
     </tr>
