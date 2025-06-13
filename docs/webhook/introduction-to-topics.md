@@ -629,6 +629,7 @@ Events related to this topic occur when
   "agentEmployeeCode": "S0001",
   "agentLocationName": "Shop A",
   "agentLocationCode": "SHOP-A",
+  "agentPhotoUrl": "https://media-cdn.omnichat.ai/your_image.png"
 }
 ```
 
