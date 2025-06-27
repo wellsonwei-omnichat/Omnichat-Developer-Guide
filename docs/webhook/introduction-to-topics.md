@@ -487,6 +487,24 @@ Events related to this topic occur when
 
     <tr>
       <td>
+        agentId
+      </td>
+
+      <td>
+        The agent's system ID
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Nullable
+      </td>
+    </tr>
+
+    <tr>
+      <td>
         agentName
       </td>
 
