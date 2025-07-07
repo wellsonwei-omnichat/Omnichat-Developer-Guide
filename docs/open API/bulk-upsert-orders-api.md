@@ -26,6 +26,7 @@ next:
 
 | Field                  | Type                  | Required | Description                                                                              |
 | :--------------------- | :-------------------- | :------- | :--------------------------------------------------------------------------------------- |
+| memberId               | String                | Y        | Unique identifier of the customer                                                        |
 | orderId                | String                | Y        | Internal primary key (PK) of the order used by the system                                |
 | orderName              | String                | Y        | Order number displayed on the page (e.g., for customer reference)                        |
 | orderDate              | String                | Y        | Date and time when the order was placed, in ISO-8601 format (e.g., 2025-04-11T15:30:00)  |
