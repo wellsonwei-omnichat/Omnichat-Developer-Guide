@@ -76,7 +76,7 @@ metadata:
 
       <td>
         Current status of the rich menu
-        Current status of the rich menu
+        `DRAFT`: Menu is being edited and not yet scheduled
       </td>
     </tr>
   </tbody>
