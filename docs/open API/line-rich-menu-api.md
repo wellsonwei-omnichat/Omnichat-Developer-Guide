@@ -77,6 +77,10 @@ metadata:
       <td>
         Current status of the rich menu
         `DRAFT`: Menu is being edited and not yet scheduled
+        `SCHEDULED`: Menu is scheduled for future publishing
+        `PUBLISHED`: Menu is currently active
+        `HALT`: Publishing is paused
+        `FINISHED`: Menu publishing has ended
       </td>
     </tr>
   </tbody>
