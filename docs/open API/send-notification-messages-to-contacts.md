@@ -24,9 +24,9 @@ Notification Open API Module
 
 ## Request Body
 
-| Field         | Type                         | Required | Description              |
-| :------------ | :--------------------------- | :------- | :----------------------- |
-| notifications | Array of Notification Object | Y        | Available size: 1 \~ 100 |
+| Field         | Type                         | Required | Description             |
+| :------------ | :--------------------------- | :------- | :---------------------- |
+| notifications | Array of Notification Object | Y        | Available size: 1 \~ 20 |
 
 ### Notification Object
 
@@ -66,9 +66,9 @@ Notification Open API Module
       </td>
 
       <td>
-        Messaging Platform  
+        Messaging Platform
 
-        Supported values:  
+        Supported values:
 
         * `line`
       </td>
@@ -106,7 +106,7 @@ Notification Open API Module
       </td>
 
       <td>
-        Contact's phone number  
+        Contact's phone number
 
         Supported format: (Country Code) + (Phone Number)
       </td>
@@ -145,7 +145,7 @@ Notification Open API Module
       </td>
 
       <td>
-        Key-value object used to replace in the both LON & SMS messages  
+        Key-value object used to replace in the both LON & SMS messages
 
         Ref for LON: [Supported values](https://fluorescent-skunk-876.notion.site/Omnichat-LINE-506da09fb6ae4822a9fa06887be43c59)
       </td>
