@@ -19,11 +19,68 @@ metadata:
 
 ### Content object
 
-| Field  | Type   | Description                        |
-| :----- | :----- | :--------------------------------- |
-| id     | String | Unique identifier of the rich menu |
-| name   | String | Display name of the rich menu      |
-| status | String | Current status of the rich menu    |
+<Table align={["left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        id
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Unique identifier of the rich menu
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        name
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Display name of the rich menu
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        status
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Current status of the rich menu
+        Current status of the rich menu
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 # Get A Rich Menu Details
 
