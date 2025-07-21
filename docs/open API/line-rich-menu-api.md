@@ -158,10 +158,11 @@ metadata:
 
       <td>
         Content associated with the action
-        `message`: message content
-        `postback`: (chatbot name) > (message block name)
-        `url`: url
-        `menu_switch`: menu name
+        `message`: the text content that will be sent when the area is clicked
+        `postback`: the name of the chatbot and message block to be triggered, in the format: (chatbot name) > (message block name)
+        `url`: the target URL that the user will be redirected to
+        `menu_switch`: the name of the rich menu to switch to
+        `certified_provider`: no associated content
       </td>
     </tr>
 
