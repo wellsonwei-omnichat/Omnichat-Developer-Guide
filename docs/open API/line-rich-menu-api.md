@@ -142,8 +142,8 @@ metadata:
       </td>
 
       <td>
-        Type of action triggered when this area is clicked
-        `message`, `postback`, `url`, `menu_switch`, `certified_provider`
+        Type of action triggered when this area is clicked<br />
+        `message`, `postback`, `url`, `menu_switch`, `certified_provider`<br />
       </td>
     </tr>
 
@@ -157,12 +157,12 @@ metadata:
       </td>
 
       <td>
-        Content associated with the action
-        `message`: the text content that will be sent when the area is clicked
-        `postback`: the name of the chatbot and message block to be triggered, in the format: (chatbot name) > (message block name)
-        `url`: the target URL that the user will be redirected to
-        `menu_switch`: the name of the rich menu to switch to
-        `certified_provider`: no associated content
+        Content associated with the action<br />
+        `message`: the text content that will be sent when the area is clicked<br />
+        `postback`: the name of the chatbot and message block to be triggered, in the format: (chatbot name) > (message block name)<br />
+        `url`: the target URL that the user will be redirected to<br />
+        `menu_switch`: the name of the rich menu to switch to<br />
+        `certified_provider`: no associated content<br />
       </td>
     </tr>
 
