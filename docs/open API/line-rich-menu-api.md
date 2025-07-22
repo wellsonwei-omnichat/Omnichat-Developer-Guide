@@ -1,5 +1,5 @@
 ---
-title: Line Rich Menu API
+title: Line Rich Menu APIs
 deprecated: false
 hidden: true
 metadata:
