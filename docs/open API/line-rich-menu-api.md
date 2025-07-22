@@ -190,7 +190,7 @@ metadata:
       </td>
 
       <td>
-        Percentage of total clicks represented by this area
+        Percentage of total clicks represented by this area (e.g., "23.45%")
       </td>
     </tr>
   </tbody>
