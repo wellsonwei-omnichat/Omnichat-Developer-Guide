@@ -13,9 +13,9 @@ GET `https://open-api.omnichat.ai/v1/broadcast/{broadcast_id}/buttons`
 
 ## Response body
 
-| Field   | Type   | Description                                               |
-| :------ | :----- | :-------------------------------------------------------- |
-| content | Object | Wrapper object containing the click statistics of buttons |
+| Field   | Type  | Description                                                            |
+| :------ | :---- | :--------------------------------------------------------------------- |
+| content | Array | List of the buttons of a specific broadcast and their click statistics |
 
 ### Click statistics object
 
