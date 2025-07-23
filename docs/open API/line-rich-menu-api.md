@@ -94,9 +94,9 @@ metadata:
 
 ## Response body
 
-| Field   | Type  | Description                                              |
-| :------ | :---- | :------------------------------------------------------- |
-| content | Array | List of the area and its details of a specific rich menu |
+| Field   | Type  | Description                                                 |
+| :------ | :---- | :---------------------------------------------------------- |
+| content | Array | List of the areas of a specific rich menu and their details |
 
 ### Rich menu object
 
