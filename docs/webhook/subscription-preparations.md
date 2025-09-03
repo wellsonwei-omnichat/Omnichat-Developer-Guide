@@ -92,7 +92,7 @@ The verification steps are as follows:
 const crypto = require('crypto');
 const requestBody = '{{request-body}}';
 const signatureSecret = '{{signature-secret}}';
-const hmac = crypto.createHmac('sha256', webhookSecret);
+const hmac = crypto.createHmac('sha256', signatureSecret);
 hmac.update(requestBody);
 const hash = hmac.digest('hex');
 ```
