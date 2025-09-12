@@ -141,9 +141,9 @@ Note: Bulk operations (e.g., importing customers) temporarily do not support sen
 }
 ```
 
-# customer/channel\_subscribe
+# customer/channel_subscribe
 
-# customer/channel\_unsubscribe
+# customer/channel_unsubscribe
 
 Events related to this topic occur when customers **subscribe** or **unsubscribe** within the social platform channels you have integrated.
 
@@ -261,7 +261,7 @@ Note: Bulk operations (e.g., importing customers) temporarily do not support sen
 }
 ```
 
-# customer/channel\_phone\_binding
+# customer/channel_phone_binding
 
 Events related to this topic occur when customers within the social platform channels you have integrated have successfully completed phone binding.
 
@@ -335,7 +335,7 @@ Events related to this topic occur when customers within the social platform cha
 }
 ```
 
-# customer/channel\_omo\_binding
+# customer/channel_omo_binding
 
 Events related to this topic occur when
 
@@ -653,7 +653,7 @@ Events related to this topic occur when
 
 <br />
 
-# direct\_msg/status
+# direct_msg/status
 
 Events related to this topic occur when there is a status change after sending a Direct Message.
 
@@ -792,7 +792,7 @@ The various **statuses** are explained below:
 }
 ```
 
-# whatsapp\_flow/flow\_create
+# whatsapp_flow/flow_create
 
 Events related to this topic occur when customers complete the WhatsApp Flow form.
 
@@ -869,7 +869,11 @@ Events related to this topic occur when customers complete the WhatsApp Flow for
 
       <td>
         The original response from WhatsApp
-        See **interactive.nfm\_reply.response\_json** in [Meta Offical Doc](https://developers.facebook.com/docs/whatsapp/flows/reference/flowswebhooks)
+        See **interactive.nfm_reply.response_json** in 
+
+        [Meta Offical Doc](https://developers.facebook.com/docs/whatsapp/flows/reference/flowswebhooks)
+
+
       </td>
     </tr>
   </tbody>
@@ -891,7 +895,7 @@ Events related to this topic occur when customers complete the WhatsApp Flow for
 }
 ```
 
-# lon/send\_sms
+# lon/send_sms
 
 Events related to this topic occur when Omnichat fails to receive the LON webhook within a specified date range.
 
@@ -918,7 +922,11 @@ Events related to this topic occur when Omnichat fails to receive the LON webhoo
 
       <td>
         The ID of `Notification Message`, each call has 1 triggerId
-        See [https://developers.omnichat.ai/docs/send-notification-messages-to-contacts](https://developers.omnichat.ai/docs/send-notification-messages-to-contacts)
+        See 
+
+        [https://developers.omnichat.ai/docs/send-notification-messages-to-contacts](https://developers.omnichat.ai/docs/send-notification-messages-to-contacts)
+
+
       </td>
     </tr>
 
@@ -928,7 +936,11 @@ Events related to this topic occur when Omnichat fails to receive the LON webhoo
       </td>
 
       <td>
-        Please `Copy 'Setting ID'` in [LINE NotiPress](https://console.omnichat.ai/line-notipress)
+        Please `Copy 'Setting ID'` in 
+
+        [LINE NotiPress](https://console.omnichat.ai/line-notipress)
+
+
       </td>
     </tr>
 
@@ -1303,3 +1315,44 @@ Events related to this topic occur when a chat-related ticket is deleted.
     "ticketId": 123
 }
 ```
+
+# broadcast_msg/status
+
+Events related to this topic occur when there is a status change after sending a Broadcast Message.
+
+The various **statuses** are explained below:
+
+* **read**: The message has been read (not applicable to text or image messages in Line).
+* **clicked**: A button within the message has been clicked.
+* **responded**: The message has been responded to.
+* **unsubscribed**: The recipient unsubscribed after receiving the message.
+
+## Data Change Object Structure
+
+| Field       | Description                                               |
+| :---------- | :-------------------------------------------------------- |
+| broadcastId | Broadcast ID                                              |
+| platform    | Contact platform name (Currently applicable to Line only) |
+| channelId   | Contact channel ID                                        |
+| userId      | Contact user ID                                           |
+| memberId    | Customer's unique ID                                      |
+| email       | Customer's email                                          |
+| phone       | Customer's phone                                          |
+| status      | Message status                                            |
+
+## Data Change Object Example
+
+```json
+{
+  "broadcastId": "b59b93d4-a179-4b32-ab75-dc573fae6004",
+  "platform": "line",
+  "channelId": "1656935362",
+  "userId": "U36bd7222a92b5cb04e4716f0c9c0dea6",
+  "memberId": "bruce001",
+  "email": "bruce.ni@omnichat.ai",
+  "phone": "886987654321",
+  "status": "read"
+}
+```
+
+<br />
