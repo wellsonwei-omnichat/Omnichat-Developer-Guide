@@ -306,25 +306,47 @@ metadata:
       <td>
         Contact’s tags to be replaced    
 
-        **[Noted: This field cannot be used together with tagsToAdd or tagsToRemove fields]**
+        **[Noted: This field cannot be used together with t`agsToAdd` or `tagsToRemove` fields]**
       </td>
     </tr>
 
     <tr>
       <td>
-
+        tagsToAdd
       </td>
 
       <td>
-
+        Array of String
       </td>
 
       <td>
-
+        N
       </td>
 
       <td>
+        Tags to be added to the contact  
 
+        **[Noted: This field cannot be used together with `tags` field]**
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        tagsToRemove
+      </td>
+
+      <td>
+        Array of String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Tags to be removed to the contact
+
+        **[Noted: This field cannot be used together with `tags` field]**
       </td>
     </tr>
   </tbody>
