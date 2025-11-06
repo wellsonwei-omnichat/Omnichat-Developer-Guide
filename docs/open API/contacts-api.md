@@ -440,7 +440,7 @@ metadata:
 
       <td>
         String / Number / Boolean  
-        (according to the data type of the custom attribute configured in Omnichat portal)
+        (according to the data type of the custom attribute configured in the Omnichat portal)
       </td>
 
       <td>
