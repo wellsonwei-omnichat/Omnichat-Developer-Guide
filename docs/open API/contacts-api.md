@@ -17,7 +17,7 @@ Get updated contacts by specific date range
 
 ## Endpoint
 
-**GET** [https://open-api.omnichat.ai/v1/contacts](https://open-api.omnichat.ai/v1/contacts) 
+**GET** [https://open-api.omnichat.ai/v1/contacts](https://open-api.omnichat.ai/v1/contacts)
 
 ## Query Parameters
 
@@ -570,7 +570,7 @@ Get updated contacts by specific date range
   </tbody>
 </Table>
 
-### `Channel` Object
+### `CustomAttributes` Object
 
 <Table align={["left","left","left","left"]}>
   <thead>
@@ -678,7 +678,7 @@ Get updated contacts by specific date range
       </td>
 
       <td>
-        type of the custom attribute  
+        type of the custom attribute
 
         Possible values:
         `text`: Text
@@ -834,9 +834,9 @@ Get updated contacts by specific date range
       </td>
 
       <td>
-        Messaging Platform.  
+        Messaging Platform.
 
-        Supported values:  
+        Supported values:
 
         * line
         * facebook
@@ -861,9 +861,9 @@ Get updated contacts by specific date range
       </td>
 
       <td>
-        Contact's channel ID to manipulate.    
+        Contact's channel ID to manipulate.
 
-        Specific Messaging Platform Channel ID.  
+        Specific Messaging Platform Channel ID.
 
         For LINE → LINE Channel ID  
         For Facebook → Facebook Page ID  
@@ -888,7 +888,7 @@ Get updated contacts by specific date range
       </td>
 
       <td>
-        Contact's ID to manipulate.  
+        Contact's ID to manipulate.
 
         For LINE → LINE User ID  
         For Facebook → Facebook PSID
