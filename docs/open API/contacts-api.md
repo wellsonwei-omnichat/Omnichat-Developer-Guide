@@ -691,7 +691,14 @@ Get updated contacts by specific date range
   </tbody>
 </Table>
 
-<br />
+### Failed - Bad request / Internal Server Error - HTTP Status 4xx / 5xx
+
+```json
+{
+    "errorCode": "",
+    "message": ""
+}
+```
 
 # Upsert a Contact
 
