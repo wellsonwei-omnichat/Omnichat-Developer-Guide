@@ -15,6 +15,11 @@ metadata:
 
 ## Endpoint
 
-**POST** https://open-api.omnichat.ai/v1/contacts/{platform}?channelId={channelId}&userId={userId}
+**POST** [https://open-api.omnichat.ai/v1/contacts/\{platform}?channelId=\{channelId}&userId=\{userId}](https://open-api.omnichat.ai/v1/contacts/\{platform}?channelId=\{channelId}\&userId=\{userId})
+
+| Field | Location | Required | Description |
+| :---- | :------- | :------- | :---------- |
+|       |          |          |             |
+|       |          |          |             |
 
 <br />
