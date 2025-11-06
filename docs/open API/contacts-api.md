@@ -691,6 +691,96 @@ Get updated contacts by specific date range
   </tbody>
 </Table>
 
+## Response Example
+
+```json
+{
+  "content": [
+    {
+      "channel": {
+        "platform": "line",
+        "channelId": "165000000"
+      },
+      "id": "U2bd582c37356d37cb6d46a823de3a908",
+      "name": "Alan",
+      "lastMessageTime": 1604650656053,
+      "subscribedAt": 1604650656053,
+      "unsubscribedAt": 1604650656053,
+      "updatedAt": 1604650656053,
+      "tags": [
+        "VIP",
+        "Sports"
+      ],
+      "customAttributes": [
+        {
+          "key": "MEMBER_TIER",
+          "value": "GOLD",
+          "type": "text",
+          "displayName": "Member Tier"
+        },
+        {
+          "key": "GENDER",
+          "value": "M",
+          "type": "text",
+          "displayName": "Gender"
+        }
+      ],
+      "status": true,
+      "note": "new customer",
+      "email": "test@email.com",
+      "phone": "886966633355",
+      "memberId": "9431",
+      "agentName": null,
+      "agentEmployeeCode": null,
+      "agentBindTime": null,
+      "agentLocationName": null,
+      "agentLocationCode": null
+    },
+    {
+      "channel": {
+        "platform": "line",
+        "channelId": "165000000"
+      },
+      "id": "U2bd582c37356d37cb6d46a823de3a413",
+      "name": "Mary",
+      "lastMessageTime": 1604650656053,
+      "tags": [],
+      "status": true,
+      "note": "",
+      "email": "mary@email.com",
+      "phone": "88690000000",
+      "memberId": "",
+      "agentName": "Sales Ken",
+      "agentEmployeeCode": "S0001",
+      "agentBindTime": 1604650656053,
+      "agentLocationName": "Shop A",
+      "agentLocationCode": "S-001"
+    },
+    {
+      "channel": {
+        "platform": "line",
+        "channelId": "165000002"
+      },
+      "id": "U2bd582c37356d37cb6d46a823de3a444",
+      "name": "Peter",
+      "lastMessageTime": 1604650656053,
+      "tags": [],
+      "status": true,
+      "note": "refund on 6/7",
+      "email": "peter@email.com",
+      "phone": "",
+      "memberId": "",
+      "agentName": null,
+      "agentEmployeeCode": null,
+      "agentBindTime": null,
+      "agentLocationName": null,
+      "agentLocationCode": null
+    }
+  ],
+  "totalElements": 3
+}
+```
+
 ### Failed - Bad request / Internal Server Error - HTTP Status 4xx / 5xx
 
 ```json
