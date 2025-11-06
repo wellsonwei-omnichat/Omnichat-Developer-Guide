@@ -374,11 +374,11 @@ metadata:
       </td>
 
       <td>
-
+        Map\<String\, String\>
       </td>
 
       <td>
-
+        N
       </td>
 
       <td>
