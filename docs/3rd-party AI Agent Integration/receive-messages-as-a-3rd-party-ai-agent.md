@@ -1,5 +1,5 @@
 ---
-title: Receive Messages as a 3rd-party AI Agent
+title: Receive Messages from webhook
 deprecated: false
 hidden: false
 metadata:
