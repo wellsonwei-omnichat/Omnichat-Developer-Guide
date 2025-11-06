@@ -382,7 +382,7 @@ metadata:
       </td>
 
       <td>
-
+        Extra attributes
       </td>
     </tr>
   </tbody>
