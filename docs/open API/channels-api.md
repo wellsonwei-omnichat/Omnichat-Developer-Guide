@@ -15,7 +15,9 @@ Get Channel Info
 
 ## Response Body
 
-Array of `Channel` Object
+### Success - HTTP Status 200
+
+Array of `Channel` Objects
 
 ### `Channel` Object
 
@@ -55,7 +57,7 @@ Array of `Channel` Object
       </td>
 
       <td>
-        Channel platform    
+        Channel platform
 
         Supported values:
 
@@ -63,8 +65,8 @@ Array of `Channel` Object
         * facebook
         * whatsapp
         * instagram
-        * wechat  
-        * web 
+        * wechat
+        * web
 
         For 3rd-party AI Agent Open API modules:  
         only `line` and `web` are supported.
@@ -109,4 +111,8 @@ Array of `Channel` Object
   </tbody>
 </Table>
 
-### Success - HTTP Status 200 with the follow response body
+<br />
+
+<br />
+
+<br />
