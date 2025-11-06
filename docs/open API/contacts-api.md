@@ -693,8 +693,6 @@ Get updated contacts by specific date range
 
 ### `Channel` Object
 
-<br />
-
 <Table align={["left","left","left","left"]}>
   <thead>
     <tr>
