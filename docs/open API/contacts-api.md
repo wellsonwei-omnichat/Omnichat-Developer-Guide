@@ -304,7 +304,8 @@ metadata:
       </td>
 
       <td>
-        Contact’s tags to be replaced  
+        Contact’s tags to be replaced    
+
         **[Noted: This field cannot be used together with tagsToAdd or tagsToRemove fields]**
       </td>
     </tr>
