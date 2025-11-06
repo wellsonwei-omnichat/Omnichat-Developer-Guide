@@ -570,7 +570,7 @@ Get updated contacts by specific date range
   </tbody>
 </Table>
 
-### `CustomAttributes` Object
+### `Custom Attributes` Object
 
 <Table align={["left","left","left","left"]}>
   <thead>
@@ -686,6 +686,82 @@ Get updated contacts by specific date range
         `date`: Date
         `datetime`: Date time
         `boolean`: Boolean
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+### `Channel` Object
+
+<br />
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Nullable
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        platform
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Channel platform
+
+        Supported values:
+
+        * line
+        * facebook
+        * whatsapp
+        * instagram
+        * wechat
+        * web
+
+        For 3rd-party AI Agent Open API modules:  
+        only `line` and `web` are supported.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        channelId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Channel ID / Fixed value `webchat` if `platform` is `web`
       </td>
     </tr>
   </tbody>
