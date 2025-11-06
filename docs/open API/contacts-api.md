@@ -198,6 +198,501 @@ Get updated contacts by specific date range
   </tbody>
 </Table>
 
+## Response Body
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Nullable
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        id
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact's user ID
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        channel
+      </td>
+
+      <td>
+        `Channel` Object
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Messaging channel object
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        name
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact’s name
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        lastMessageTime
+      </td>
+
+      <td>
+        Long
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact's last message received time
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        subscribedAt
+      </td>
+
+      <td>
+        Long
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact's subscription time
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        unsubscribedAt
+      </td>
+
+      <td>
+        Long
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact's un-subscription time
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        updatedAt
+      </td>
+
+      <td>
+        Long
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact's information last updated time
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        status
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact’s subscription status
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        email
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact’s email
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        phone
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact’s phone number
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        memberId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact’s website member ID
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        note
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact’s note
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        agentName
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Name of the agent bound to the contact
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        agentEmployeeCode
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        The employee code of the agent bound to the contact  
+        (Only for OMO Sales Cloud)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        agentLocationName
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Shop location name of the agent bound to the contact
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        agentLocationCode
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        The shop location code of the agent bound to the contact  
+        (Only for OMO Sales Cloud)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        agentBindTime
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        The time when the agent bound to the contact (ISO 8601 format)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        tags
+      </td>
+
+      <td>
+        Array of String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact’s tags to be replaced
+
+        **[Noted: This field cannot be used together with t`agsToAdd` or `tagsToRemove` fields]**
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        customAttributes
+      </td>
+
+      <td>
+        `CustomAttribute` Object
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact's custom attributes
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+### `Channel` Object
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Nullable
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        key
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Attribute key  
+        Max. length: 100 characters
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        value
+      </td>
+
+      <td>
+        Object  
+        (according to the data type of the custom attribute configured in Omnichat portal)
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Attribute value  
+        Max. length: 1000 characters
+
+        Format:  
+        For `number` value, use number (integer / float) format (NOT string)  
+        For `boolean` value, use true / false  
+        For `datetime` value, use ISO8601 format datetime string, e.g. `2022-11-01T14:16:00`  
+        For `date` value, use `YYYY-MM-DD` format string
+
+        Remove custom attribute values:  
+        You can pass in empty string for `string`/`date`/`datetime` type custom attribute to remove the value  
+        For `date`/`datetime`, it will convert to `1970-01-01` in system
+
+        For `boolean`, you should pass in false  
+        For `number`, you should pass in 0
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        displayName
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Display/readable name of the custom attribute
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        type
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        type of the custom attribute  
+
+        Possible values:
+        `text`: Text
+        `number`: Number
+        `date`: Date
+        `datetime`: Date time
+        `boolean`: Boolean
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+<br />
+
 # Upsert a Contact
 
 ## Endpoint
@@ -579,11 +1074,15 @@ Get updated contacts by specific date range
 
 ### `Custom Attribute` Objects
 
-<Table align={["left","left","left"]}>
+<Table align={["left","left","left","left"]}>
   <thead>
     <tr>
       <th>
         Field
+      </th>
+
+      <th>
+        Type
       </th>
 
       <th>
@@ -603,6 +1102,10 @@ Get updated contacts by specific date range
       </td>
 
       <td>
+        String
+      </td>
+
+      <td>
         N
       </td>
 
@@ -615,6 +1118,11 @@ Get updated contacts by specific date range
     <tr>
       <td>
         value
+      </td>
+
+      <td>
+        Object  
+        (according to the data type of the custom attribute configured in Omnichat portal)
       </td>
 
       <td>
