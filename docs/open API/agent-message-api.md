@@ -155,13 +155,13 @@ metadata:
       </td>
 
       <td>
-        Message type.  
+        Message type.
 
         Available types:
         `text`: Text message
         `image`: Image message
-        `video`\*: Video message (not supported on Webchat)
-        `audio`\*: Audio message (not supported on Webchat)  
+        `video`*: Video message (not supported on Webchat)
+        `audio`*: Audio message (not supported on Webchat)
 
         Max file size differs on different platforms.
       </td>
@@ -275,7 +275,7 @@ metadata:
 
 ## Response Body
 
-### Success
+### Success - 200 OK
 
 <Table align={["left","left","left","left"]}>
   <thead>
@@ -319,8 +319,6 @@ metadata:
     </tr>
   </tbody>
 </Table>
-
-### Success - 200 OK
 
 ```json
 {
