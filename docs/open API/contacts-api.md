@@ -11,17 +11,126 @@ metadata:
 * CRM Open API Module
 * Raccoon AI Add-on or 3rd-party AI Agent Open API Module
 
+# Get Contacts
+
+Get updated contacts by specific date range
+
+## Endpoint
+
+**GET** [https://open-api.omnichat.ai/v1/contacts](https://open-api.omnichat.ai/v1/contacts) 
+
+## Parameters
+
 # Upsert a Contact
 
 ## Endpoint
 
 **POST** [https://open-api.omnichat.ai/v1/contacts/\{platform}?channelId=\{channelId}&userId=\{userId}](https://open-api.omnichat.ai/v1/contacts/\{platform}?channelId=\{channelId}\&userId=\{userId})
 
-| Field     | Location | Required |
-| :-------- | :------- | :------- |
-| platform  | Path     | Y        |
-| channelId | Query    | Y        |
-| userId    | Query    | Y        |
+## Parameters
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Location
+      </th>
+
+      <th>
+        Required
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        platform
+      </td>
+
+      <td>
+        Path
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Messaging Platform.  
+
+        Supported values:  
+
+        * line
+        * facebook
+        * whatsapp
+        * instagram
+        * wechat
+        * webchat
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        channelId
+      </td>
+
+      <td>
+        Query
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact's channel ID to manipulate.    
+
+        Specific Messaging Platform Channel ID.  
+
+        For LINE → LINE Channel ID  
+        For Facebook → Facebook Page ID  
+        For WhatsApp → WhatsApp Business Phone Number  
+        For Instagram → Instagram Business Account ID  
+        For WeChat → WeChat ID  
+        For Webchat → Fixed value `webchat`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        userId
+      </td>
+
+      <td>
+        Query
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact's ID to manipulate.  
+
+        For LINE → LINE User ID  
+        For Facebook → Facebook PSID
+        For WhatsApp → WhatsApp Phone Number
+        For Instagram → Instagram User ID
+        For WeChat → WeChat User ID
+        For Webchat → Webchat User ID
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ## Request Body
 
