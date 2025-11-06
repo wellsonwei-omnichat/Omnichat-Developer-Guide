@@ -249,29 +249,272 @@ metadata:
 | sender     | Sender  | N        | Sender information          |                             |
 | content    | Content | N        | Message content information |                             |
 
-* Sender
+### `Sender` Object
 
-  | Field      | Type   | Nullable | Description           | Remark                                    |
-  | ---------- | ------ | -------- | --------------------- | ----------------------------------------- |
-  | id         | String | N        | Sender ID             | Customer or teammate username in Omnichat |
-  | externalId | String | N        | Sender actual user ID | User ID in Omnichat                       |
-  | type       | String | N        | Sender type           | Possible values:                          |
+<Table>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
 
-  * `customer`
-  * `agent`
-  * `bot` |
-    | senderName | String | N | Sender name |  |
-    | metadata | Object | N | Metadata |  |
-* Content
+      <th>
+        Type
+      </th>
 
-  | Field | Type   | Nullable | Description  | Remark           |
-  | ----- | ------ | -------- | ------------ | ---------------- |
-  | type  | String | N        | Message type | Possible values: |
+      <th>
+        Nullable
+      </th>
 
-  * `text`
-  * `image` |
-    | text | String | Y | Message content | not null if type = `text` |
-    | url | String | Y | Message content url for media | not null if type = `image` |
-    | metadata | Object | N | Metadata |  |
+      <th>
+        Description
+      </th>
+
+      <th>
+        Remark
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        id
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Sender ID
+      </td>
+
+      <td>
+        Customer or teammate username in Omnichat
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        externalId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Sender actual user ID
+      </td>
+
+      <td>
+        User ID in Omnichat
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        type
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Sender type
+      </td>
+
+      <td>
+        Possible values:  
+        `customer`  
+        `agent`  
+        `bot`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        senderName
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Sender name
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        metadata
+      </td>
+
+      <td>
+        Object
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Metadata
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+<br />
+
+### `Content` Object
+
+<Table align={["left","left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Nullable
+      </th>
+
+      <th>
+        Description
+      </th>
+
+      <th>
+        Remark
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        type
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Message type
+      </td>
+
+      <td>
+        Possible values:  
+
+        * `text`
+        * `image`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        text
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Message content
+      </td>
+
+      <td>
+        not null if type = `text`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        url
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Message content url for media
+      </td>
+
+      <td>
+        not null if type = `image`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        metadata
+      </td>
+
+      <td>
+        Object
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Metadata
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+<br />
 
 <br />
