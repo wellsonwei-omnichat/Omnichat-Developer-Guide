@@ -387,3 +387,70 @@ metadata:
     </tr>
   </tbody>
 </Table>
+
+## `Custom Attribute` Objects
+
+<br />
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Nullable
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        key
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Attribute key  
+        Max. length: 100 characters
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        value
+      </td>
+
+      <td>
+        String / Number / Boolean  
+        (according to the data type of the custom attribute configured in Omnichat portal)
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Attribute value  
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
