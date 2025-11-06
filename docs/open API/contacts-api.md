@@ -129,3 +129,5 @@ metadata:
 | email    | String  | N        | Contact’s email               |
 | phone    | String  | N        | Contact’s phone number        |
 | memberId | String  | N        | Contact’s member ID           |
+| note     | String  | N        | Contact’s note                |
+|          |         |          |                               |
