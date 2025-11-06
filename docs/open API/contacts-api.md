@@ -79,7 +79,15 @@ metadata:
       </td>
 
       <td>
+        Contact's channel ID to manipulate.  
+        Specific Messaging Platform Channel ID.  
 
+        * LINE → LINE Channel ID
+        * Facebook → Facebook Page ID
+        * WhatsApp → WhatsApp Business Phone Number
+        * Instagram → Instagram Business Account ID
+        * WeChat → WeChat ID
+        * Webchat → Fixed value `webchat`
       </td>
     </tr>
 
@@ -97,7 +105,14 @@ metadata:
       </td>
 
       <td>
+        Contact's ID to manipulate.  
 
+        * LINE → LINE User ID
+        * Facebook → Facebook PSID
+        * WhatsApp → WhatsApp Phone Number
+        * Instagram → Instagram User ID
+        * WeChat → WeChat User ID
+        * Webchat → Webchat User ID
       </td>
     </tr>
   </tbody>
