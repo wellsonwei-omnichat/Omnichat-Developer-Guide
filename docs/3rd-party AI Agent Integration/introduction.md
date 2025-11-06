@@ -17,4 +17,4 @@ To get other required data fields, refer to  `OPEN API` category
 
 * `Contacts APIs` > [`Get Contacts`](https://developers.omnichat.ai/docs/contacts-api#get-contacts)
 * `Contacts APIs` > [`Upsert a Contact`](https://developers.omnichat.ai/docs/contacts-api#upsert-a-contact)
-* `Channels APIs` > [`Get Team Channels Info`](https://developers.omnichat.ai/docs/channels-api#get-team-channels-info-api)
+* `Channels APIs` > [`Get Team Channels Info`](https://developers.omnichat.ai/docs/channels-api#get-team-channels-info)
