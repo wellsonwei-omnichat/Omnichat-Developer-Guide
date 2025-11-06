@@ -122,12 +122,13 @@ metadata:
 
 <br />
 
-| Field    | Type    | Required | Description                   |
-| :------- | :------ | :------- | :---------------------------- |
-| name     | String  | N        | Contact’s Name                |
-| status   | Boolean | N        | Contact’s subscription status |
-| email    | String  | N        | Contact’s email               |
-| phone    | String  | N        | Contact’s phone number        |
-| memberId | String  | N        | Contact’s member ID           |
-| note     | String  | N        | Contact’s note                |
-|          |         |          |                               |
+| Field             | Type    | Required | Description                                         |
+| :---------------- | :------ | :------- | :-------------------------------------------------- |
+| name              | String  | N        | Contact’s Name                                      |
+| status            | Boolean | N        | Contact’s subscription status                       |
+| email             | String  | N        | Contact’s email                                     |
+| phone             | String  | N        | Contact’s phone number                              |
+| memberId          | String  | N        | Contact’s member ID                                 |
+| note              | String  | N        | Contact’s note                                      |
+| agentEmployeeCode | String  | N        | The employee code of the agent bound to the contact |
+|                   |         |          |                                                     |
