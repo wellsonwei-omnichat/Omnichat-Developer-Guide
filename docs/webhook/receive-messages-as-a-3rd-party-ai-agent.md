@@ -23,7 +23,7 @@ metadata:
 
 ### `Event` Object
 
-<Table>
+<Table align={["left","left","left","left","left"]}>
   <thead>
     <tr>
       <th>
@@ -116,14 +116,12 @@ metadata:
         * `ai-session:open`: Start to chat with AI agent, message webhook will be sent upon received this event
         * `message:new`: Customer / User send a message
         * `ai-session:close`:
-            End up chat with AI agent, no message webhooks will be sent until next ai-session is open |
-            | payload | Payload | N | Event payload |  |
+          End up chat with AI agent, no message webhooks will be sent until next ai-session is open |
+          | payload | Payload | N | Event payload |  |
       </td>
     </tr>
   </tbody>
 </Table>
-
-<br />
 
 ### `Payload` Object
 
@@ -146,15 +144,100 @@ metadata:
 
 ### `Room` Object
 
-| Field | Type   | Nullable | Description | Remark           |
-| ----- | ------ | -------- | ----------- | ---------------- |
-| id    | String | N        | Room ID     |                  |
-| type  | String | N        | Room type   | Possible values: |
+<Table>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
 
-### `individual`: 1-on-1 conversation |
+      <th>
+        Type
+      </th>
 
+      <th>
+        Nullable
+      </th>
 
-| metadata | Object | N | Metadata | Currently not available |
+      <th>
+        Description
+      </th>
+
+      <th>
+        Remark
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        id
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Room ID
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        type
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Room type
+      </td>
+
+      <td>
+        Possible values:  
+        `individual`: 1-on-1 conversation
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        metadata
+      </td>
+
+      <td>
+        Object
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Metadata
+      </td>
+
+      <td>
+        (Currently not available)
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 ### `Message` Object
 
