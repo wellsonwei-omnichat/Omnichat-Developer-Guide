@@ -122,6 +122,7 @@ metadata:
 
 <br />
 
-| Field | Type   | Required | Description    |
-| :---- | :----- | :------- | :------------- |
-| name  | String | N        | Contact’s Name |
+| Field  | Type    | Required | Description                   |
+| :----- | :------ | :------- | :---------------------------- |
+| name   | String  | N        | Contact’s Name                |
+| status | Boolean | N        | Contact’s subscription status |
