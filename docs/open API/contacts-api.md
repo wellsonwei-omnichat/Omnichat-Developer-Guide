@@ -765,7 +765,9 @@ Get updated contacts by specific date range
   </tbody>
 </Table>
 
-## Response Example
+## Response Body
+
+### Success
 
 ```json
 {
@@ -1345,7 +1347,7 @@ Get updated contacts by specific date range
 }
 ```
 
-## Responses
+## Respons Body
 
 ### Success - 204
 
