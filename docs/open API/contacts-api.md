@@ -67,15 +67,33 @@ metadata:
 
     <tr>
       <td>
+        channelId
+      </td>
 
+      <td>
+        Query
+      </td>
+
+      <td>
+        Y
       </td>
 
       <td>
 
       </td>
+    </tr>
+
+    <tr>
+      <td>
+        userId
+      </td>
 
       <td>
+        Query
+      </td>
 
+      <td>
+        Y
       </td>
 
       <td>
