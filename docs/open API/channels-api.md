@@ -15,8 +15,6 @@ Get Channel Info
 
 ## Response Body
 
-### Success - HTTP Status 200
-
 Array of `Channel` Objects
 
 ### `Channel` Object
@@ -111,6 +109,8 @@ Array of `Channel` Objects
   </tbody>
 </Table>
 
+### Success - HTTP Status 200
+
 ```json
 [
     {
@@ -126,5 +126,3 @@ Array of `Channel` Objects
     ...
 ]
 ```
-
-<br />
