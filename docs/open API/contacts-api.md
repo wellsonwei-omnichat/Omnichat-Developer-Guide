@@ -273,6 +273,25 @@ metadata:
 
     <tr>
       <td>
+        agentLocationCode
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        The shop location code of the agent bound to the contact  
+        (Only for OMO Sales Cloud)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
 
       </td>
 
