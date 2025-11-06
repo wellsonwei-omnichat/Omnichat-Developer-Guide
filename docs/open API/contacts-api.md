@@ -449,7 +449,20 @@ metadata:
 
       <td>
         Attribute value  
+        Max. length: 1000 characters    
 
+        Format:  
+        For `number` value, use number (integer / float) format (NOT string)  
+        For `boolean` value, use true / false  
+        For `datetime` value, use ISO8601 format datetime string, e.g. `2022-11-01T14:16:00`  
+        For `date` value, use `YYYY-MM-DD` format string  
+
+        Remove custom attribute values:  
+        You can pass in empty string for `string`/`date`/`datetime` type custom attribute to remove the value    
+        For `date`/`datetime`, it will convert to `1970-01-01` in system  
+
+        For `boolean`, you should pass in false  
+        For `number`, you should pass in 0
       </td>
     </tr>
   </tbody>
