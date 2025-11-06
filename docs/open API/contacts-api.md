@@ -118,4 +118,10 @@ metadata:
   </tbody>
 </Table>
 
+## Request Body
+
 <br />
+
+| Field | Type   | Required | Description    |
+| :---- | :----- | :------- | :------------- |
+| name  | String | N        | Contact’s Name |
