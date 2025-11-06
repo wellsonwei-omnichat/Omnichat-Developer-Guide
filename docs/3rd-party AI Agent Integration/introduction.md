@@ -17,4 +17,4 @@ To get other required data fields, refer to  `OPEN API` category
 
 * `Contacts APIs` > `Get Contacts`
 * `Contacts APIs` > `Upsert a Contact`
-* `Channels APIs` > `Get Team Channel Info`
+* `Channels APIs` > `Get Team Channels Info API`
