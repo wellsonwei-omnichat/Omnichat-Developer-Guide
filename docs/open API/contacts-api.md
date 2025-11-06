@@ -19,7 +19,184 @@ Get updated contacts by specific date range
 
 **GET** [https://open-api.omnichat.ai/v1/contacts](https://open-api.omnichat.ai/v1/contacts) 
 
-## Parameters
+## Query Parameters
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Required
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        platform
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Messaging Platform.
+
+        Supported values:
+
+        * line
+        * facebook
+        * whatsapp
+        * instagram
+        * wechat
+        * webchat
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        channelId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact's channel ID to manipulate.
+
+        Specific Messaging Platform Channel ID.
+
+        For LINE → LINE Channel ID  
+        For Facebook → Facebook Page ID  
+        For WhatsApp → WhatsApp Business Phone Number  
+        For Instagram → Instagram Business Account ID  
+        For WeChat → WeChat ID  
+        For Webchat → Fixed value `webchat`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        userId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Contact's ID to manipulate.
+
+        For LINE → LINE User ID  
+        For Facebook → Facebook PSID
+        For WhatsApp → WhatsApp Phone Number
+        For Instagram → Instagram User ID
+        For WeChat → WeChat User ID
+        For Webchat → Webchat User ID
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        updatedAfter
+      </td>
+
+      <td>
+        Long
+      </td>
+
+      <td>
+        Y* (if no specific `userId`)
+      </td>
+
+      <td>
+        The start of the specific date range in unix timestamp (milliseconds) (inclusive)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        updatedBefore
+      </td>
+
+      <td>
+        Long
+      </td>
+
+      <td>
+        Y* (if no specific `userId`)
+      </td>
+
+      <td>
+        The end of the specific date range in unix timestamp (milliseconds) (exclusive)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        page
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+        Y* (if no specific `userId`)
+      </td>
+
+      <td>
+        Page number. Default: 1
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        pageSize
+      </td>
+
+      <td>
+        Integer
+      </td>
+
+      <td>
+        Y* (if no specific `userId`)
+      </td>
+
+      <td>
+        Number of contacts per page
+
+        Default: 20 (Max: 100)
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 # Upsert a Contact
 
