@@ -292,19 +292,19 @@ metadata:
 
     <tr>
       <td>
-
+        tags
       </td>
 
       <td>
-
+        Array of String
       </td>
 
       <td>
-
+        N
       </td>
 
       <td>
-
+        Contact’s tags to be replaced
       </td>
     </tr>
   </tbody>
