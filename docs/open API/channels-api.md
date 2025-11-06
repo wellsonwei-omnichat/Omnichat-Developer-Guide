@@ -111,8 +111,20 @@ Array of `Channel` Objects
   </tbody>
 </Table>
 
-<br />
-
-<br />
+```json
+[
+    {
+		    "platform": "webchat",
+        "channelId": "webchat",
+        "channelName": "Team name"
+    },
+    { 
+    		"platform": "line",
+        "channelId": "1657703186",
+        "channelName": "LINE Channel Name"
+    },
+    ...
+]
+```
 
 <br />
