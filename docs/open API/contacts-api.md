@@ -367,5 +367,23 @@ metadata:
         Contact's custom attributes
       </td>
     </tr>
+
+    <tr>
+      <td>
+        extraAttributes
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
   </tbody>
 </Table>
