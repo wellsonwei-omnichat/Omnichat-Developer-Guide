@@ -1,0 +1,371 @@
+---
+title: Agent Message API
+deprecated: false
+hidden: false
+metadata:
+  robots: index
+---
+<br />
+
+# Subscription Required
+
+* Raccoon AI Add-on, or
+* Open API - 3rd-party AI Agent Module
+
+## Endpoint
+
+**POST** [https://open-api.omnichat.ai/v1/agent-messages](https://open-api.omnichat.ai/v1/agent-messages)
+
+## Request Body
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Required
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        team
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Team ID
+        Use `team.id` retrieved from the webhook
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        roomId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        ID of the chat room to receiver the message
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        messages
+      </td>
+
+      <td>
+        Array of `Message` objects
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Messages to send.  
+        Max size for text and image: 5
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        replyToken
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y*
+      </td>
+
+      <td>
+        Reply token for LINE retrieved from the webhook
+        required for LINE messaging
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+### `Message` Object
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Required
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        type
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Message type.  
+
+        Available types:
+        `text`: Text message
+        `image`: Image message
+        `video`\*: Video message (not supported on Webchat)
+        `audio`\*: Audio message (not supported on Webchat)  
+
+        Max file size differs on different platforms.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        text
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y*
+      </td>
+
+      <td>
+        Message content.  
+        Required if type is `text`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        url
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y*
+      </td>
+
+      <td>
+        URL to media-related resources  
+        Required if type is `image`, `video`, or `audio`
+
+        Find supported extension to different message type in our [official manuals](https://docs.omnichat.ai/features/omnichannel-messenger/chuan-song-tu-pian-ying-pian-yin-xun-dang-an).
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+## Request Example
+
+### Text
+
+```json
+{
+		"team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+    "roomId": "67ffde199a2d2ebc4714d41c",
+    "messages": [
+        {
+            "type": "text",
+            "text": "Example text"
+        }
+    ]
+}
+```
+
+### Image
+
+```
+{
+		"team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+    "roomId": "67ffde199a2d2ebc4714d41c",
+    "messages": [
+        {
+            "type": "image",
+            "url": "https:://exmaple-image.png"
+        }
+    ]
+}
+```
+
+### Video
+
+```
+{
+		"team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+    "roomId": "67ffde199a2d2ebc4714d41c",
+    "messages": [
+        {
+            "type": "video",
+            "url": "https:://exmaple-video.mp4"
+        }
+    ]
+}
+```
+
+### Audio
+
+```
+{
+		"team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+    "roomId": "67ffde199a2d2ebc4714d41c",
+    "messages": [
+        {
+            "type": "audio",
+            "url": "https:://exmaple-audio.m4a"
+        }
+    ]
+}
+```
+
+<br />
+
+## Response Body
+
+### Success
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Nullable
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        messageIds
+      </td>
+
+      <td>
+        Array of String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        Message IDs of sent messages .
+        Response as null to message which failed to send
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+### Success - 200 OK
+
+```json
+{
+    "messageIds": [
+        "461230966842064897"
+    ]
+}
+```
+
+### Failed - 400 Bad Request
+
+#### No Feature Toggle
+
+```
+{
+    "errorCode": "INVALID_REQUEST_BODY",
+    "message": "The team does not have access to the third-party AI agent feature."
+}
+```
+
+#### Invalid request body
+
+```
+{
+    "errorCode": "INVALID_REQUEST_BODY",
+    "message": "roomId is required"
+}
+```
+
+#### Exceed max number of messages
+
+```
+{
+    "errorCode": "INVALID_REQUEST_BODY",
+    "message": "Up to 5 messages are allowed at a time"
+}
+```
+
+#### Room not found / invalid `roomId`
+
+```
+{
+    "errorCode": "INVALID_REQUEST_BODY",
+    "message": "roomId not found"
+}
+```
+
+<br />
