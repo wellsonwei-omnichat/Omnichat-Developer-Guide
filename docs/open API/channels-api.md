@@ -1,5 +1,5 @@
 ---
-title: Channels API
+title: Channels APIs
 deprecated: false
 hidden: false
 metadata:
