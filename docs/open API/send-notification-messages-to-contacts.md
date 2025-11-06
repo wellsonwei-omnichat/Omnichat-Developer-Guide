@@ -1,5 +1,5 @@
 ---
-title: Send notification messages to contacts
+title: Send Notification Messages to Contacts
 excerpt: ''
 deprecated: false
 hidden: false
