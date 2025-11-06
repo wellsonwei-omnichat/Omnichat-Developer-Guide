@@ -120,8 +120,6 @@ metadata:
 
 ## Request Body
 
-<br />
-
 <Table align={["left","left","left","left"]}>
   <thead>
     <tr>
@@ -390,17 +388,11 @@ metadata:
 
 ## `Custom Attribute` Objects
 
-<br />
-
-<Table align={["left","left","left","left"]}>
+<Table align={["left","left","left"]}>
   <thead>
     <tr>
       <th>
         Field
-      </th>
-
-      <th>
-        Type
       </th>
 
       <th>
@@ -420,10 +412,6 @@ metadata:
       </td>
 
       <td>
-        String
-      </td>
-
-      <td>
         N
       </td>
 
@@ -436,11 +424,6 @@ metadata:
     <tr>
       <td>
         value
-      </td>
-
-      <td>
-        String / Number / Boolean  
-        (according to the data type of the custom attribute configured in the Omnichat portal)
       </td>
 
       <td>
@@ -467,3 +450,42 @@ metadata:
     </tr>
   </tbody>
 </Table>
+
+## Request Example
+
+```json
+{
+	"name": "Peter Chan",
+	"status": false,
+	"email": "example@example.com",
+	"phone": "85298765432",
+	"memberId": "M00001",
+	"agentEmployeeCode": "EMP-001",
+	"agentLocationCode": "SHOP-A",
+  "tagsToAdd": [ "VVIP", "Sporty" ],
+  "tagsToRemove": [ "VIP" ],
+	"customAttributes": [
+		{ "key": "MemberTier", "value": "GOLD" },
+		{ "key": "Points", "value": 2031 },
+		{ "key": "TotalSpending", "value": 900.00 },
+		{ "key": "AcceptedMarketingPromotion", "value": true },
+		{ "key": "LastPurchaseDate", "value": "2022-11-01" },
+		{ "key": "RegisterDatetime", "value": "2022-11-01T14:16:00" }
+	]
+}
+```
+
+## Responses
+
+### Success - 204
+
+HTTP Status 204 with empty response body
+
+### Failed - Bad request - HTTP Status 4xx / 5xx
+
+```json
+{
+    "errorCode": "MISSING_URL_PARAMETER",
+    "message": "Missing URL parameters"
+}
+```
