@@ -122,13 +122,171 @@ metadata:
 
 <br />
 
-| Field             | Type    | Required | Description                                         |
-| :---------------- | :------ | :------- | :-------------------------------------------------- |
-| name              | String  | N        | Contact’s Name                                      |
-| status            | Boolean | N        | Contact’s subscription status                       |
-| email             | String  | N        | Contact’s email                                     |
-| phone             | String  | N        | Contact’s phone number                              |
-| memberId          | String  | N        | Contact’s member ID                                 |
-| note              | String  | N        | Contact’s note                                      |
-| agentEmployeeCode | String  | N        | The employee code of the agent bound to the contact |
-|                   |         |          |                                                     |
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Required
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        name
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact’s Name
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        status
+      </td>
+
+      <td>
+        Boolean
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact’s subscription status
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        email
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact’s email
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        phone
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact’s phone number
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        memberId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact’s member ID
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        note
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact’s note
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        agentEmployeeCode
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        The employee code of the agent bound to the contact  
+        (Only for OMO Sales Cloud)
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+  </tbody>
+</Table>
