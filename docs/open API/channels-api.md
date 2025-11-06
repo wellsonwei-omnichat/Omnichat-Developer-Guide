@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-# Get Team Channels Info API
+# Get Team Channels Info
 
 Get Channel Info
 
