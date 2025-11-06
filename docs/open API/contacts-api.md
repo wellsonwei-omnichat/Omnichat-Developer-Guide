@@ -349,5 +349,41 @@ metadata:
         **[Noted: This field cannot be used together with `tags` field]**
       </td>
     </tr>
+
+    <tr>
+      <td>
+        customAttributes
+      </td>
+
+      <td>
+        `CustomAttribute` Object
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact's custom attributes
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
   </tbody>
 </Table>
