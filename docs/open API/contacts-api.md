@@ -765,7 +765,7 @@ Get updated contacts by specific date range
   </tbody>
 </Table>
 
-### Success
+### Success - 200
 
 ```json
 {
