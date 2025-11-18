@@ -217,7 +217,7 @@ metadata:
 
 ```json
 {
-		"team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+    "team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
     "roomId": "67ffde199a2d2ebc4714d41c",
     "messages": [
         {
@@ -230,9 +230,9 @@ metadata:
 
 ### Image
 
-```
+```json
 {
-		"team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+    "team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
     "roomId": "67ffde199a2d2ebc4714d41c",
     "messages": [
         {
@@ -245,9 +245,9 @@ metadata:
 
 ### Video
 
-```
+```json
 {
-		"team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+    "team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
     "roomId": "67ffde199a2d2ebc4714d41c",
     "messages": [
         {
@@ -260,9 +260,9 @@ metadata:
 
 ### Audio
 
-```
+```json
 {
-		"team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+    "team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
     "roomId": "67ffde199a2d2ebc4714d41c",
     "messages": [
         {
@@ -334,7 +334,7 @@ metadata:
 
 #### No Feature Toggle
 
-```
+```json
 {
     "errorCode": "INVALID_REQUEST_BODY",
     "message": "The team does not have access to the third-party AI agent feature."
@@ -343,7 +343,7 @@ metadata:
 
 #### Invalid request body
 
-```
+```json
 {
     "errorCode": "INVALID_REQUEST_BODY",
     "message": "roomId is required"
@@ -352,7 +352,7 @@ metadata:
 
 #### Exceed max number of messages
 
-```
+```json
 {
     "errorCode": "INVALID_REQUEST_BODY",
     "message": "Up to 5 messages are allowed at a time"
@@ -361,7 +361,7 @@ metadata:
 
 #### Room not found / invalid `roomId`
 
-```
+```json
 {
     "errorCode": "INVALID_REQUEST_BODY",
     "message": "roomId not found"
