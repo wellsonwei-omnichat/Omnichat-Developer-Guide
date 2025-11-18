@@ -157,11 +157,12 @@ metadata:
       <td>
         Message type.
 
-        Available types:
-        `text`: Text message
-        `image`: Image message
-        `video`*: Video message (not supported on Webchat)
-        `audio`*: Audio message (not supported on Webchat)
+        Available types:  
+
+        * `text`: Text message
+        * `image`: Image message
+        * `video`: Video message (not supported on Webchat)
+        * `audio`: Audio message (not supported on Webchat)
 
         Max file size differs on different platforms.
       </td>
