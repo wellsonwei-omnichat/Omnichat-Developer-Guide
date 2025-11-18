@@ -154,7 +154,7 @@ metadata:
 
 ### `Channel` Object
 
-<Table>
+<Table align={["left","left","left","left","left"]}>
   <thead>
     <tr>
       <th>
@@ -675,43 +675,43 @@ metadata:
       "id": "635753b278bf6600ffa4f37a",
       "locale": "zh-Hant",
     },
-  	"events": [
-    		{
-      		"id": "6800c938f5db472b153e2d9c",
-  		    "createdAt": "2025-04-17T09:26:16.167Z",
-      		"type": "message:new",
-      		"payload": {
-        	    "channel": {
-              		"id": "fagagfafasfasfasfasf",
-            			"externalId": "661e1adb55751a86cd162034",
-            			"currentUrl": "https://www.example.com/item1",
-            			"platform": "webchat",
-            			"metadata": {}
-          		},
-        "room": {
-          "id": "67ffde199a2d2ebc4714d41c",
-          "type": "individual",
-          "metadata": {}
-        },
-        "message": {
-          "id": "6800c93853ee2083547ca736",
-          "createdAt": "2025-04-17T09:26:16.167Z",
-          "sender": {
-            "id": "67ffdc02080b8449e1888888",
-            "externalId": "67ffdc02080b8449e14428d7",
-            "type": "customer",
-            "senderName": "強森學長",
-            "metadata": {}
-          },
-          "content": {
-            "type": "text",
-            "text": "hello",
-            "metadata": {}
-          }
-				}
-      }
-    }
-  ]
+    "events": [
+        {
+      	    "id": "6800c938f5db472b153e2d9c",
+            "createdAt": "2025-04-17T09:26:16.167Z",
+            "type": "message:new",
+            "payload": {
+                "channel": {
+                    "id": "fagagfafasfasfasfasf",
+                    "externalId": "661e1adb55751a86cd162034",
+                    "currentUrl": "https://www.example.com/item1",
+                    "platform": "webchat",
+                    "metadata": {}
+                },
+                "room": {
+                    "id": "67ffde199a2d2ebc4714d41c",
+                    "type": "individual",
+                    "metadata": {}
+                },
+                "message": {
+                    "id": "6800c93853ee2083547ca736",
+                    "createdAt": "2025-04-17T09:26:16.167Z",
+                    "sender": {
+                        "id": "67ffdc02080b8449e1888888",
+                        "externalId": "67ffdc02080b8449e14428d7",
+                        "type": "customer",
+                        "senderName": "強森學長",
+                        "metadata": {}
+                    },
+                    "content": {
+                        "type": "text",
+                        "text": "hello",
+                        "metadata": {}
+                    }
+				        }
+            }
+        }
+    ]
 }
 ```
 
@@ -756,7 +756,7 @@ metadata:
                         "url": "hello",
                         "metadata": {}
                     }
-				        }
+                }
             }
         }
     ]
