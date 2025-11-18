@@ -157,7 +157,7 @@ metadata:
       <td>
         Message type.
 
-        Available types:  
+        Available types:
 
         * `text`: Text message
         * `image`: Image message
@@ -182,7 +182,7 @@ metadata:
       </td>
 
       <td>
-        Message content.   
+        Message content.
 
         Required if type is `text`
       </td>
