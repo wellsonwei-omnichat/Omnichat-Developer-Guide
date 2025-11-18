@@ -182,7 +182,8 @@ metadata:
       </td>
 
       <td>
-        Message content.  
+        Message content.   
+
         Required if type is `text`
       </td>
     </tr>
@@ -204,7 +205,7 @@ metadata:
         URL to media-related resources  
         Required if type is `image`, `video`, or `audio`
 
-        Find supported extension to different message type in our [official manuals](https://docs.omnichat.ai/features/omnichannel-messenger/chuan-song-tu-pian-ying-pian-yin-xun-dang-an).
+        Find a supported extension for different message types in our [official manuals](https://docs.omnichat.ai/features/omnichannel-messenger/chuan-song-tu-pian-ying-pian-yin-xun-dang-an).
       </td>
     </tr>
   </tbody>
