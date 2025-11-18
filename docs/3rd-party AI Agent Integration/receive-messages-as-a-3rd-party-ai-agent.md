@@ -671,23 +671,23 @@ metadata:
 
 ```json
 {
-  "team": {
-    "id": "635753b278bf6600ffa4f37a",
-    "locale": "zh-Hant",
-  },
-  "events": [
-    {
-      "id": "6800c938f5db472b153e2d9c",
-      "createdAt": "2025-04-17T09:26:16.167Z",
-      "type": "message:new",
-      "payload": {
-        "channel": {
-            "id": "fagagfafasfasfasfasf",
-            "externalId": "661e1adb55751a86cd162034",
-            "currentUrl": "https://www.example.com/item1",
-            "platform": "webchat",
-            "metadata": {}
-          },
+    "team": {
+      "id": "635753b278bf6600ffa4f37a",
+      "locale": "zh-Hant",
+    },
+  	"events": [
+    		{
+      		"id": "6800c938f5db472b153e2d9c",
+  		    "createdAt": "2025-04-17T09:26:16.167Z",
+      		"type": "message:new",
+      		"payload": {
+        	    "channel": {
+              		"id": "fagagfafasfasfasfasf",
+            			"externalId": "661e1adb55751a86cd162034",
+            			"currentUrl": "https://www.example.com/item1",
+            			"platform": "webchat",
+            			"metadata": {}
+          		},
         "room": {
           "id": "67ffde199a2d2ebc4714d41c",
           "type": "individual",
