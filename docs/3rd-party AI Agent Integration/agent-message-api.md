@@ -73,7 +73,7 @@ metadata:
       </td>
 
       <td>
-        ID of the chat room to receiver the message
+        ID of the chat room to receive the message
       </td>
     </tr>
 
