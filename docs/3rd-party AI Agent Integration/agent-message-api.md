@@ -336,7 +336,7 @@ metadata:
 
 ```json
 {
-		"team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+    "team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
     "roomId": "67ffde199a2d2ebc4714d41c",
     "messages": [
         {
