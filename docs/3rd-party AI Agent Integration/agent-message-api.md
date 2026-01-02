@@ -110,8 +110,8 @@ metadata:
       </td>
 
       <td>
-        Reply token for LINE retrieved from the webhook
-        required for LINE messaging
+        Reply token for LINE retrieved from the webhook  
+        Required for LINE messaging
       </td>
     </tr>
   </tbody>
