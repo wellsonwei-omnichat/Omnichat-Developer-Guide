@@ -203,13 +203,102 @@ metadata:
 
       <td>
         URL to media-related resources  
-        Required if type is `image`, `video`, or `audio`
+        Required if type is `image` or `audio`
+
+        Find a supported extension for different message types in our [official manuals](https://docs.omnichat.ai/features/omnichannel-messenger/chuan-song-tu-pian-ying-pian-yin-xun-dang-an).
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        video
+      </td>
+
+      <td>
+        Video
+      </td>
+
+      <td>
+        Y*
+      </td>
+
+      <td>
+        video-related resources.  
+        Required if type is video
 
         Find a supported extension for different message types in our [official manuals](https://docs.omnichat.ai/features/omnichannel-messenger/chuan-song-tu-pian-ying-pian-yin-xun-dang-an).
       </td>
     </tr>
   </tbody>
 </Table>
+
+<br />
+
+### `Video` Object
+
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Required
+      </th>
+
+      <th>
+        Description
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        url
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y
+      </td>
+
+      <td>
+        URL to the video file.
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        thumbnailUrl
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Y*
+      </td>
+
+      <td>
+        `previewImage` URL for `LINE` video message
+
+        Only required in the LINE platform.
+      </td>
+    </tr>
+  </tbody>
+</Table>
+
+<br />
 
 ## Request Example
 
@@ -247,12 +336,15 @@ metadata:
 
 ```json
 {
-    "team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+		"team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
     "roomId": "67ffde199a2d2ebc4714d41c",
     "messages": [
         {
             "type": "video",
-            "url": "https:://exmaple-video.mp4"
+            "video": {
+                "url": "https://example/mock.mp4",
+                "thumbnailUrl": "https://example/mock.jpg"
+            }
         }
     ]
 }
