@@ -868,7 +868,7 @@ Get updated contacts by specific date range
 
 ## Endpoint
 
-**POST** [https://open-api.omnichat.ai/v1/contacts/\{platform}?channelId=\{channelId}&userId=\{userId}](https://open-api.omnichat.ai/v1/contacts/\{platform}?channelId=\{channelId}\&userId=\{userId})
+**PUT** `https://open-api.omnichat.ai/v1/contacts/{platform}?channelId={channelId}&userId={userId}`
 
 ## Parameters
 
@@ -1357,5 +1357,38 @@ HTTP Status 204 with empty response body
 {
     "errorCode": "MISSING_URL_PARAMETER",
     "message": "Missing URL parameters"
+}
+```
+
+---
+
+# Delete a Contact
+
+Delete a contact by platform, channel ID, and user ID.
+
+## Endpoint
+
+**DELETE** `https://open-api.omnichat.ai/v1/contacts/{platform}?channelId={channelId}&userId={userId}`
+
+## Parameters
+
+| Field | Location | Required | Description |
+| :---- | :------- | :------- | :---------- |
+| platform | Path | Yes | Messaging Platform. Supported values: `line`, `facebook`, `whatsapp`, `instagram`, `wechat`, `webchat` |
+| channelId | Query | Yes | Contact's channel ID to manipulate |
+| userId | Query | Yes | Contact's ID to manipulate |
+
+## Response Body
+
+### Success - 204
+
+HTTP Status 204 with empty response body
+
+### Failed - HTTP Status 4xx / 5xx
+
+```json
+{
+    "errorCode": "CONTACT_NOT_FOUND",
+    "message": "Contact not found"
 }
 ```
