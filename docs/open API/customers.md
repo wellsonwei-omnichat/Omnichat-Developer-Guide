@@ -1,11 +1,11 @@
 ---
-title: Customers APIs
+title: Customers
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# Customers APIs
+# Customers
 
 APIs for managing customer profiles (identified by memberId or omniCustomerId).
 

@@ -10,11 +10,11 @@
 - channels
 - rooms
 - broadcasts
-- whatsapp-api
-- whatsapp-headless-api
+- whatsapp
+- whatsapp-headless
 - whatsapp-webhook
-- meta-business-api
-- omo-sales-api
+- meta-business
+- omo-sales
 - send-notification-messages-to-contacts
-- bulk-upsert-orders-api
-- line-rich-menu-api
+- orders
+- line-rich-menus

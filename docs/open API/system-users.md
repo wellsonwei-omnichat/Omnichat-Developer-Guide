@@ -1,11 +1,11 @@
 ---
-title: System Users APIs
+title: System Users
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# System Users APIs
+# System Users
 
 APIs for retrieving system user information.
 

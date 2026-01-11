@@ -1,11 +1,11 @@
 ---
-title: Loyalty APIs
+title: Loyalty Points
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# Loyalty APIs
+# Loyalty Points
 
 APIs for managing customer loyalty points.
 

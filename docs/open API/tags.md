@@ -1,11 +1,11 @@
 ---
-title: Tag APIs
+title: Tags
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# Tag APIs
+# Tags
 
 APIs for retrieving tagging log records.
 

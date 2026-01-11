@@ -1,11 +1,11 @@
 ---
-title: Meta Business APIs
+title: Meta Business
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# Meta Business APIs
+# Meta Business
 
 APIs for Meta (Facebook/WhatsApp) business operations.
 

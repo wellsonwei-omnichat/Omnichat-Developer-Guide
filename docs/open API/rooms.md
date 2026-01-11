@@ -1,11 +1,11 @@
 ---
-title: Rooms APIs
+title: Rooms
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# Rooms APIs
+# Rooms
 
 APIs for managing chat rooms.
 

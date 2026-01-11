@@ -1,11 +1,11 @@
 ---
-title: WhatsApp APIs
+title: WhatsApp
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# WhatsApp APIs
+# WhatsApp
 
 APIs for managing WhatsApp message templates.
 

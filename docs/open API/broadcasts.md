@@ -1,11 +1,11 @@
 ---
-title: Broadcast APIs
+title: Broadcasts
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# Broadcast APIs
+# Broadcasts
 
 APIs for sending and managing broadcast messages.
 

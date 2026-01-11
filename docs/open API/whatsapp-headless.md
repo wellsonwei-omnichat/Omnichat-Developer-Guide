@@ -1,11 +1,11 @@
 ---
-title: WhatsApp Headless APIs
+title: WhatsApp Headless
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# WhatsApp Headless APIs
+# WhatsApp Headless
 
 APIs for sending WhatsApp messages directly without tracking. This is a passthrough API to WhatsApp Cloud API.
 

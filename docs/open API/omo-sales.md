@@ -1,11 +1,11 @@
 ---
-title: OMO Sales APIs
+title: OMO Sales
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# OMO Sales APIs
+# OMO Sales
 
 APIs for OMO (Online-Merge-Offline) sales operations including reports and roster management.
 

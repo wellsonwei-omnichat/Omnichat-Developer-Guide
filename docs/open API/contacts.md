@@ -1,5 +1,5 @@
 ---
-title: Contacts APIs
+title: Contacts
 deprecated: false
 hidden: false
 metadata:

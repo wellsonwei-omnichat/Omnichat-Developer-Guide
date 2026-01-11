@@ -1,11 +1,11 @@
 ---
-title: Messaging APIs
+title: Messages
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# Messaging APIs
+# Messages
 
 APIs for retrieving chat history and sending direct messages to contacts.
 

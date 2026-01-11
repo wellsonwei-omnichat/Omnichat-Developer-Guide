@@ -1,11 +1,11 @@
 ---
-title: Identity APIs
+title: Identities
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# Identity APIs
+# Identities
 
 APIs for checking member data using social identity.
 

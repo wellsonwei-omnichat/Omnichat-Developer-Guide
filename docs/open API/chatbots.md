@@ -1,11 +1,11 @@
 ---
-title: Chatbot APIs
+title: Chatbots
 deprecated: false
 hidden: false
 metadata:
   robots: index
 ---
-# Chatbot APIs
+# Chatbots
 
 Manage chatbots and their message blocks.
 
