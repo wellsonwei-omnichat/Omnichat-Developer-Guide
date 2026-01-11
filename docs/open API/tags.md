@@ -11,7 +11,9 @@ APIs for retrieving tagging log records.
 
 ## Subscription Required
 
-- CRM Open API Module
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api` | Open API Module - Required for retrieving tagging logs |
 
 ---
 

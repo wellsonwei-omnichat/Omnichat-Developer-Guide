@@ -11,9 +11,11 @@ APIs for managing chat rooms.
 
 ## Subscription Required
 
-- CRM Open API Module
-- OMO Sales Cloud
-- 3rd-party AI Agent Open API Module (for To Human Agent API)
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api_crm` | CRM Open API Module - Required for Assign Agent API |
+| `open_api_omo` | OMO Open API Module - Required for Assign Agent API |
+| `open_api_3rd_party_ai_agent` | 3rd-party AI Agent Open API Module - Required for To Human Agent API |
 
 ---
 

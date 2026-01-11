@@ -9,6 +9,12 @@ metadata:
 
 APIs for retrieving system user information.
 
+## Subscription Required
+
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api` | Open API Module - Required for retrieving system users |
+
 ---
 
 # Get System Users List

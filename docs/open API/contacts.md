@@ -5,11 +5,11 @@ hidden: false
 metadata:
   robots: index
 ---
-# Subscription Required
+## Subscription Required
 
-* CS / Marketing / OMO Sales / Social CDP Cloud
-* CRM Open API Module
-* Raccoon AI Add-on or 3rd-party AI Agent Open API Module
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api_crm` | CRM Open API Module - Required for all Contact endpoints |
 
 # Get Contacts
 

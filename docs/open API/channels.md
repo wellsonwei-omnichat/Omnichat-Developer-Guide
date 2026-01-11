@@ -9,6 +9,12 @@ metadata:
 
 Get Channel Info
 
+## Subscription Required
+
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api` | Open API Module - Required for retrieving channel information |
+
 ## Endpoint
 
 **GET** [https://open-api.omnichat.ai/v1/channels](https://open-api.omnichat.ai/v1/channels)

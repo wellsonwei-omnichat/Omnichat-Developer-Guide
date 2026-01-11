@@ -11,8 +11,9 @@ Manage chatbots and their message blocks.
 
 ## Subscription Required
 
-- Marketing Cloud / Social CDP Cloud
-- Marketing Open API Module
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api_marketing` | Marketing Open API Module - Required for all Chatbot endpoints |
 
 ---
 

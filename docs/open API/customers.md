@@ -11,8 +11,9 @@ APIs for managing customer profiles (identified by memberId or omniCustomerId).
 
 ## Subscription Required
 
-- CS / Marketing / OMO Sales / Social CDP Cloud
-- CRM Open API Module
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api_crm` | CRM Open API Module - Required for all Customer endpoints |
 
 ---
 

@@ -11,8 +11,9 @@ APIs for checking member data using social identity.
 
 ## Subscription Required
 
-- CS / Marketing / OMO Sales / Social CDP Cloud
-- CRM Open API Module
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api_crm` | CRM Open API Module - Required for checking member data |
 
 ---
 

@@ -17,8 +17,9 @@ Get chat history messages by date range.
 
 ## Subscription Required
 
-- Customer Service Cloud / Social CDP Cloud
-- CRM Open API Module
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api_crm` | CRM Open API Module - Required for retrieving chat history |
 
 ## Endpoint
 
@@ -216,8 +217,9 @@ Get message details by message ID.
 
 ## Subscription Required
 
-- Customer Service Cloud / Social CDP Cloud
-- CRM Open API Module
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api_crm` | CRM Open API Module - Required for retrieving message details |
 
 ## Endpoint
 
@@ -269,8 +271,9 @@ Send a direct message to a single contact.
 
 ## Subscription Required
 
-- Marketing Cloud / Social CDP Cloud
-- Marketing Open API Module
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api_marketing` | Marketing Open API Module - Required for sending direct messages |
 
 ## Endpoint
 

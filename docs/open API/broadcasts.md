@@ -11,8 +11,9 @@ APIs for sending and managing broadcast messages.
 
 ## Subscription Required
 
-- Marketing Cloud
-- Open API Marketing Module
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api_marketing` | Marketing Open API Module - Required for all Broadcast endpoints |
 
 ---
 

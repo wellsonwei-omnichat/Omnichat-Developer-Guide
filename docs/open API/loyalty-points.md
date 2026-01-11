@@ -11,8 +11,10 @@ APIs for managing customer loyalty points.
 
 ## Subscription Required
 
-- Loyalty Points Module
-- Loyalty Open API Module
+| Feature Toggle | Description |
+|----------------|-------------|
+| `open_api_loyalty_point` | Loyalty Points Open API Module - Required for adjusting loyalty points |
+| `open_api` | Open API Module - Base requirement |
 
 ---
 
