@@ -466,8 +466,8 @@ metadata:
       </td>
 
       <td>
-        Message IDs of sent messages .
-        Response as null to message which failed to send
+        Message IDs of sent messages.
+        Response as null to the message that failed to send
       </td>
     </tr>
   </tbody>
