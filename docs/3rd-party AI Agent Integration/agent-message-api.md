@@ -16,7 +16,7 @@ metadata:
 
 **POST** [https://open-api.omnichat.ai/v1/agent-messages](https://open-api.omnichat.ai/v1/agent-messages)
 
-## Request Body
+# Request Body
 
 <Table align={["left","left","left","left"]}>
   <thead>
@@ -245,7 +245,7 @@ metadata:
       </td>
 
       <td>
-         `QuickReply` Object
+        `QuickReply` Object
         Required if type is quick_reply
       </td>
     </tr>
@@ -426,7 +426,7 @@ metadata:
 
 <br />
 
-## Response Body
+# Response Body
 
 ### Success - 200 OK
 
