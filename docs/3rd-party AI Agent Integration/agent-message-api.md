@@ -12,7 +12,7 @@ metadata:
 * Raccoon AI Add-on, or
 * Open API - 3rd-party AI Agent Module
 
-## Endpoint
+# Endpoint
 
 **POST** [https://open-api.omnichat.ai/v1/agent-messages](https://open-api.omnichat.ai/v1/agent-messages)
 
