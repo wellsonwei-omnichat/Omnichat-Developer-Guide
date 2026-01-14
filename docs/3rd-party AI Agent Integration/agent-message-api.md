@@ -161,8 +161,9 @@ metadata:
 
         * `text`: Text message
         * `image`: Image message
-        * `video`: Video message (not supported on Webchat)
+        * `video`: Video message
         * `audio`: Audio message (not supported on Webchat)
+        * `quick_reply`: Quick Reply message
 
         Max file size differs on different platforms.
       </td>
@@ -227,6 +228,25 @@ metadata:
         Required if type is video
 
         Find a supported extension for different message types in our [official manuals](https://docs.omnichat.ai/features/omnichannel-messenger/chuan-song-tu-pian-ying-pian-yin-xun-dang-an).
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        quick_reply
+      </td>
+
+      <td>
+        QuickReply
+      </td>
+
+      <td>
+        Y*
+      </td>
+
+      <td>
+         `QuickReply` Object
+        Required if type is quick_reply
       </td>
     </tr>
   </tbody>
@@ -300,6 +320,23 @@ metadata:
 
 <br />
 
+### `QuickReply` Object
+
+| Field   | Type               | Required | Description              |
+| :------ | :----------------- | :------- | :----------------------- |
+| text    | String             | Y        | Message with quick reply |
+| replies | Reply Object Array | Y        | Reply options            |
+
+<br />
+
+### `Reply` Object
+
+| Field | Type   | Required | Description         |
+| :---- | :----- | :------- | :------------------ |
+| text  | String | Y        | Quick reply content |
+
+<br />
+
 ## Request Example
 
 ### Text
@@ -360,6 +397,28 @@ metadata:
         {
             "type": "audio",
             "url": "https:://exmaple-audio.m4a"
+        }
+    ]
+}
+```
+
+### Quick Reply
+
+```jsx
+{
+	  "team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
+    "roomId": "67ffde199a2d2ebc4714d41c",
+    "messages": [
+        {
+            "type": "quick_reply",
+            "quick_reply": {
+                "text": "Message Content",
+                "replies": [
+                    {
+                        "text": "echo text"
+                    }
+                ]
+            }
         }
     ]
 }
