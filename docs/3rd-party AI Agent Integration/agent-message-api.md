@@ -428,7 +428,7 @@ metadata:
 
 # Response Body
 
-### Success - 200 OK
+## Success - 200 OK
 
 <Table align={["left","left","left","left"]}>
   <thead>
@@ -481,9 +481,9 @@ metadata:
 }
 ```
 
-### Failed - 400 Bad Request
+## Failed - 400 Bad Request
 
-#### No Feature Toggle
+### No Feature Toggle
 
 ```json
 {
@@ -492,7 +492,7 @@ metadata:
 }
 ```
 
-#### Invalid request body
+### Invalid request body
 
 ```json
 {
@@ -501,7 +501,7 @@ metadata:
 }
 ```
 
-#### Exceed max number of messages
+### Exceed max number of messages
 
 ```json
 {
@@ -510,7 +510,7 @@ metadata:
 }
 ```
 
-#### Room not found / invalid `roomId`
+### Room not found / invalid `roomId`
 
 ```json
 {
