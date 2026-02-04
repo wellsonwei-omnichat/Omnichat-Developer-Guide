@@ -17,7 +17,7 @@ Hand over the chat from AI Chat to Open - Human Agent
 
 | Field  | Type   | Required | Description                      |
 | :----- | :----- | :------- | :------------------------------- |
-| roomId | String | Y        | ID of the chat room to hand-over |
+| roomId | String | Y        | ID of the chat room to hand over |
 | team   | String | Y        | Team account ID                  |
 
 ## Request Example
