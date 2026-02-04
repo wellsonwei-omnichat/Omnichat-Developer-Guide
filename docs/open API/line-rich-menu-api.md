@@ -67,6 +67,20 @@ metadata:
 
     <tr>
       <td>
+        channelId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        the channelId of rich menu
+      </td>
+    </tr>
+
+    <tr>
+      <td>
         status
       </td>
 
