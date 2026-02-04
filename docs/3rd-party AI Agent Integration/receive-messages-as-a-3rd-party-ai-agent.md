@@ -469,7 +469,8 @@ metadata:
       </td>
 
       <td>
-        User ID in Omnichat
+        User ID for external platform.  
+        Might not be applicable.
       </td>
     </tr>
 
