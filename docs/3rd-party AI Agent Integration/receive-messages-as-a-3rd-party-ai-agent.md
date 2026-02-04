@@ -447,7 +447,7 @@ metadata:
       </td>
 
       <td>
-        Customer or teammate username in Omnichat
+        Customer or teammate ID in Omnichat
       </td>
     </tr>
 
