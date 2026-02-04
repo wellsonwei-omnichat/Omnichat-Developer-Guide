@@ -7,6 +7,8 @@ metadata:
 ---
 # To Human Agent API
 
+Hand over the chat from AI Chat to Open - Human Agent
+
 ## Endpoint
 
 **POST** [https://open-api.omnichat.ai/v1/rooms/to-human-agent](https://open-api.omnichat.ai/v1/rooms/to-human-agent)
@@ -31,11 +33,11 @@ metadata:
 
 ### Success - 204
 
-Successfully set room to live chat.
+Successfully set up a room from `AI chat` to `Open-human agent`.
 
 ### Failed - 400 Bad Request
 
-Room is not allowed to assign to human
+The room is not allowed to be assigned to `Open-human agent`.
 
 ```
 {
@@ -46,7 +48,7 @@ Room is not allowed to assign to human
 
 ### Failed - 404 Not Found
 
-Specific room does not exist
+A specific room does not exist
 
 ```
 {
