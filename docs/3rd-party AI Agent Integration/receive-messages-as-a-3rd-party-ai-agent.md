@@ -447,7 +447,7 @@ metadata:
       </td>
 
       <td>
-        Customer or teammate ID in Omnichat
+
       </td>
     </tr>
 
@@ -465,12 +465,11 @@ metadata:
       </td>
 
       <td>
-        Sender's actual user ID
+        Sender's actual user ID in Omnichat.
       </td>
 
       <td>
-        User ID for external platform.  
-        Might not be applicable.
+        Can be used for contact info query/update.
       </td>
     </tr>
 
