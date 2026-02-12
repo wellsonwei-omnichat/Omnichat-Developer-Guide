@@ -93,7 +93,7 @@ Successfully closed an `AI Chat` room.
 
 The room cannot be closed.
 
-(e.g. A chat room not in `AI Chat`, or it's a chat room with collaborating human agents.)
+(e.g., a chat room not in `AI Chat`, or it's a chat room with collaborating human agents.)
 
 ```json
 {
