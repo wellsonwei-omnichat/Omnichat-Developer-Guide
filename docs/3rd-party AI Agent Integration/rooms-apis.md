@@ -1,5 +1,5 @@
 ---
-title: Rooms APIs
+title: Agent Rooms APIs
 deprecated: false
 hidden: false
 metadata:
@@ -7,7 +7,7 @@ metadata:
 ---
 # To Human Agent API
 
-Hand over the chat from AI Chat to Open - Human Agent
+Hand over the chat from `AI Chat` to `Open - Human Agent`
 
 ## Endpoint
 
@@ -53,6 +53,64 @@ A specific room does not exist
 ```
 {
     "errorCode": "ROOM_NOT_FOUND",
-    "message": ""
+    "message": "Room does not exist, roomId: xxx"
+}
+```
+
+<br />
+
+# Close Case
+
+Change the chat status from `AI Chat` to `Closed`
+
+## Endpoint
+
+**POST** [https://open-api.omnichat.ai/v1/rooms/close](https://open-api.omnichat.ai/v1/rooms/close)
+
+## Request Body
+
+| Field  | Type   | Required | Description                      |
+| :----- | :----- | :------- | :------------------------------- |
+| roomId | String | Y        | ID of the chat room to be closed |
+| team   | String | Y        | Team account ID                  |
+
+## Request Example
+
+```json
+{
+    "roomId": "67ffde199a2d2ebc4714d41c", 
+    "team": "TEAM-ID"
+}
+```
+
+## Response Body
+
+### Success - 204
+
+Successfully closed an `AI Chat` room.
+
+### Failed - 400 Bad Request
+
+The room cannot be closed.
+
+(e.g. A chat room not in `AI Chat`, or it's a chat room with collaborating human agents.)
+
+```
+{
+  "errorCode": "NOT_ALLOWED_TO_CLOSE_ROOM",
+  "message": "Not allowed to close room: room status is not AI_CHAT, current status: 1"
+}
+```
+
+<br />
+
+### Failed - 404 Not Found
+
+A specific room does not exist
+
+```
+{
+    "errorCode": "ROOM_NOT_FOUND",
+    "message": "Room does not exist, roomId: xxx"
 }
 ```
