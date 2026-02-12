@@ -5,8 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 # Subscription Required
 
 * Raccoon AI Add-on, or
@@ -164,6 +162,7 @@ metadata:
         * `video`: Video message
         * `audio`: Audio message (not supported on Webchat)
         * `quick_reply`: Quick Reply message
+        * `google_map` : Google Map message (webchat only)
 
         Max file size differs on different platforms.
       </td>
@@ -233,7 +232,7 @@ metadata:
 
     <tr>
       <td>
-        quick_reply
+        quickReply
       </td>
 
       <td>
@@ -246,7 +245,26 @@ metadata:
 
       <td>
         `QuickReply` Object
-        Required if type is quick_reply
+        Required if type is `quick_reply`
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        googleMap
+      </td>
+
+      <td>
+        GoogleMap
+      </td>
+
+      <td>
+        Y*
+      </td>
+
+      <td>
+        GoogleMap Object  
+        Required if type is `google_map`
       </td>
     </tr>
   </tbody>
@@ -329,11 +347,20 @@ metadata:
 
 <br />
 
-### `Reply` Object
+#### `Reply` Object
 
 | Field | Type   | Required | Description         |
 | :---- | :----- | :------- | :------------------ |
 | text  | String | Y        | Quick reply content |
+
+<br />
+
+### `GoogleMap` Object
+
+| Field   | Type               | Required | Description              |
+| :------ | :----------------- | :------- | :----------------------- |
+| text    | String             | Y        | Message with quick reply |
+| replies | Reply Object Array | Y        | Reply options            |
 
 <br />
 
