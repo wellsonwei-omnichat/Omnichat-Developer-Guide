@@ -39,7 +39,7 @@ Successfully set up a room from `AI chat` to `Open-human agent`.
 
 The room is not allowed to be assigned to `Open-human agent`.
 
-```
+```json
 {
     "errorCode": "NOT_ALLOWED_ASSIGN_TO_HUMAN",
     "message": ""
@@ -50,7 +50,7 @@ The room is not allowed to be assigned to `Open-human agent`.
 
 A specific room does not exist
 
-```
+```json
 {
     "errorCode": "ROOM_NOT_FOUND",
     "message": "Room does not exist, roomId: xxx"
@@ -95,7 +95,7 @@ The room cannot be closed.
 
 (e.g. A chat room not in `AI Chat`, or it's a chat room with collaborating human agents.)
 
-```
+```json
 {
   "errorCode": "NOT_ALLOWED_TO_CLOSE_ROOM",
   "message": "Not allowed to close room: room status is not AI_CHAT, current status: 1"
@@ -108,7 +108,7 @@ The room cannot be closed.
 
 A specific room does not exist
 
-```
+```json
 {
     "errorCode": "ROOM_NOT_FOUND",
     "message": "Room does not exist, roomId: xxx"
