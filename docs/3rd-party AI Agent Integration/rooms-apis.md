@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-# To Human Agent API
+# To Human Agent
 
 Hand over the chat from `AI Chat` to `Open - Human Agent`
 
