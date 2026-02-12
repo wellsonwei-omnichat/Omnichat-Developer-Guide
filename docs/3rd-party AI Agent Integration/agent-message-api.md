@@ -357,10 +357,11 @@ metadata:
 
 ### `GoogleMap` Object
 
-| Field   | Type               | Required | Description              |
-| :------ | :----------------- | :------- | :----------------------- |
-| text    | String             | Y        | Message with quick reply |
-| replies | Reply Object Array | Y        | Reply options            |
+| Field        | Type   | Required | Description                              |
+| :----------- | :----- | :------- | :--------------------------------------- |
+| staticUrl    | String | Y        | static map url                           |
+| embeddingUrl | String | Y        | embedding map url                        |
+| appUrl       | String | N        | open google map app if on mobile devices |
 
 <br />
 
@@ -431,7 +432,7 @@ metadata:
 
 ### Quick Reply
 
-```jsx
+```json
 {
 	  "team": "a122b64d-cbb4-4b32-aecb-c1cc48908e06",
     "roomId": "67ffde199a2d2ebc4714d41c",
@@ -449,6 +450,23 @@ metadata:
         }
     ]
 }
+```
+
+### Google Map
+
+```json
+ {
+     "team": "Easychat-2",
+     "roomId": "366e4390-7dc9-4858-bf77-ce329571e4d8",
+     "messages": [{
+         "type": "google_map",
+         "googleMap": {
+            "staticUrl": "https://maps.googleapis.com/maps/api/staticmap?center=25.033964,121.564468&zoom=15&size=600x400&scale=2&markers=color:red|label:T|25.033964,121.564468&key=AIzaSyCUz2ww6G5yRfo7u8Lt6rM4N0cUTDZIJ3M",
+            "embeddingUrl": "https://www.google.com/maps/embed/v1/place?key=AIzaSyCUz2ww6G5yRfo7u8Lt6rM4N0cUTDZIJ3M&q=%E5%8F%B0%E5%8C%97101",
+            "appUrl":"2222"
+         }
+     }]
+ }
 ```
 
 <br />
@@ -547,3 +565,25 @@ metadata:
 ```
 
 <br />
+
+### Missing required text for `quick_reply`
+
+```json
+{
+    "errorCode": "INVALID_REQUEST_BODY",
+    "message": "quick_reply.text is required for quick_reply-type messages"
+}
+```
+
+<br />
+
+## Failed - 424 Failed Dependency
+
+### Line API Failed
+
+```json
+{
+    "errorCode": "LINE_API_EXCEPTION",
+    "message": "Invalid reply token"
+}
+```
