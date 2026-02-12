@@ -1,5 +1,8 @@
 ---
 title: Receive Messages from Webhook
+excerpt: >-
+  When a chat room is in `AI Chat`, the webhook will send message events when a
+  customer interact with the channel.
 deprecated: false
 hidden: false
 metadata:
