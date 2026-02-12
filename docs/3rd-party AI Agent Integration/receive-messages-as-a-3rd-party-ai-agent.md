@@ -8,8 +8,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 ## Data Object
 
 | Field | Type           | Nullable | Description      | Remark |
