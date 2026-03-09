@@ -202,7 +202,7 @@ curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=line&memberId
       </td>
 
       <td>
-        Y* (if no specific `userId`)
+        Y* (if no specific `userId`,`memberId`,`phone`,`email`)
       </td>
 
       <td>
@@ -220,7 +220,7 @@ curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=line&memberId
       </td>
 
       <td>
-        Y* (if no specific `userId`)
+        Y* (if no specific `userId`,`memberId`,`phone`,`email`)
       </td>
 
       <td>
@@ -238,7 +238,7 @@ curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=line&memberId
       </td>
 
       <td>
-        Y* (if no specific `userId`)
+        Y* (if no specific `userId`,`memberId`,`phone`,`email`)
       </td>
 
       <td>
@@ -256,7 +256,7 @@ curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=line&memberId
       </td>
 
       <td>
-        Y* (if no specific `userId`)
+        Y* (if no specific `userId`,`memberId`,`phone`,`email`)
       </td>
 
       <td>
