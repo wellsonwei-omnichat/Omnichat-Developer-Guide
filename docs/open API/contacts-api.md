@@ -124,6 +124,60 @@ Get updated contacts by specific date range
 
     <tr>
       <td>
+        memberId
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact's member ID
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        phone
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact's phone number
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        email
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        N
+      </td>
+
+      <td>
+        Contact's email address
+      </td>
+    </tr>
+
+    <tr>
+      <td>
         updatedAfter
       </td>
 
