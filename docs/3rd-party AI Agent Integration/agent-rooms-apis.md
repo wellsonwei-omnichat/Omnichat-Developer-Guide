@@ -97,8 +97,8 @@ The room cannot be closed.
 
 ```json
 {
-  "errorCode": "NOT_ALLOWED_TO_CLOSE_ROOM",
-  "message": "Not allowed to close room: room status is not AI_CHAT, current status: 1"
+    "errorCode": "INVALID_REQUEST_BODY",
+    "message": "The room status is not supported, RoomStatus={statusCode}"
 }
 ```
 
@@ -110,7 +110,7 @@ A specific room does not exist
 
 ```json
 {
-    "errorCode": "ROOM_NOT_FOUND",
-    "message": "Room does not exist, roomId: xxx"
+    "errorCode": "NOT_FOUND",
+    "message": "Can't find the Room={roomId} in team={teamId}"
 }
 ```
