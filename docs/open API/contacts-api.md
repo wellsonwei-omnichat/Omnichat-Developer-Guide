@@ -19,6 +19,22 @@ Get updated contacts by specific date range
 
 **GET** [https://open-api.omnichat.ai/v1/contacts](https://open-api.omnichat.ai/v1/contacts)
 
+```powershell Example1
+curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=line&page=1&pageSize=20&updatedAfter=1652371200000&updatedBefore=1653580800000'
+```
+
+<br />
+
+```powershell Example2
+curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=whatsapp&userId=886989777777'
+```
+
+<br />
+
+```powershell Example3
+curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=line&memberId=example_member_id_123'
+```
+
 ## Query Parameters
 
 <Table align={["left","left","left","left"]}>
