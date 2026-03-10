@@ -11,7 +11,7 @@ And refer to[`Receive Messages from webhook`](https://developers.omnichat.ai/doc
 To send AI messages, refer to [`Agent Message API`  ](https://developers.omnichat.ai/docs/agent-message-api)
 And make sure you read `OPEN API` > [`Authorization`](https://developers.omnichat.ai/docs/authorization).
 
-To manage a chat room, refer to `OPEN API` > [`Agent Rooms APIs`](https://developers.omnichat.ai/docs/rooms-apis) 
+To manage a chat room, refer to `OPEN API` > [`Agent Rooms APIs`](https://developers.omnichat.ai/docs/agent-rooms-apis)
 
 To get other required data fields, refer to  `OPEN API` category
 
