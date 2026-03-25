@@ -203,7 +203,9 @@ Agent unassigned successfully. Empty response body.
 }
 ```
 
-<br />
+### Error Response Examples
+
+For detailed error response examples, refer to: <Anchor label="Unassign Agent - Error Response example" target="_blank" href="https://www.notion.so/Unassign-Agent-Error-Response-example-306ae8904ccc80b6bbf4f57415679132">Unassign Agent - Error Response example</Anchor>
 
 # Unassign Collaborator
 
