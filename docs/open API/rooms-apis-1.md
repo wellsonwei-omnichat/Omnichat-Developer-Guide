@@ -144,7 +144,6 @@ Collaborator assigned successfully. Empty response body.
 | `OCE::BAD_REQUEST::WhatsappAccUserDoc not found: xxx`                                             | WhatsApp user not found for the given team, channel, and telephone       |
 | `OCE::BAD_REQUEST::No valid agent identifier provided`                                            | No agent resolver could handle the provided agent identifiers            |
 | `OCE::BAD_REQUEST::Unauthenticated access token`                                                  | The provided token does not match the system API key                     |
-| `OCE::BAD_REQUEST::Missing arkhamApiToken in systemSetting`                                       | System setting `arkhamApiToken` is not configured                        |
 
 ### Failed - 500 Internal Server Error
 
