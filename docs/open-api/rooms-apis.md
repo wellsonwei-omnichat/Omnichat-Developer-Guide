@@ -9,12 +9,13 @@ excerpt: >-
 Assign a follow-up agent to a contact.
 
 <Callout icon="⚠️" theme="warning">
-If the target room is a collaboration room and the target agent role is not a CS role, the target agent must be assigned as a collaborator first. Call the [Assign Collaborator](#assign-collaborator) API before calling this endpoint.
+  If the target room is a collaboration room and the target agent role is not a CS role, the target agent must be assigned as a collaborator first. Call the [Assign Collaborator](#assign-collaborator) API before calling this endpoint.
 </Callout>
 
 **Subscription Required:**
-- Customer Service Cloud / Social CDP Cloud
-- CRM Open API Module
+
+* Customer Service Cloud / Social CDP Cloud
+* CRM Open API Module
 
 ## Endpoint
 
@@ -28,15 +29,15 @@ If the target room is a collaboration room and the target agent role is not a CS
 
 ## Request Body
 
-| Field                  | Type   | Required | Description                                                                                                                      |
-| :--------------------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| platform               | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                                         |
-| channelId              | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number               |
-| userId                 | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                                 |
-| agentEmail             | String | N        | Agent login email in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                            |
-| agentPhone             | String | N        | Agent login phone in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                            |
-| agentEmployeeCode      | String | N        | Agent employee code (salesperson / sales manager only). *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*   |
-| agentShopLocationCode  | String | N        | Agent shop location code. *Required if assigning to a salesperson / sales manager agent*                                          |
+| Field                 | Type   | Required | Description                                                                                                                     |
+| :-------------------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------------ |
+| platform              | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                                        |
+| channelId             | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number              |
+| userId                | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                                |
+| agentEmail            | String | N        | Agent login email in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_                          |
+| agentPhone            | String | N        | Agent login phone in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_                          |
+| agentEmployeeCode     | String | N        | Agent employee code (salesperson / sales manager only). _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_ |
+| agentShopLocationCode | String | N        | Agent shop location code. _Required if assigning to a salesperson / sales manager agent_                                        |
 
 ## Request Example
 
@@ -66,6 +67,10 @@ Agent assigned successfully. Empty response body.
 }
 ```
 
+### Eror Response Examples
+
+For detailed error response examples, refer to: <Anchor label="Assign agent - Error Response example" target="_blank" href="https://www.notion.so/Assign-agent-Error-Response-example-306ae8904ccc808282e5e274cac3af28">Assign agent - Error Response example</Anchor>
+
 <br />
 
 # Assign Collaborator
@@ -73,8 +78,9 @@ Agent assigned successfully. Empty response body.
 Assign a collaborator to a contact.
 
 **Subscription Required:**
-- Customer Service Cloud / Social CDP Cloud
-- CRM Open API Module
+
+* Customer Service Cloud / Social CDP Cloud
+* CRM Open API Module
 
 ## Endpoint
 
@@ -88,15 +94,15 @@ Assign a collaborator to a contact.
 
 ## Request Body
 
-| Field                  | Type   | Required | Description                                                                                                                      |
-| :--------------------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| platform               | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                                         |
-| channelId              | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number               |
-| userId                 | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                                 |
-| agentEmail             | String | N        | Agent login email in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                            |
-| agentPhone             | String | N        | Agent login phone in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                            |
-| agentEmployeeCode      | String | N        | Agent employee code. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                                      |
-| agentShopLocationCode  | String | N        | Agent shop location code. *Required if assigning to a salesperson / sales manager agent*                                          |
+| Field                 | Type   | Required | Description                                                                                                        |
+| :-------------------- | :----- | :------- | :----------------------------------------------------------------------------------------------------------------- |
+| platform              | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                           |
+| channelId             | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number |
+| userId                | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                   |
+| agentEmail            | String | N        | Agent login email in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_             |
+| agentPhone            | String | N        | Agent login phone in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_             |
+| agentEmployeeCode     | String | N        | Agent employee code. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_                       |
+| agentShopLocationCode | String | N        | Agent shop location code. _Required if assigning to a salesperson / sales manager agent_                           |
 
 ## Request Example
 
@@ -120,27 +126,27 @@ Collaborator assigned successfully. Empty response body.
 
 ### Failed - 400 Bad Request
 
-| Error Message                                                                        | Description                                                              |
-| :----------------------------------------------------------------------------------- | :----------------------------------------------------------------------- |
-| `OCE::BAD_REQUEST::userId is required`                                               | `userId` field is blank or missing                                       |
-| `OCE::BAD_REQUEST::channelId is required`                                            | `channelId` field is blank or missing                                    |
-| `OCE::BAD_REQUEST::platform is required`                                             | `platform` field is blank or missing                                     |
-| `OCE::BAD_REQUEST::platform (xxx) is not supported yet`                              | The provided platform is not `line` or `whatsapp`                        |
-| `OCE::BAD_REQUEST::team (xxx) is not supported to use Open API Customer Service`     | The team does not have `OPEN_API` or `OPEN_API_CUSTOMER_SERVICE` enabled |
-| `OCE::BAD_REQUEST::At least one of agentEmail, agentPhone, or agentEmployeeCode must be provided` | All three agent identifier fields are blank               |
-| `OCE::BAD_REQUEST::agentShopLocationCode is required when agentEmployeeCode is provided` | `agentEmployeeCode` was provided but `agentShopLocationCode` is missing |
-| `OCE::BAD_REQUEST::Platform not found: xxx`                                          | Platform name does not match any known platform enum                     |
-| `OCE::BAD_REQUEST::Channel not found: xxx`                                           | WhatsApp account not found for the given team and channel                |
-| `OCE::BAD_REQUEST::WhatsappAccUserDoc not found: xxx`                                | WhatsApp user not found for the given team, channel, and telephone       |
-| `OCE::BAD_REQUEST::No valid agent identifier provided`                               | No agent resolver could handle the provided agent identifiers            |
-| `OCE::BAD_REQUEST::Unauthenticated access token`                                    | The provided token does not match the system API key                     |
-| `OCE::BAD_REQUEST::Missing arkhamApiToken in systemSetting`                          | System setting `arkhamApiToken` is not configured                        |
+| Error Message                                                                                     | Description                                                              |
+| :------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------- |
+| `OCE::BAD_REQUEST::userId is required`                                                            | `userId` field is blank or missing                                       |
+| `OCE::BAD_REQUEST::channelId is required`                                                         | `channelId` field is blank or missing                                    |
+| `OCE::BAD_REQUEST::platform is required`                                                          | `platform` field is blank or missing                                     |
+| `OCE::BAD_REQUEST::platform (xxx) is not supported yet`                                           | The provided platform is not `line` or `whatsapp`                        |
+| `OCE::BAD_REQUEST::team (xxx) is not supported to use Open API Customer Service`                  | The team does not have `OPEN_API` or `OPEN_API_CUSTOMER_SERVICE` enabled |
+| `OCE::BAD_REQUEST::At least one of agentEmail, agentPhone, or agentEmployeeCode must be provided` | All three agent identifier fields are blank                              |
+| `OCE::BAD_REQUEST::agentShopLocationCode is required when agentEmployeeCode is provided`          | `agentEmployeeCode` was provided but `agentShopLocationCode` is missing  |
+| `OCE::BAD_REQUEST::Platform not found: xxx`                                                       | Platform name does not match any known platform enum                     |
+| `OCE::BAD_REQUEST::Channel not found: xxx`                                                        | WhatsApp account not found for the given team and channel                |
+| `OCE::BAD_REQUEST::WhatsappAccUserDoc not found: xxx`                                             | WhatsApp user not found for the given team, channel, and telephone       |
+| `OCE::BAD_REQUEST::No valid agent identifier provided`                                            | No agent resolver could handle the provided agent identifiers            |
+| `OCE::BAD_REQUEST::Unauthenticated access token`                                                  | The provided token does not match the system API key                     |
+| `OCE::BAD_REQUEST::Missing arkhamApiToken in systemSetting`                                       | System setting `arkhamApiToken` is not configured                        |
 
 ### Failed - 500 Internal Server Error
 
-| Error Message                              | Description               |
-| :----------------------------------------- | :------------------------ |
-| `OCE::INTERNAL_SERVER_ERROR::<message>`    | Unexpected server error   |
+| Error Message                           | Description             |
+| :-------------------------------------- | :---------------------- |
+| `OCE::INTERNAL_SERVER_ERROR::<message>` | Unexpected server error |
 
 <br />
 
@@ -149,7 +155,8 @@ Collaborator assigned successfully. Empty response body.
 Unassign a single sales role agent from a contact.
 
 **Subscription Required:**
-- Available for OMO teams only
+
+* Available for OMO teams only
 
 ## Endpoint
 
@@ -163,11 +170,11 @@ Unassign a single sales role agent from a contact.
 
 ## Request Body
 
-| Field     | Type   | Required | Description                                                                                          |
-| :-------- | :----- | :------- | :--------------------------------------------------------------------------------------------------- |
-| platform  | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                             |
+| Field     | Type   | Required | Description                                                                                                        |
+| :-------- | :----- | :------- | :----------------------------------------------------------------------------------------------------------------- |
+| platform  | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                           |
 | channelId | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number |
-| userId    | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                     |
+| userId    | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                   |
 
 ## Request Example
 
@@ -200,8 +207,9 @@ Agent unassigned successfully. Empty response body.
 Unassign a collaborator from a contact.
 
 **Subscription Required:**
-- Customer Service Cloud / Social CDP Cloud
-- CRM Open API Module
+
+* Customer Service Cloud / Social CDP Cloud
+* CRM Open API Module
 
 ## Endpoint
 
@@ -220,9 +228,9 @@ Unassign a collaborator from a contact.
 | platform          | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                           |
 | channelId         | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number |
 | userId            | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                   |
-| agentEmail        | String | N        | Agent login email in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*              |
-| agentPhone        | String | N        | Agent login phone in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*              |
-| agentEmployeeCode | String | N        | Agent employee code. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                        |
+| agentEmail        | String | N        | Agent login email in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_             |
+| agentPhone        | String | N        | Agent login phone in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_             |
+| agentEmployeeCode | String | N        | Agent employee code. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_                       |
 
 ## Request Example
 
@@ -259,19 +267,20 @@ Collaborator unassigned successfully. Empty response body.
 
 ### Failed - 500 Internal Server Error
 
-| Error Message                              | Description               |
-| :----------------------------------------- | :------------------------ |
-| `OCE::INTERNAL_SERVER_ERROR::<message>`    | Unexpected server error   |# Assign Follow Up Agent
+| Error Message                           | Description             |                          |
+| :-------------------------------------- | :---------------------- | :----------------------- |
+| `OCE::INTERNAL_SERVER_ERROR::<message>` | Unexpected server error | # Assign Follow Up Agent |
 
 Assign a follow-up agent to a contact.
 
 <Callout icon="⚠️" theme="warning">
-If the target room is a collaboration room and the target agent role is not a CS role, the target agent must be assigned as a collaborator first. Call the [Assign Collaborator](#assign-collaborator) API before calling this endpoint.
+  If the target room is a collaboration room and the target agent role is not a CS role, the target agent must be assigned as a collaborator first. Call the [Assign Collaborator](#assign-collaborator) API before calling this endpoint.
 </Callout>
 
 **Subscription Required:**
-- Customer Service Cloud / Social CDP Cloud
-- CRM Open API Module
+
+* Customer Service Cloud / Social CDP Cloud
+* CRM Open API Module
 
 ## Endpoint
 
@@ -285,15 +294,15 @@ If the target room is a collaboration room and the target agent role is not a CS
 
 ## Request Body
 
-| Field                  | Type   | Required | Description                                                                                                                      |
-| :--------------------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| platform               | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                                         |
-| channelId              | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number               |
-| userId                 | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                                 |
-| agentEmail             | String | N        | Agent login email in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                            |
-| agentPhone             | String | N        | Agent login phone in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                            |
-| agentEmployeeCode      | String | N        | Agent employee code (salesperson / sales manager only). *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*   |
-| agentShopLocationCode  | String | N        | Agent shop location code. *Required if assigning to a salesperson / sales manager agent*                                          |
+| Field                 | Type   | Required | Description                                                                                                                     |
+| :-------------------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------------ |
+| platform              | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                                        |
+| channelId             | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number              |
+| userId                | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                                |
+| agentEmail            | String | N        | Agent login email in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_                          |
+| agentPhone            | String | N        | Agent login phone in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_                          |
+| agentEmployeeCode     | String | N        | Agent employee code (salesperson / sales manager only). _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_ |
+| agentShopLocationCode | String | N        | Agent shop location code. _Required if assigning to a salesperson / sales manager agent_                                        |
 
 ## Request Example
 
@@ -330,8 +339,9 @@ Agent assigned successfully. Empty response body.
 Assign a collaborator to a contact.
 
 **Subscription Required:**
-- Customer Service Cloud / Social CDP Cloud
-- CRM Open API Module
+
+* Customer Service Cloud / Social CDP Cloud
+* CRM Open API Module
 
 ## Endpoint
 
@@ -345,15 +355,15 @@ Assign a collaborator to a contact.
 
 ## Request Body
 
-| Field                  | Type   | Required | Description                                                                                                                      |
-| :--------------------- | :----- | :------- | :------------------------------------------------------------------------------------------------------------------------------- |
-| platform               | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                                         |
-| channelId              | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number               |
-| userId                 | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                                 |
-| agentEmail             | String | N        | Agent login email in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                            |
-| agentPhone             | String | N        | Agent login phone in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                            |
-| agentEmployeeCode      | String | N        | Agent employee code. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                                      |
-| agentShopLocationCode  | String | N        | Agent shop location code. *Required if assigning to a salesperson / sales manager agent*                                          |
+| Field                 | Type   | Required | Description                                                                                                        |
+| :-------------------- | :----- | :------- | :----------------------------------------------------------------------------------------------------------------- |
+| platform              | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                           |
+| channelId             | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number |
+| userId                | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                   |
+| agentEmail            | String | N        | Agent login email in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_             |
+| agentPhone            | String | N        | Agent login phone in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_             |
+| agentEmployeeCode     | String | N        | Agent employee code. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_                       |
+| agentShopLocationCode | String | N        | Agent shop location code. _Required if assigning to a salesperson / sales manager agent_                           |
 
 ## Request Example
 
@@ -377,27 +387,27 @@ Collaborator assigned successfully. Empty response body.
 
 ### Failed - 400 Bad Request
 
-| Error Message                                                                        | Description                                                              |
-| :----------------------------------------------------------------------------------- | :----------------------------------------------------------------------- |
-| `OCE::BAD_REQUEST::userId is required`                                               | `userId` field is blank or missing                                       |
-| `OCE::BAD_REQUEST::channelId is required`                                            | `channelId` field is blank or missing                                    |
-| `OCE::BAD_REQUEST::platform is required`                                             | `platform` field is blank or missing                                     |
-| `OCE::BAD_REQUEST::platform (xxx) is not supported yet`                              | The provided platform is not `line` or `whatsapp`                        |
-| `OCE::BAD_REQUEST::team (xxx) is not supported to use Open API Customer Service`     | The team does not have `OPEN_API` or `OPEN_API_CUSTOMER_SERVICE` enabled |
-| `OCE::BAD_REQUEST::At least one of agentEmail, agentPhone, or agentEmployeeCode must be provided` | All three agent identifier fields are blank               |
-| `OCE::BAD_REQUEST::agentShopLocationCode is required when agentEmployeeCode is provided` | `agentEmployeeCode` was provided but `agentShopLocationCode` is missing |
-| `OCE::BAD_REQUEST::Platform not found: xxx`                                          | Platform name does not match any known platform enum                     |
-| `OCE::BAD_REQUEST::Channel not found: xxx`                                           | WhatsApp account not found for the given team and channel                |
-| `OCE::BAD_REQUEST::WhatsappAccUserDoc not found: xxx`                                | WhatsApp user not found for the given team, channel, and telephone       |
-| `OCE::BAD_REQUEST::No valid agent identifier provided`                               | No agent resolver could handle the provided agent identifiers            |
-| `OCE::BAD_REQUEST::Unauthenticated access token`                                    | The provided token does not match the system API key                     |
-| `OCE::BAD_REQUEST::Missing arkhamApiToken in systemSetting`                          | System setting `arkhamApiToken` is not configured                        |
+| Error Message                                                                                     | Description                                                              |
+| :------------------------------------------------------------------------------------------------ | :----------------------------------------------------------------------- |
+| `OCE::BAD_REQUEST::userId is required`                                                            | `userId` field is blank or missing                                       |
+| `OCE::BAD_REQUEST::channelId is required`                                                         | `channelId` field is blank or missing                                    |
+| `OCE::BAD_REQUEST::platform is required`                                                          | `platform` field is blank or missing                                     |
+| `OCE::BAD_REQUEST::platform (xxx) is not supported yet`                                           | The provided platform is not `line` or `whatsapp`                        |
+| `OCE::BAD_REQUEST::team (xxx) is not supported to use Open API Customer Service`                  | The team does not have `OPEN_API` or `OPEN_API_CUSTOMER_SERVICE` enabled |
+| `OCE::BAD_REQUEST::At least one of agentEmail, agentPhone, or agentEmployeeCode must be provided` | All three agent identifier fields are blank                              |
+| `OCE::BAD_REQUEST::agentShopLocationCode is required when agentEmployeeCode is provided`          | `agentEmployeeCode` was provided but `agentShopLocationCode` is missing  |
+| `OCE::BAD_REQUEST::Platform not found: xxx`                                                       | Platform name does not match any known platform enum                     |
+| `OCE::BAD_REQUEST::Channel not found: xxx`                                                        | WhatsApp account not found for the given team and channel                |
+| `OCE::BAD_REQUEST::WhatsappAccUserDoc not found: xxx`                                             | WhatsApp user not found for the given team, channel, and telephone       |
+| `OCE::BAD_REQUEST::No valid agent identifier provided`                                            | No agent resolver could handle the provided agent identifiers            |
+| `OCE::BAD_REQUEST::Unauthenticated access token`                                                  | The provided token does not match the system API key                     |
+| `OCE::BAD_REQUEST::Missing arkhamApiToken in systemSetting`                                       | System setting `arkhamApiToken` is not configured                        |
 
 ### Failed - 500 Internal Server Error
 
-| Error Message                              | Description               |
-| :----------------------------------------- | :------------------------ |
-| `OCE::INTERNAL_SERVER_ERROR::<message>`    | Unexpected server error   |
+| Error Message                           | Description             |
+| :-------------------------------------- | :---------------------- |
+| `OCE::INTERNAL_SERVER_ERROR::<message>` | Unexpected server error |
 
 <br />
 
@@ -406,7 +416,8 @@ Collaborator assigned successfully. Empty response body.
 Unassign a single sales role agent from a contact.
 
 **Subscription Required:**
-- Available for OMO teams only
+
+* Available for OMO teams only
 
 ## Endpoint
 
@@ -420,11 +431,11 @@ Unassign a single sales role agent from a contact.
 
 ## Request Body
 
-| Field     | Type   | Required | Description                                                                                          |
-| :-------- | :----- | :------- | :--------------------------------------------------------------------------------------------------- |
-| platform  | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                             |
+| Field     | Type   | Required | Description                                                                                                        |
+| :-------- | :----- | :------- | :----------------------------------------------------------------------------------------------------------------- |
+| platform  | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                           |
 | channelId | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number |
-| userId    | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                     |
+| userId    | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                   |
 
 ## Request Example
 
@@ -457,8 +468,9 @@ Agent unassigned successfully. Empty response body.
 Unassign a collaborator from a contact.
 
 **Subscription Required:**
-- Customer Service Cloud / Social CDP Cloud
-- CRM Open API Module
+
+* Customer Service Cloud / Social CDP Cloud
+* CRM Open API Module
 
 ## Endpoint
 
@@ -477,9 +489,9 @@ Unassign a collaborator from a contact.
 | platform          | String | Y        | Messaging platform. Supported values: `line`, `whatsapp`                                                           |
 | channelId         | String | Y        | Messaging platform Channel ID. For LINE → LINE Messaging Channel ID. For WhatsApp → WhatsApp Business Phone Number |
 | userId            | String | Y        | Contact's User ID. For LINE → LINE User ID. For WhatsApp → WhatsApp Phone Number                                   |
-| agentEmail        | String | N        | Agent login email in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*              |
-| agentPhone        | String | N        | Agent login phone in Omnichat. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*              |
-| agentEmployeeCode | String | N        | Agent employee code. *One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required*                        |
+| agentEmail        | String | N        | Agent login email in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_             |
+| agentPhone        | String | N        | Agent login phone in Omnichat. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_             |
+| agentEmployeeCode | String | N        | Agent employee code. _One of `agentEmail`, `agentPhone`, or `agentEmployeeCode` is required_                       |
 
 ## Request Example
 
@@ -516,6 +528,6 @@ Collaborator unassigned successfully. Empty response body.
 
 ### Failed - 500 Internal Server Error
 
-| Error Message                              | Description               |
-| :----------------------------------------- | :------------------------ |
-| `OCE::INTERNAL_SERVER_ERROR::<message>`    | Unexpected server error   |
+| Error Message                           | Description             |
+| :-------------------------------------- | :---------------------- |
+| `OCE::INTERNAL_SERVER_ERROR::<message>` | Unexpected server error |
