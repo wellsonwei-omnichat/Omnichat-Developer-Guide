@@ -71,6 +71,10 @@ Agent assigned successfully. Empty response body.
 }
 ```
 
+### Error Response Examples
+
+For detailed error response examples, refer to: <Anchor label="Assign agent - Error Response example" target="_blank" href="https://www.notion.so/Assign-agent-Error-Response-example-306ae8904ccc808282e5e274cac3af28">Assign agent - Error Response example</Anchor>
+
 <br />
 
 # Assign Collaborator
