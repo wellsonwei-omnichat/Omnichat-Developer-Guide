@@ -114,3 +114,72 @@ A specific room does not exist
     "message": "Can't find the Room={roomId} in team={teamId}"
 }
 ```
+
+<br />
+
+# Trigger auto assign
+
+Change the chat status from `AI Chat` to `In progress`
+
+## Endpoint
+
+**POST** [https://open-api.omnichat.ai/v1/rooms/trigger-auto-assign](https://open-api.omnichat.ai/v1/rooms/trigger-auto-assign)
+
+## Request Body
+
+| Field  | Type   | Required | Description                                     |
+| :----- | :----- | :------- | :---------------------------------------------- |
+| team   | String | Y        | Team account ID                                 |
+| roomId | String | Y        | ID of the chat room to be triggered auto assign |
+| ruleId | String | Y        | Triggered keyword auto assign rule ID           |
+
+## Request Example
+
+```json
+{
+    "team": "TEAM-ID",
+    "roomId": "67ffde199a2d2ebc4714d41c",
+    "ruleId": "687f39901567d32b15225e9b"
+}
+```
+
+## Response Body
+
+### Success - 204
+
+Successfully triggered auto assign an `AI Chat` room.
+
+### Failed - 400 Bad Request
+
+The room cannot be triggered.
+
+(e.g., a chat room not in `AI Chat`, or it's a chat room with collaborating human agents.)
+
+```json
+{
+    "errorCode": "INVALID_REQUEST_BODY",
+    "message": "The room status is not supported, RoomStatus={statusCode}"
+}
+```
+
+The rule cannot be triggered.
+
+(e.g., room channel not supported, or rule type error, or rule is disabled)
+
+```json
+{
+    "errorCode": "INVALID_REQUEST_BODY",
+    "message": "trigger rule not available"
+}
+```
+
+### Failed - 404 Not Found
+
+A specific room does not exist
+
+```json
+{
+    "errorCode": "NOT_FOUND",
+    "message": "Can't find the Room={roomId} in team={teamId}"
+}
+```
