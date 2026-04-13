@@ -936,6 +936,17 @@ curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=line&memberId
 }
 ```
 
+### Error Codes
+
+* `INVALID_REQUEST_PARAMETERS`: Missing required query params (channelId+userId for specific query, or updatedAfter+updatedBefore for list query)
+* `INVALID_REQUEST_PARAMETER`: Request parameter constraint violation (e.g., platform is null)
+* `INVALID_REQUEST_BODY`: Request body validation failed
+* `INVALID_FORMAT`: Invalid property format (e.g., invalid enum value)
+* `MISMATCH_TYPE`: Query parameter type mismatch (e.g., invalid platform enum, non-integer page)
+* `MISSING_URL_PARAMETER`: Required parameter is missing
+* `USER_ID_NOT_FOUND`: Specific user query returned no results
+* `UNEXPECTED_ERROR`: Unhandled runtime exception
+
 # Upsert a Contact
 
 ## Endpoint
