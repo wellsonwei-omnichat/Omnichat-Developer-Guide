@@ -83,7 +83,7 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 ## WhatsApp Headless API
 
-The format changes align with the official WhatsApp specifications. Please refer to this document for detailed information.
+The format changes align with the official WhatsApp BSUID specifications. Please refer to this document for detailed information.
 
 * [Send message requests](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids/?locale=en_US#send-message-requests)
 * [Send message response](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids/?locale=en_US#send-message-response)
@@ -92,7 +92,7 @@ The format changes align with the official WhatsApp specifications. Please refer
 
 # WhatsApp Message Webhook Forward
 
-The format changes align with the official WhatsApp specifications. Please refer to this document for detailed information.
+The format changes align with the official WhatsApp BSUID specifications. Please refer to this document for detailed information.
 
 * [Status messages webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids/?locale=en_US#status-messages-webhooks)
 * [Incoming messages webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids/?locale=en_US#incoming-messages-webhooks-1)
