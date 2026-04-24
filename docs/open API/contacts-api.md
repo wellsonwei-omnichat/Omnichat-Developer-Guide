@@ -107,7 +107,7 @@ Get updated contacts by specific date range
       </td>
 
       <td>
-        Y
+        N
       </td>
 
       <td>
