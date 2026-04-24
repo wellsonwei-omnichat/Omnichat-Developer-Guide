@@ -13,11 +13,67 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 # Omnichat Webhooks
 
-##
+## customer/create, customer/update
+
+<br />
+
+## customer/channel_subscribe, customer/channel_unsubscribe
+
+<br />
+
+## customer/channel_omo_binding
+
+<br />
+
+## direct_msg/status
+
+<br />
+
+## whatsapp_flow/flow_create
+
+<br />
+
+## ticket/create, ticket/update
+
+<br />
+
+# Open API
+
+## Contacts API
 
 ###
 
-##
+## Customers API
+
+<br />
+
+## Tag API
+
+<br />
+
+## Rooms API
+
+<br />
+
+## Messaging API
+
+### https://open-api.omnichat.ai/v1/direct-messages
+
+<br />
+
+## Broadcast API
+
+### https://open-api.omnichat.ai/v1/broadcast
+
+<br />
+
+## WhatsApp Headless API
+
+<br />
+
+# WhatsApp Message Webhook Forward
+
+<br />
 
 <br />
 
