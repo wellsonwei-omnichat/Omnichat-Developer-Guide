@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-WhatsApp will launch a [Usernames](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids?) feature later this year. When enabled by users, phone numbers might not be included in Message Webhooks.
+WhatsApp will launch a [Usernames feature](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids?) later this year. When enabled by users, phone numbers might not be included in Message Webhooks.
 
 In response to this adjustment, Omnichat will update the following Webhooks and Open API formats.
 
