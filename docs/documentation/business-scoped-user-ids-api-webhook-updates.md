@@ -5,7 +5,7 @@ hidden: false
 metadata:
   robots: index
 ---
-WhatsApp will launch a Usernames feature later this year. When enabled by users, phone numbers might not be included in Message Webhooks.
+Wh##atsApp will launch a Usernames feature later this year. When enabled by users, phone numbers might not be included in Message Webhooks.
 
 In response to this adjustment, Omnichat will update the following Webhooks and Open API formats.
 
@@ -41,37 +41,57 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 ## Contacts API
 
-###
+### Get contacts
+
+<br />
+
+### Upsert a Contact
+
+### Delete Contact by User ID
 
 ## Customers API
 
-<br />
+### Get customer detail by member ID
 
 ## Tag API
 
-<br />
+https://open-api.omnichat.ai/v1/tagging-logs/records
+
+### Get tagging log records
 
 ## Rooms API
 
-### Assign follow up agent 
+### Assign follow up agent
 
-### Assign collaborator 
+### Assign collaborator
 
-### Unassign agent 
+### Unassign agent
 
-### Unassign collaborator 
+### Unassign collaborator
 
 <br />
 
 ## Messaging API
 
-### Send direct message [https://open-api.omnichat.ai/v1/direct-messages](https://open-api.omnichat.ai/v1/direct-messages)
+### Get chat history
+
+### Get message details
+
+### Send direct message
+
+[https://open-api.omnichat.ai/v1/direct-messages](https://open-api.omnichat.ai/v1/direct-messages)
 
 <br />
 
 ## Broadcast API
 
-### Send broadcast [https://open-api.omnichat.ai/v1/broadcast](https://open-api.omnichat.ai/v1/broadcast)
+### Get broadcast recipient list
+
+<br />
+
+### Send broadcast 
+
+[https://open-api.omnichat.ai/v1/broadcast](https://open-api.omnichat.ai/v1/broadcast)
 
 <br />
 
