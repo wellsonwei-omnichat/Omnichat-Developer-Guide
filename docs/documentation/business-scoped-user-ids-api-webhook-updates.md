@@ -13,25 +13,15 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 # Omnichat Webhooks
 
-## customer/create, customer/update
+## customer/create, customer/update 
 
-<br />
+## customer/channel_subscribe, customer/channel_unsubscribe 
 
-## customer/channel_subscribe, customer/channel_unsubscribe
+## customer/channel_omo_binding 
 
-<br />
+## direct_msg/status 
 
-## customer/channel_omo_binding
-
-<br />
-
-## direct_msg/status
-
-<br />
-
-## whatsapp_flow/flow_create
-
-<br />
+## whatsapp_flow/flow_create 
 
 ## ticket/create, ticket/update
 
@@ -43,21 +33,23 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 ### Get contacts
 
-<br />
-
 ### Upsert a Contact
 
 ### Delete Contact by User ID
+
+<br />
 
 ## Customers API
 
 ### Get customer detail by member ID
 
+<br />
+
 ## Tag API
 
-https://open-api.omnichat.ai/v1/tagging-logs/records
-
 ### Get tagging log records
+
+<br />
 
 ## Rooms API
 
@@ -79,19 +71,13 @@ https://open-api.omnichat.ai/v1/tagging-logs/records
 
 ### Send direct message
 
-[https://open-api.omnichat.ai/v1/direct-messages](https://open-api.omnichat.ai/v1/direct-messages)
-
 <br />
 
 ## Broadcast API
 
 ### Get broadcast recipient list
 
-<br />
-
-### Send broadcast 
-
-[https://open-api.omnichat.ai/v1/broadcast](https://open-api.omnichat.ai/v1/broadcast)
+### Send broadcast
 
 <br />
 
