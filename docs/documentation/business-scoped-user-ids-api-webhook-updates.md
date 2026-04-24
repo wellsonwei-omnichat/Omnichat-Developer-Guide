@@ -83,13 +83,19 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 ## WhatsApp Headless API
 
-<br />
+The format changes align with the official WhatsApp specifications. Please refer to this document for detailed information.
+
+* [Send message requests](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids/?locale=en_US#send-message-requests)
+* [Send message response](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids/?locale=en_US#send-message-response)
+* [Send marketing message requests](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids/?locale=en_US#send-marketing-message-requests)
+* [Send marketing message response](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids/?locale=en_US#send-marketing-message-response)
 
 # WhatsApp Message Webhook Forward
 
-<br />
+The format changes align with the official WhatsApp specifications. Please refer to this document for detailed information.
 
-<br />
+* [Status messages webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids/?locale=en_US#status-messages-webhooks)
+* [Incoming messages webhooks](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids/?locale=en_US#incoming-messages-webhooks-1)
 
 # Change Log
 
