@@ -13,15 +13,15 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 # Omnichat Webhooks
 
-## customer/create, customer/update 
+## customer/create, customer/update
 
-## customer/channel_subscribe, customer/channel_unsubscribe 
+## customer/channel_subscribe, customer/channel_unsubscribe
 
-## customer/channel_omo_binding 
+## customer/channel_omo_binding
 
-## direct_msg/status 
+## direct_msg/status
 
-## whatsapp_flow/flow_create 
+## whatsapp_flow/flow_create
 
 ## ticket/create, ticket/update
 
@@ -93,6 +93,6 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 # Change Log
 
-2026/05/06 Add bsuid in the Omnichat Webhook
+2026/05/06 Add bsuid in the Omnichat Webhooks
 
 <br />
