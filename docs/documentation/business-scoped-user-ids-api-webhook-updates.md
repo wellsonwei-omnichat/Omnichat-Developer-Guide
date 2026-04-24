@@ -53,17 +53,25 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 ## Rooms API
 
+### Assign follow up agent 
+
+### Assign collaborator 
+
+### Unassign agent 
+
+### Unassign collaborator 
+
 <br />
 
 ## Messaging API
 
-### https://open-api.omnichat.ai/v1/direct-messages
+### Send direct message [https://open-api.omnichat.ai/v1/direct-messages](https://open-api.omnichat.ai/v1/direct-messages)
 
 <br />
 
 ## Broadcast API
 
-### https://open-api.omnichat.ai/v1/broadcast
+### Send broadcast [https://open-api.omnichat.ai/v1/broadcast](https://open-api.omnichat.ai/v1/broadcast)
 
 <br />
 
@@ -77,6 +85,8 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 <br />
 
-<br />
+# Change Log
+
+2026/05/06 Add bsuid in the Omnichat Webhook
 
 <br />
