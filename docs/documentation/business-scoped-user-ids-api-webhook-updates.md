@@ -13,6 +13,8 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 
 # Omnichat Webhooks
 
+BSUIDs will begin appearing in webhooks in early May 2026.
+
 ## customer/create, customer/update
 
 ## customer/channel_subscribe, customer/channel_unsubscribe
@@ -28,6 +30,8 @@ In response to this adjustment, Omnichat will update the following Webhooks and 
 <br />
 
 # Open API
+
+Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supported by June. All other APIs will be supported by mid-to-late May.
 
 ## Contacts API
 
