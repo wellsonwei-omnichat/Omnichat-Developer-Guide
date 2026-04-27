@@ -9,7 +9,7 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 
 In response to this adjustment, Omnichat will update the following Webhooks and Open API formats.
 
-**Any changes described in this document are subject to change.** Please refer to the Change Log for the latest updates.
+**Any changes described in this document are subject to change.** Please refer to the [Change Log](https://developers.omnichat.ai/docs/business-scoped-user-ids-api-webhook-updates#change-log) for the latest updates.
 
 # Omnichat Webhooks
 
