@@ -14,16 +14,14 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 
 Overview
 
-| Property | Detail |
-| :--- | :--- |
-| Field name | bsuid |
-| Type | String |
-| Nullable | Yes — omitted from the payload when not applicable |
-| Applicable platform | WhatsApp only |
+| Property            | Detail                                             |
+| :------------------ | :------------------------------------------------- |
+| Field name          | bsuid                                              |
+| Type                | String                                             |
+| Nullable            | Yes — omitted from the payload when not applicable |
+| Applicable platform | WhatsApp only                                      |
 
 Note: bsuid appears only for WhatsApp contacts. For all other platforms the field is absent. When a WhatsApp user enables the Username feature, userId (phone number) may become null while bsuid is populated. Both fields can also be present simultaneously during the transition period.
-
-
 
 customer/create and customer/update
 
@@ -31,12 +29,12 @@ bsuid is added inside each entry of the socialContacts array for WhatsApp contac
 
 Updated: Customer's social channel contact information
 
-| Field | Description | Type | Nullable |
-| :---- | :---------- | :--- | :------- |
-| platform | Platform name. Possible values: line, facebook, instagram, or whatsapp | String | |
-| channelId | Channel ID / WhatsApp Business Phone Number | String | |
-| userId | Social Messenger Channel User ID (LINE User ID / Facebook PSID / Instagram IGSID / WhatsApp Phone Number) | String | Yes |
-| bsuid | WhatsApp Business-Scoped User ID. Only present for WhatsApp contacts when the user has enabled the Username feature. | String | Yes |
+| Field     | Description                                                                                                          | Type   | Nullable |
+| :-------- | :------------------------------------------------------------------------------------------------------------------- | :----- | :------- |
+| platform  | Platform name. Possible values: line, facebook, instagram, or whatsapp                                               | String |          |
+| channelId | Channel ID / WhatsApp Business Phone Number                                                                          | String |          |
+| userId    | Social Messenger Channel User ID (LINE User ID / Facebook PSID / Instagram IGSID / WhatsApp Phone Number)            | String | Yes      |
+| bsuid     | WhatsApp Business-Scoped User ID. Only present for WhatsApp contacts when the user has enabled the Username feature. | String | Yes      |
 
 Updated JSON example
 
@@ -69,24 +67,22 @@ Updated JSON example
 }
 ```
 
-
-
 customer/channel_subscribe, customer/channel_unsubscribe
 
 bsuid is added as a top-level field for WhatsApp subscribe / unsubscribe events.
 
 Updated Data Change Object Structure
 
-| Field | Description | Type | Nullable |
-| :---- | :---------- | :--- | :------- |
-| memberId | Customer's unique ID | String | |
-| email | Customer's email | String | |
-| phone | Customer's phone | String | |
-| name | Customer's name | String | |
-| platform | Contact platform name. Possible values: line, facebook, instagram, or whatsapp | String | |
-| channelId | Contact channel ID / WABA Phone Number (WhatsApp) | String | |
-| userId | Contact user ID / User Phone Number (WhatsApp) | String | Yes |
-| bsuid | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes |
+| Field     | Description                                                                                                 | Type   | Nullable |
+| :-------- | :---------------------------------------------------------------------------------------------------------- | :----- | :------- |
+| memberId  | Customer's unique ID                                                                                        | String |          |
+| email     | Customer's email                                                                                            | String |          |
+| phone     | Customer's phone                                                                                            | String |          |
+| name      | Customer's name                                                                                             | String |          |
+| platform  | Contact platform name. Possible values: line, facebook, instagram, or whatsapp                              | String |          |
+| channelId | Contact channel ID / WABA Phone Number (WhatsApp)                                                           | String |          |
+| userId    | Contact user ID / User Phone Number (WhatsApp)                                                              | String | Yes      |
+| bsuid     | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes      |
 
 Updated JSON example
 
@@ -103,31 +99,29 @@ Updated JSON example
 }
 ```
 
-
-
 customer/channel_omo_binding
 
 bsuid is added as a top-level field for WhatsApp OMO binding events.
 
 Updated Data Change Object Structure
 
-| Field | Description | Type | Nullable |
-| :---- | :---------- | :--- | :------- |
-| platform | Messaging Platform. Supported values: line, whatsapp | String | |
-| channelId | Messaging Platform Channel ID | String | |
-| userId | Customer's User ID (LINE User ID / WhatsApp Phone Number) | String | Yes |
-| bsuid | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes |
-| memberId | Customer's unique ID | String | Yes |
-| email | Customer's email | String | Yes |
-| phone | Customer's phone | String | Yes |
-| agentId | The agent's system ID | String | Yes |
-| agentName | The agent name of the agent bound to the customer | String | Yes |
-| agentEmail | The Omnichat login email of the agent bound to the customer | String | Yes |
-| agentPhone | The Omnichat login phone of the agent bound to the customer | String | Yes |
-| agentEmployeeCode | The employee code of the agent bound to the customer | String | Yes |
-| agentLocationName | The shop location name of the agent bound to the customer | String | Yes |
-| agentLocationCode | The shop location code of the agent bound to the customer | String | Yes |
-| agentPhotoUrl | The agent's photo | String | Yes |
+| Field             | Description                                                                                                 | Type   | Nullable |
+| :---------------- | :---------------------------------------------------------------------------------------------------------- | :----- | :------- |
+| platform          | Messaging Platform. Supported values: line, whatsapp                                                        | String |          |
+| channelId         | Messaging Platform Channel ID                                                                               | String |          |
+| userId            | Customer's User ID (LINE User ID / WhatsApp Phone Number)                                                   | String | Yes      |
+| bsuid             | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes      |
+| memberId          | Customer's unique ID                                                                                        | String | Yes      |
+| email             | Customer's email                                                                                            | String | Yes      |
+| phone             | Customer's phone                                                                                            | String | Yes      |
+| agentId           | The agent's system ID                                                                                       | String | Yes      |
+| agentName         | The agent name of the agent bound to the customer                                                           | String | Yes      |
+| agentEmail        | The Omnichat login email of the agent bound to the customer                                                 | String | Yes      |
+| agentPhone        | The Omnichat login phone of the agent bound to the customer                                                 | String | Yes      |
+| agentEmployeeCode | The employee code of the agent bound to the customer                                                        | String | Yes      |
+| agentLocationName | The shop location name of the agent bound to the customer                                                   | String | Yes      |
+| agentLocationCode | The shop location code of the agent bound to the customer                                                   | String | Yes      |
+| agentPhotoUrl     | The agent's photo                                                                                           | String | Yes      |
 
 Updated JSON example
 
@@ -150,26 +144,24 @@ Updated JSON example
 }
 ```
 
-
-
 direct_msg/status
 
 bsuid is added as a top-level field for WhatsApp Direct Message status events.
 
 Updated Data Change Object Structure
 
-| Field | Description | Type | Nullable |
-| :---- | :---------- | :--- | :------- |
-| trackId | Message track ID | String | |
-| messageIds | Message IDs | Array | |
-| platform | Contact platform name. Possible values: line, facebook, instagram, or whatsapp | String | |
-| channelId | Contact channel ID / WABA Phone Number (WhatsApp) | String | |
-| userId | Contact user ID / User Phone Number (WhatsApp) | String | |
-| memberId | Customer's unique ID | String | |
-| email | Customer's email | String | |
-| phone | Customer's phone | String | |
-| status | Message status | String | |
-| bsuid | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes |
+| Field      | Description                                                                                                 | Type   | Nullable |
+| :--------- | :---------------------------------------------------------------------------------------------------------- | :----- | :------- |
+| trackId    | Message track ID                                                                                            | String |          |
+| messageIds | Message IDs                                                                                                 | Array  |          |
+| platform   | Contact platform name. Possible values: line, facebook, instagram, or whatsapp                              | String |          |
+| channelId  | Contact channel ID / WABA Phone Number (WhatsApp)                                                           | String |          |
+| userId     | Contact user ID / User Phone Number (WhatsApp)                                                              | String |          |
+| memberId   | Customer's unique ID                                                                                        | String |          |
+| email      | Customer's email                                                                                            | String |          |
+| phone      | Customer's phone                                                                                            | String |          |
+| status     | Message status                                                                                              | String |          |
+| bsuid      | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes      |
 
 Updated JSON example
 
@@ -190,22 +182,21 @@ Updated JSON example
 }
 ```
 
-
 whatsapp_flow/flow_create
 
 bsuid is added as a top-level field when customers complete a WhatsApp Flow form.
 
 Updated Data Change Object Structure
 
-| Field | Description | Type | Nullable |
-| :---- | :---------- | :--- | :------- |
-| name | Customer's name | String | Yes |
-| phone | Customer's phone | String | |
-| bsuid | WhatsApp Business-Scoped User ID. Only present when the user has enabled the Username feature. | String | Yes |
-| flowId | WhatsApp flow's ID | String | |
-| flowName | WhatsApp flow's Name | String | |
-| responseTime | Customer response time | String | |
-| flowResponse | The original response from WhatsApp. See interactive.nfm_reply.response_json in the [Meta Official Doc](https://developers.facebook.com/docs/whatsapp/flows/reference/flowswebhooks) | Object | |
+| Field        | Description                                                                                                                                                                          | Type   | Nullable |
+| :----------- | :----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :----- | :------- |
+| name         | Customer's name                                                                                                                                                                      | String | Yes      |
+| phone        | Customer's phone                                                                                                                                                                     | String |          |
+| bsuid        | WhatsApp Business-Scoped User ID. Only present when the user has enabled the Username feature.                                                                                       | String | Yes      |
+| flowId       | WhatsApp flow's ID                                                                                                                                                                   | String |          |
+| flowName     | WhatsApp flow's Name                                                                                                                                                                 | String |          |
+| responseTime | Customer response time                                                                                                                                                               | String |          |
+| flowResponse | The original response from WhatsApp. See interactive.nfm_reply.response_json in the [Meta Official Doc](https://developers.facebook.com/docs/whatsapp/flows/reference/flowswebhooks) | Object |          |
 
 Updated JSON example
 
@@ -224,31 +215,29 @@ Updated JSON example
 }
 ```
 
-
-
 ticket/create and ticket/update
 
 bsuid is added as a top-level field for WhatsApp ticket events.
 
 Updated Data Change Object Structure
 
-| Field | Description | Type | Nullable |
-| :---- | :---------- | :--- | :------- |
-| ticketId | A sequence number | Integer | |
-| subject | The subject of this ticket | String | |
-| customerName | Customer's name | String | |
-| isGroupChat | Flag used to determine if the ticket is related to a group chat | Boolean | |
-| isCollaborationChat | Flag used to determine if the ticket is related to a collaboration chat | Boolean | |
-| platform | Supported values: webchat, line, whatsapp, wechat, instagram, facebook | String | |
-| channelId | Contact channel ID / WABA Phone Number (WhatsApp) | String | |
-| userId | Contact user ID / User Phone Number (WhatsApp) | String | |
-| bsuid | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes |
-| status | Supported values: Open, InProgress, Closed | String | |
-| createdAt | Creation time | String | |
-| closedAt | Closed time when the ticket status is Closed. Always null for ticket/create | String | Yes |
-| firstFollowUpAt | First follow-up time | String | |
-| firstResponseAt | The first response time of this ticket | String | |
-| agentLogs | List of Agent Logs. Default is an empty array | Array | |
+| Field               | Description                                                                                                 | Type    | Nullable |
+| :------------------ | :---------------------------------------------------------------------------------------------------------- | :------ | :------- |
+| ticketId            | A sequence number                                                                                           | Integer |          |
+| subject             | The subject of this ticket                                                                                  | String  |          |
+| customerName        | Customer's name                                                                                             | String  |          |
+| isGroupChat         | Flag used to determine if the ticket is related to a group chat                                             | Boolean |          |
+| isCollaborationChat | Flag used to determine if the ticket is related to a collaboration chat                                     | Boolean |          |
+| platform            | Supported values: webchat, line, whatsapp, wechat, instagram, facebook                                      | String  |          |
+| channelId           | Contact channel ID / WABA Phone Number (WhatsApp)                                                           | String  |          |
+| userId              | Contact user ID / User Phone Number (WhatsApp)                                                              | String  |          |
+| bsuid               | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String  | Yes      |
+| status              | Supported values: Open, InProgress, Closed                                                                  | String  |          |
+| createdAt           | Creation time                                                                                               | String  |          |
+| closedAt            | Closed time when the ticket status is Closed. Always null for ticket/create                                 | String  | Yes      |
+| firstFollowUpAt     | First follow-up time                                                                                        | String  |          |
+| firstResponseAt     | The first response time of this ticket                                                                      | String  |          |
+| agentLogs           | List of Agent Logs. Default is an empty array                                                               | Array   |          |
 
 Updated JSON example — create
 
@@ -279,21 +268,17 @@ Updated JSON example — create
 }
 ```
 
-
 | 2026/05/06 | Added bsuid field to customer/create, customer/update, customer/channel_subscribe, customer/channel_unsubscribe, customer/channel_omo_binding, direct_msg/status, whatsapp_flow/flow_create, ticket/create, ticket/update webhook payloads |
-
 
 The following webhook topics are not affected by BSUID changes:
 
-- broadcast_msg/status
-- customer/channel_phone_binding
-- lon/send_sms
-- ticket/delete
-
-
+* broadcast_msg/status
+* customer/channel_phone_binding
+* lon/send_sms
+* ticket/delete
 
 Change Log
 
-| Date | Change |
-| :--- | :----- |
+| Date       | Change                                                                                                                                                                                                                                                         |
+| :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 2026/05/06 | Added `bsuid` field to `customer/create`, `customer/update`, `customer/channel_subscribe`, `customer/channel_unsubscribe`, `customer/channel_omo_binding`, `direct_msg/status`, `whatsapp_flow/flow_create`, `ticket/create`, `ticket/update` webhook payloads |
