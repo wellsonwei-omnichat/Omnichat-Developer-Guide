@@ -23,7 +23,7 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 | Nullable            | Yes — omitted from the payload when not applicable |
 | Applicable platform | WhatsApp only                                      |
 
-> **Note:** `bsuid` appears only for WhatsApp contacts. For all other platforms the field is absent. When a WhatsApp user enables the Username feature, `userId` (phone number) may become `null` while `bsuid` is populated. Both fields can also be present simultaneously during the transition period.
+> **Note:** `bsuid` appears only for WhatsApp contacts. For all other platforms the field is absent. When a WhatsApp user enables the Username feature, `userId` (phone number) **may become `null`** while `bsuid` is populated. Both fields can also be present simultaneously. Please ensure your integration handles `null` values for `userId` on WhatsApp events.
 
 ***
 
@@ -62,8 +62,8 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
     {
       "platform": "whatsapp",
       "channelId": "85298765432",
-      "userId": "8526543210",
-      "bsuid": "US.13491208655302741918"
+      "userId": "8526543210",    // CHANGED: may be null when WhatsApp Username feature is enabled
+      "bsuid": "US.13491208655302741918"    // ADDED
     }
   ],
   "createdAt": "2023-11-09T14:09:57.511+08:00",
@@ -100,8 +100,8 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
   "name": "Bruce Ni",
   "platform": "whatsapp",
   "channelId": "85298765432",
-  "userId": "8526543210",
-  "bsuid": "US.13491208655302741918"
+  "userId": "8526543210",    // CHANGED: may be null when WhatsApp Username feature is enabled
+  "bsuid": "US.13491208655302741918"    // ADDED
 }
 ```
 
@@ -137,8 +137,8 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 {
   "platform": "whatsapp",
   "channelId": "85298765432",
-  "userId": "8526543210",
-  "bsuid": "US.13491208655302741918",
+  "userId": "8526543210",    // CHANGED: may be null when WhatsApp Username feature is enabled
+  "bsuid": "US.13491208655302741918",    // ADDED
   "memberId": "bruce001",
   "email": "bruce.ni@omnichat.ai",
   "phone": "886987654321",
@@ -184,11 +184,11 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
   "platform": "whatsapp",
   "channelId": "85298765432",
   "userId": "8526543210",
-  "bsuid": "US.13491208655302741918",
   "memberId": "bruce001",
   "email": "bruce.ni@omnichat.ai",
   "phone": "886987654321",
-  "status": "delivered"
+  "status": "delivered",
+  "bsuid": "US.13491208655302741918"    // ADDED
 }
 ```
 
@@ -216,7 +216,7 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 {
   "name": "Omnichat",
   "phone": "85261234567",
-  "bsuid": "US.13491208655302741918",
+  "bsuid": "US.13491208655302741918",    // ADDED
   "flowId": "1234567890",
   "flowName": "Example Flow",
   "responseTime": "2024-07-01T17:42:24.333+08:00",
@@ -265,7 +265,7 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
   "platform": "whatsapp",
   "channelId": "85298765432",
   "userId": "8526543210",
-  "bsuid": "US.13491208655302741918",
+  "bsuid": "US.13491208655302741918",    // ADDED
   "status": "Open",
   "createdAt": "2025-02-13T13:54:56.848+08:00",
   "closedAt": null,
