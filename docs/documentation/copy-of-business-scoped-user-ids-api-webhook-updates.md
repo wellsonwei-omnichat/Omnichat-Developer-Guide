@@ -8,37 +8,37 @@ hidden: true
 metadata:
   robots: noindex
 ---
-WhatsApp will launch a [Usernames feature](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids?) later this year. When enabled by users, phone numbers might not be included in Message Webhooks. In response, Omnichat will add a new `bsuid` field to the affected webhook payloads.
+WhatsApp will launch a [Usernames feature](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids?) later this year. When enabled by users, phone numbers might not be included in Message Webhooks. In response, Omnichat will add a new bsuid field to the affected webhook payloads.
 
-**BSUIDs will begin appearing in webhooks in early May 2026.**
+BSUIDs will begin appearing in webhooks in early May 2026.
 
-## Overview
+Overview
 
 | Property | Detail |
 | :--- | :--- |
-| Field name | `bsuid` |
+| Field name | bsuid |
 | Type | String |
 | Nullable | Yes — omitted from the payload when not applicable |
 | Applicable platform | WhatsApp only |
 
-> **Note:** `bsuid` appears only for WhatsApp contacts. For all other platforms the field is absent. When a WhatsApp user enables the Username feature, `userId` (phone number) may become `null` while `bsuid` is populated. Both fields can also be present simultaneously during the transition period.
+Note: bsuid appears only for WhatsApp contacts. For all other platforms the field is absent. When a WhatsApp user enables the Username feature, userId (phone number) may become null while bsuid is populated. Both fields can also be present simultaneously during the transition period.
 
----
 
-## customer/create and customer/update
 
-`bsuid` is added inside each entry of the `socialContacts` array for WhatsApp contacts.
+customer/create and customer/update
 
-### Updated: Customer's social channel contact information
+bsuid is added inside each entry of the socialContacts array for WhatsApp contacts.
+
+Updated: Customer's social channel contact information
 
 | Field | Description | Type | Nullable |
 | :---- | :---------- | :--- | :------- |
-| platform | Platform name. Possible values: **line**, **facebook**, **instagram**, or **whatsapp** | String | |
+| platform | Platform name. Possible values: line, facebook, instagram, or whatsapp | String | |
 | channelId | Channel ID / WhatsApp Business Phone Number | String | |
 | userId | Social Messenger Channel User ID (LINE User ID / Facebook PSID / Instagram IGSID / WhatsApp Phone Number) | String | Yes |
-| **bsuid** | **WhatsApp Business-Scoped User ID. Only present for WhatsApp contacts when the user has enabled the Username feature.** | **String** | **Yes** |
+| bsuid | WhatsApp Business-Scoped User ID. Only present for WhatsApp contacts when the user has enabled the Username feature. | String | Yes |
 
-### Updated JSON example
+Updated JSON example
 
 ```json
 {
@@ -69,13 +69,13 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 }
 ```
 
----
 
-## customer/channel_subscribe, customer/channel_unsubscribe
 
-`bsuid` is added as a top-level field for WhatsApp subscribe / unsubscribe events.
+customer/channel_subscribe, customer/channel_unsubscribe
 
-### Updated Data Change Object Structure
+bsuid is added as a top-level field for WhatsApp subscribe / unsubscribe events.
+
+Updated Data Change Object Structure
 
 | Field | Description | Type | Nullable |
 | :---- | :---------- | :--- | :------- |
@@ -83,12 +83,12 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 | email | Customer's email | String | |
 | phone | Customer's phone | String | |
 | name | Customer's name | String | |
-| platform | Contact platform name. Possible values: **line**, **facebook**, **instagram**, or **whatsapp** | String | |
+| platform | Contact platform name. Possible values: line, facebook, instagram, or whatsapp | String | |
 | channelId | Contact channel ID / WABA Phone Number (WhatsApp) | String | |
 | userId | Contact user ID / User Phone Number (WhatsApp) | String | Yes |
-| **bsuid** | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes** |
+| bsuid | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes |
 
-### Updated JSON example
+Updated JSON example
 
 ```json
 {
@@ -103,20 +103,20 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 }
 ```
 
----
 
-## customer/channel_omo_binding
 
-`bsuid` is added as a top-level field for WhatsApp OMO binding events.
+customer/channel_omo_binding
 
-### Updated Data Change Object Structure
+bsuid is added as a top-level field for WhatsApp OMO binding events.
+
+Updated Data Change Object Structure
 
 | Field | Description | Type | Nullable |
 | :---- | :---------- | :--- | :------- |
-| platform | Messaging Platform. Supported values: `line`, `whatsapp` | String | |
+| platform | Messaging Platform. Supported values: line, whatsapp | String | |
 | channelId | Messaging Platform Channel ID | String | |
 | userId | Customer's User ID (LINE User ID / WhatsApp Phone Number) | String | Yes |
-| **bsuid** | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes** |
+| bsuid | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes |
 | memberId | Customer's unique ID | String | Yes |
 | email | Customer's email | String | Yes |
 | phone | Customer's phone | String | Yes |
@@ -129,7 +129,7 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 | agentLocationCode | The shop location code of the agent bound to the customer | String | Yes |
 | agentPhotoUrl | The agent's photo | String | Yes |
 
-### Updated JSON example
+Updated JSON example
 
 ```json
 {
@@ -150,28 +150,28 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 }
 ```
 
----
 
-## direct_msg/status
 
-`bsuid` is added as a top-level field for WhatsApp Direct Message status events.
+direct_msg/status
 
-### Updated Data Change Object Structure
+bsuid is added as a top-level field for WhatsApp Direct Message status events.
+
+Updated Data Change Object Structure
 
 | Field | Description | Type | Nullable |
 | :---- | :---------- | :--- | :------- |
 | trackId | Message track ID | String | |
 | messageIds | Message IDs | Array | |
-| platform | Contact platform name. Possible values: **line**, **facebook**, **instagram**, or **whatsapp** | String | |
+| platform | Contact platform name. Possible values: line, facebook, instagram, or whatsapp | String | |
 | channelId | Contact channel ID / WABA Phone Number (WhatsApp) | String | |
 | userId | Contact user ID / User Phone Number (WhatsApp) | String | |
 | memberId | Customer's unique ID | String | |
 | email | Customer's email | String | |
 | phone | Customer's phone | String | |
 | status | Message status | String | |
-| **bsuid** | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes** |
+| bsuid | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes |
 
-### Updated JSON example
+Updated JSON example
 
 ```json
 {
@@ -190,24 +190,24 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 }
 ```
 
----
-## whatsapp_flow/flow_create
 
-`bsuid` is added as a top-level field when customers complete a WhatsApp Flow form.
+whatsapp_flow/flow_create
 
-### Updated Data Change Object Structure
+bsuid is added as a top-level field when customers complete a WhatsApp Flow form.
+
+Updated Data Change Object Structure
 
 | Field | Description | Type | Nullable |
 | :---- | :---------- | :--- | :------- |
 | name | Customer's name | String | Yes |
 | phone | Customer's phone | String | |
-| **bsuid** | **WhatsApp Business-Scoped User ID. Only present when the user has enabled the Username feature.** | **String** | **Yes** |
+| bsuid | WhatsApp Business-Scoped User ID. Only present when the user has enabled the Username feature. | String | Yes |
 | flowId | WhatsApp flow's ID | String | |
 | flowName | WhatsApp flow's Name | String | |
 | responseTime | Customer response time | String | |
-| flowResponse | The original response from WhatsApp. See `interactive.nfm_reply.response_json` in the [Meta Official Doc](https://developers.facebook.com/docs/whatsapp/flows/reference/flowswebhooks) | Object | |
+| flowResponse | The original response from WhatsApp. See interactive.nfm_reply.response_json in the [Meta Official Doc](https://developers.facebook.com/docs/whatsapp/flows/reference/flowswebhooks) | Object | |
 
-### Updated JSON example
+Updated JSON example
 
 ```json
 {
@@ -224,13 +224,13 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 }
 ```
 
----
 
-## ticket/create and ticket/update
 
-`bsuid` is added as a top-level field for WhatsApp ticket events.
+ticket/create and ticket/update
 
-### Updated Data Change Object Structure
+bsuid is added as a top-level field for WhatsApp ticket events.
+
+Updated Data Change Object Structure
 
 | Field | Description | Type | Nullable |
 | :---- | :---------- | :--- | :------- |
@@ -239,18 +239,18 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 | customerName | Customer's name | String | |
 | isGroupChat | Flag used to determine if the ticket is related to a group chat | Boolean | |
 | isCollaborationChat | Flag used to determine if the ticket is related to a collaboration chat | Boolean | |
-| platform | Supported values: `webchat`, `line`, `whatsapp`, `wechat`, `instagram`, `facebook` | String | |
+| platform | Supported values: webchat, line, whatsapp, wechat, instagram, facebook | String | |
 | channelId | Contact channel ID / WABA Phone Number (WhatsApp) | String | |
 | userId | Contact user ID / User Phone Number (WhatsApp) | String | |
-| **bsuid** | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes** |
-| status | Supported values: `Open`, `InProgress`, `Closed` | String | |
+| bsuid | WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature. | String | Yes |
+| status | Supported values: Open, InProgress, Closed | String | |
 | createdAt | Creation time | String | |
-| closedAt | Closed time when the ticket status is `Closed`. Always `null` for `ticket/create` | String | Yes |
+| closedAt | Closed time when the ticket status is Closed. Always null for ticket/create | String | Yes |
 | firstFollowUpAt | First follow-up time | String | |
 | firstResponseAt | The first response time of this ticket | String | |
 | agentLogs | List of Agent Logs. Default is an empty array | Array | |
 
-### Updated JSON example — create
+Updated JSON example — create
 
 ```json
 {
@@ -279,20 +279,20 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 }
 ```
 
----
 
-## Webhooks Not Affected
+| 2026/05/06 | Added bsuid field to customer/create, customer/update, customer/channel_subscribe, customer/channel_unsubscribe, customer/channel_omo_binding, direct_msg/status, whatsapp_flow/flow_create, ticket/create, ticket/update webhook payloads |
 
-The following webhook topics are **not** affected by BSUID changes:
 
-- `broadcast_msg/status`
-- `customer/channel_phone_binding`
-- `lon/send_sms`
-- `ticket/delete`
+The following webhook topics are not affected by BSUID changes:
 
----
+- broadcast_msg/status
+- customer/channel_phone_binding
+- lon/send_sms
+- ticket/delete
 
-## Change Log
+
+
+Change Log
 
 | Date | Change |
 | :--- | :----- |
