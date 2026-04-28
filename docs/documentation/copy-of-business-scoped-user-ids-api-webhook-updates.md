@@ -8,8 +8,6 @@ hidden: true
 metadata:
   robots: noindex
 ---
-# Business-Scoped User ID (BSUID) — Webhook Updates
-
 WhatsApp will launch a [Usernames feature](https://developers.facebook.com/documentation/business-messaging/whatsapp/business-scoped-user-ids?) later this year. When enabled by users, phone numbers might not be included in Message Webhooks. In response, Omnichat will add a new `bsuid` field to the affected webhook payloads.
 
 **BSUIDs will begin appearing in webhooks in early May 2026.**
