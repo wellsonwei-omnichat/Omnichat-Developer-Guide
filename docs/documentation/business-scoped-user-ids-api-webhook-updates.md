@@ -93,6 +93,8 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 }
 ```
 
+<br />
+
 ## customer/channel_omo_binding
 
 `bsuid` is added as a top-level field for WhatsApp OMO binding events.
@@ -142,8 +144,6 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 
 ## direct_msg/status
 
-<br />
-
 `bsuid` is added as a top-level field for WhatsApp Direct Message status events.
 
 ### Updated Data Change Object Structure
@@ -180,9 +180,9 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 }
 ```
 
-## whatsapp_flow/flow_create
-
 <br />
+
+## whatsapp_flow/flow_create
 
 `bsuid` is added as a top-level field when customers complete a WhatsApp Flow form.
 
@@ -215,9 +215,9 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 }
 ```
 
-## ticket/create, ticket/update
-
 <br />
+
+## ticket/create, ticket/update
 
 `bsuid` is added as a top-level field for WhatsApp ticket events.
 
@@ -286,6 +286,8 @@ The following webhook topics are **not** affected by BSUID changes:
 # Open API
 
 Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supported by June. All other APIs will be supported by mid-to-late May.
+
+**We will provide detailed information soon.**
 
 ## Contacts API
 
