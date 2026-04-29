@@ -1,7 +1,7 @@
 ---
 title: Business-Scoped User IDs API & Webhook Updates
 deprecated: false
-hidden: true
+hidden: false
 metadata:
   robots: index
 ---
