@@ -21,12 +21,12 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 
 ### Updated: Customer's social channel contact information
 
-| Field     | Description                                                                                                              | Type       | Nullable |
-| :-------- | :----------------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
-| platform  | Platform name. Possible values: **line**, **facebook**, **instagram**, or **whatsapp**                                   | String     |          |
-| channelId | Channel ID / WhatsApp Business Phone Number                                                                              | String     |          |
-| userId    | Social Messenger Channel User ID (LINE User ID / Facebook PSID / Instagram IGSID / WhatsApp Phone Number)                | String     | Yes      |
-| **bsuid** | **WhatsApp Business-Scoped User ID. Only present for WhatsApp contacts when the user has enabled the Username feature.** | **String** | **Yes**  |
+| Field     | Description                                                                                               | Type       | Nullable             |
+| :-------- | :-------------------------------------------------------------------------------------------------------- | :--------- | :------------------- |
+| platform  | Platform name. Possible values: line, facebook, instagram, or whatsapp                                    | String     |                      |
+| channelId | Channel ID / WhatsApp Business Phone Number                                                               | String     |                      |
+| userId    | Social Messenger Channel User ID (LINE User ID / Facebook PSID / Instagram IGSID / WhatsApp Phone Number) | String     | **Yes for WhatsApp** |
+| **bsuid** | **WhatsApp Business-Scoped User ID**                                                                      | **String** | **Yes**              |
 
 ### Updated JSON example
 
@@ -50,7 +50,7 @@ BSUIDs will begin appearing in webhooks in early May 2026.
     {
       "platform": "whatsapp",
       "channelId": "85298765432",
-      "userId": "8526543210",    // CHANGED: may be null when WhatsApp Username feature is enabled
+      "userId": "8526543210",    // CHANGED: may be null when WhatsApp user enables Username feature 
       "bsuid": "US.13491208655302741918"    // ADDED
     }
   ],
@@ -67,16 +67,16 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 
 ### Updated Data Change Object Structure
 
-| Field     | Description                                                                                                     | Type       | Nullable |
-| :-------- | :-------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
-| memberId  | Customer's unique ID                                                                                            | String     |          |
-| email     | Customer's email                                                                                                | String     |          |
-| phone     | Customer's phone                                                                                                | String     |          |
-| name      | Customer's name                                                                                                 | String     |          |
-| platform  | Contact platform name. Possible values: **line**, **facebook**, **instagram**, or **whatsapp**                  | String     |          |
-| channelId | Contact channel ID / WABA Phone Number (WhatsApp)                                                               | String     |          |
-| userId    | Contact user ID / User Phone Number (WhatsApp)                                                                  | String     | Yes      |
-| **bsuid** | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes**  |
+| Field     | Description                                                                                    | Type       | Nullable             |
+| :-------- | :--------------------------------------------------------------------------------------------- | :--------- | :------------------- |
+| memberId  | Customer's unique ID                                                                           | String     |                      |
+| email     | Customer's email                                                                               | String     |                      |
+| phone     | Customer's phone                                                                               | String     |                      |
+| name      | Customer's name                                                                                | String     |                      |
+| platform  | Contact platform name. Possible values: **line**, **facebook**, **instagram**, or **whatsapp** | String     |                      |
+| channelId | Contact channel ID / WABA Phone Number (WhatsApp)                                              | String     |                      |
+| userId    | Contact user ID / User Phone Number (WhatsApp)                                                 | String     | **Yes for WhatsApp** |
+| **bsuid** | **WhatsApp Business-Scoped User ID**                                                           | **String** | **Yes**              |
 
 ### Updated JSON example
 
@@ -84,11 +84,11 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 {
   "memberId": "bruce001",
   "email": "bruce.ni@omnichat.ai",
-  "phone": "886987654321",
+  "phone": "886987654321",  
   "name": "Bruce Ni",
   "platform": "whatsapp",
   "channelId": "85298765432",
-  "userId": "8526543210",    // CHANGED: may be null when WhatsApp Username feature is enabled
+  "userId": "8526543210",    // CHANGED: may be null when WhatsApp user enables Username feature
   "bsuid": "US.13491208655302741918"    // ADDED
 }
 ```
@@ -99,23 +99,23 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 
 ### Updated Data Change Object Structure
 
-| Field             | Description                                                                                                     | Type       | Nullable |
-| :---------------- | :-------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
-| platform          | Messaging Platform. Supported values: `line`, `whatsapp`                                                        | String     |          |
-| channelId         | Messaging Platform Channel ID                                                                                   | String     |          |
-| userId            | Customer's User ID (LINE User ID / WhatsApp Phone Number)                                                       | String     | Yes      |
-| **bsuid**         | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes**  |
-| memberId          | Customer's unique ID                                                                                            | String     | Yes      |
-| email             | Customer's email                                                                                                | String     | Yes      |
-| phone             | Customer's phone                                                                                                | String     | Yes      |
-| agentId           | The agent's system ID                                                                                           | String     | Yes      |
-| agentName         | The agent name of the agent bound to the customer                                                               | String     | Yes      |
-| agentEmail        | The Omnichat login email of the agent bound to the customer                                                     | String     | Yes      |
-| agentPhone        | The Omnichat login phone of the agent bound to the customer                                                     | String     | Yes      |
-| agentEmployeeCode | The employee code of the agent bound to the customer                                                            | String     | Yes      |
-| agentLocationName | The shop location name of the agent bound to the customer                                                       | String     | Yes      |
-| agentLocationCode | The shop location code of the agent bound to the customer                                                       | String     | Yes      |
-| agentPhotoUrl     | The agent's photo                                                                                               | String     | Yes      |
+| Field             | Description                                                 | Type       | Nullable             |
+| :---------------- | :---------------------------------------------------------- | :--------- | :------------------- |
+| platform          | Messaging Platform. Supported values: `line`, `whatsapp`    | String     |                      |
+| channelId         | Messaging Platform Channel ID                               | String     |                      |
+| userId            | Customer's User ID (LINE User ID / WhatsApp Phone Number)   | String     | **Yes for WhatsApp** |
+| **bsuid**         | **WhatsApp Business-Scoped User ID**                        | **String** | **Yes**              |
+| memberId          | Customer's unique ID                                        | String     | Yes                  |
+| email             | Customer's email                                            | String     | Yes                  |
+| phone             | Customer's phone                                            | String     | Yes                  |
+| agentId           | The agent's system ID                                       | String     | Yes                  |
+| agentName         | The agent name of the agent bound to the customer           | String     | Yes                  |
+| agentEmail        | The Omnichat login email of the agent bound to the customer | String     | Yes                  |
+| agentPhone        | The Omnichat login phone of the agent bound to the customer | String     | Yes                  |
+| agentEmployeeCode | The employee code of the agent bound to the customer        | String     | Yes                  |
+| agentLocationName | The shop location name of the agent bound to the customer   | String     | Yes                  |
+| agentLocationCode | The shop location code of the agent bound to the customer   | String     | Yes                  |
+| agentPhotoUrl     | The agent's photo                                           | String     | Yes                  |
 
 ### Updated JSON example
 
@@ -123,7 +123,7 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 {
   "platform": "whatsapp",
   "channelId": "85298765432",
-  "userId": "8526543210",    // CHANGED: may be null when WhatsApp Username feature is enabled
+  "userId": "8526543210",    // CHANGED: may be null when WhatsApp user enables Username feature
   "bsuid": "US.13491208655302741918",    // ADDED
   "memberId": "bruce001",
   "email": "bruce.ni@omnichat.ai",
@@ -148,18 +148,18 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 
 ### Updated Data Change Object Structure
 
-| Field      | Description                                                                                                     | Type       | Nullable |
-| :--------- | :-------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
-| trackId    | Message track ID                                                                                                | String     |          |
-| messageIds | Message IDs                                                                                                     | Array      |          |
-| platform   | Contact platform name. Possible values: **line**, **facebook**, **instagram**, or **whatsapp**                  | String     |          |
-| channelId  | Contact channel ID / WABA Phone Number (WhatsApp)                                                               | String     |          |
-| userId     | Contact user ID / User Phone Number (WhatsApp)                                                                  | String     |          |
-| memberId   | Customer's unique ID                                                                                            | String     |          |
-| email      | Customer's email                                                                                                | String     |          |
-| phone      | Customer's phone                                                                                                | String     |          |
-| status     | Message status                                                                                                  | String     |          |
-| **bsuid**  | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes**  |
+| Field      | Description                                                                                    | Type       | Nullable             |
+| :--------- | :--------------------------------------------------------------------------------------------- | :--------- | :------------------- |
+| trackId    | Message track ID                                                                               | String     |                      |
+| messageIds | Message IDs                                                                                    | Array      |                      |
+| platform   | Contact platform name. Possible values: **line**, **facebook**, **instagram**, or **whatsapp** | String     |                      |
+| channelId  | Contact channel ID / WABA Phone Number (WhatsApp)                                              | String     |                      |
+| userId     | Contact user ID / User Phone Number (WhatsApp)                                                 | String     | **Yes for WhatsApp** |
+| memberId   | Customer's unique ID                                                                           | String     |                      |
+| email      | Customer's email                                                                               | String     |                      |
+| phone      | Customer's phone                                                                               | String     |                      |
+| status     | Message status                                                                                 | String     |                      |
+| **bsuid**  | **WhatsApp Business-Scoped User ID. Only present for WhatsApp**                                | **String** | **Yes**              |
 
 ### Updated JSON example
 
@@ -171,7 +171,7 @@ BSUIDs will begin appearing in webhooks in early May 2026.
   ],
   "platform": "whatsapp",
   "channelId": "85298765432",
-  "userId": "8526543210",
+  "userId": "8526543210",		// CHANGED: may be null when WhatsApp user enables Username feature 
   "memberId": "bruce001",
   "email": "bruce.ni@omnichat.ai",
   "phone": "886987654321",
@@ -191,8 +191,8 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 | Field        | Description                                                                                                                                                                            | Type       | Nullable |
 | :----------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
 | name         | Customer's name                                                                                                                                                                        | String     | Yes      |
-| phone        | Customer's phone                                                                                                                                                                       | String     |          |
-| **bsuid**    | **WhatsApp Business-Scoped User ID. Only present when the user has enabled the Username feature.**                                                                                     | **String** | **Yes**  |
+| phone        | Customer's phone                                                                                                                                                                       | String     | **Yes**  |
+| **bsuid**    | **WhatsApp Business-Scoped User ID**                                                                                                                                                   | **String** | **Yes**  |
 | flowId       | WhatsApp flow's ID                                                                                                                                                                     | String     |          |
 | flowName     | WhatsApp flow's Name                                                                                                                                                                   | String     |          |
 | responseTime | Customer response time                                                                                                                                                                 | String     |          |
@@ -203,7 +203,7 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 ```json
 {
   "name": "Omnichat",
-  "phone": "85261234567",
+  "phone": "85261234567",		// CHANGED: may be null when WhatsApp user enables Username feature 
   "bsuid": "US.13491208655302741918",    // ADDED
   "flowId": "1234567890",
   "flowName": "Example Flow",
@@ -223,23 +223,23 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 
 ### Updated Data Change Object Structure
 
-| Field               | Description                                                                                                     | Type       | Nullable |
-| :------------------ | :-------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
-| ticketId            | A sequence number                                                                                               | Integer    |          |
-| subject             | The subject of this ticket                                                                                      | String     |          |
-| customerName        | Customer's name                                                                                                 | String     |          |
-| isGroupChat         | Flag used to determine if the ticket is related to a group chat                                                 | Boolean    |          |
-| isCollaborationChat | Flag used to determine if the ticket is related to a collaboration chat                                         | Boolean    |          |
-| platform            | Supported values: `webchat`, `line`, `whatsapp`, `wechat`, `instagram`, `facebook`                              | String     |          |
-| channelId           | Contact channel ID / WABA Phone Number (WhatsApp)                                                               | String     |          |
-| userId              | Contact user ID / User Phone Number (WhatsApp)                                                                  | String     |          |
-| **bsuid**           | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes**  |
-| status              | Supported values: `Open`, `InProgress`, `Closed`                                                                | String     |          |
-| createdAt           | Creation time                                                                                                   | String     |          |
-| closedAt            | Closed time when the ticket status is `Closed`. Always `null` for `ticket/create`                               | String     | Yes      |
-| firstFollowUpAt     | First follow-up time                                                                                            | String     |          |
-| firstResponseAt     | The first response time of this ticket                                                                          | String     |          |
-| agentLogs           | List of Agent Logs. Default is an empty array                                                                   | Array      |          |
+| Field               | Description                                                                        | Type       | Nullable             |
+| :------------------ | :--------------------------------------------------------------------------------- | :--------- | :------------------- |
+| ticketId            | A sequence number                                                                  | Integer    |                      |
+| subject             | The subject of this ticket                                                         | String     |                      |
+| customerName        | Customer's name                                                                    | String     |                      |
+| isGroupChat         | Flag used to determine if the ticket is related to a group chat                    | Boolean    |                      |
+| isCollaborationChat | Flag used to determine if the ticket is related to a collaboration chat            | Boolean    |                      |
+| platform            | Supported values: `webchat`, `line`, `whatsapp`, `wechat`, `instagram`, `facebook` | String     |                      |
+| channelId           | Contact channel ID / WABA Phone Number (WhatsApp)                                  | String     |                      |
+| userId              | Contact user ID / User Phone Number (WhatsApp)                                     | String     | **Yes for WhatsApp** |
+| **bsuid**           | **WhatsApp Business-Scoped User ID. Only present for WhatsApp**                    | **String** | **Yes**              |
+| status              | Supported values: `Open`, `InProgress`, `Closed`                                   | String     |                      |
+| createdAt           | Creation time                                                                      | String     |                      |
+| closedAt            | Closed time when the ticket status is `Closed`. Always `null` for `ticket/create`  | String     | Yes                  |
+| firstFollowUpAt     | First follow-up time                                                               | String     |                      |
+| firstResponseAt     | The first response time of this ticket                                             | String     |                      |
+| agentLogs           | List of Agent Logs. Default is an empty array                                      | Array      |                      |
 
 ### Updated JSON example — create
 
@@ -251,8 +251,8 @@ BSUIDs will begin appearing in webhooks in early May 2026.
   "isGroupChat": false,
   "isCollaborationChat": false,
   "platform": "whatsapp",
-  "channelId": "85298765432",
-  "userId": "8526543210",
+  "channelId": "85298765432",		
+  "userId": "8526543210",		// CHANGED: may be null when WhatsApp user enables Username feature 
   "bsuid": "US.13491208655302741918",    // ADDED
   "status": "Open",
   "createdAt": "2025-02-13T13:54:56.848+08:00",
