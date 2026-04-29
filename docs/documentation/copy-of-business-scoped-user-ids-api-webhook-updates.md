@@ -284,6 +284,287 @@ WhatsApp will launch a [Usernames feature](https://developers.facebook.com/docum
 
 ***
 
+## GET /v1/messages — Chat History
+
+- **API 目前開發文件連結:** https://documenter.getpostman.com/view/2s9YsMBC4o#a696226b-c319-4db3-a229-92cfdeba804d
+
+`bsuid` is added to each message item in the chat history response for WhatsApp messages.
+
+### Updated Response Object Structure
+
+| Field            | Description                                                                                                     | Type       | Nullable |
+| :--------------- | :-------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
+| id               | Message ID                                                                                                      | String     |          |
+| time             | Message creation time (epoch millis)                                                                            | Long       |          |
+| senderName       | Sender's name                                                                                                   | String     | Yes      |
+| senderEmail      | Sender's email                                                                                                  | String     | Yes      |
+| senderPhone      | Sender's phone                                                                                                  | String     | Yes      |
+| senderUserId     | Sender's user ID                                                                                                | String     |          |
+| senderType       | Sender type. Possible values: `customer`, `agent`, `bot`                                                        | String     |          |
+| messageType      | Message type                                                                                                    | String     |          |
+| message          | Message text content                                                                                            | String     | Yes      |
+| mediaUrl         | Media URL                                                                                                       | String     | Yes      |
+| channel          | Channel information object                                                                                      | Object     |          |
+| channel.platform | Platform name                                                                                                   | String     |          |
+| channel.channelId| Channel ID                                                                                                      | String     |          |
+| roomId           | Room ID                                                                                                         | String     |          |
+| customerUserId   | Customer user ID / User Phone Number (WhatsApp)                                                                 | String     | Yes      |
+| **bsuid**        | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes**  |
+| messageStatus    | Message status                                                                                                  | String     |          |
+
+### Updated JSON example
+
+```json
+{
+  "id": "663a1b2c3d4e5f6789abcdef",
+  "time": 1714300800000,
+  "senderName": "Bruce Ni",
+  "senderEmail": null,
+  "senderPhone": "886987654321",
+  "senderUserId": "8526543210",
+  "senderType": "customer",
+  "messageType": "text",
+  "message": "Hello, I need help with my order.",
+  "mediaUrl": null,
+  "channel": {
+    "platform": "whatsapp",
+    "channelId": "85298765432"
+  },
+  "roomId": "whatsapp_85298765432_8526543210",
+  "customerUserId": "8526543210",
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "messageStatus": "delivered"
+}
+```
+
+---
+
+## GET /v1/messages/{'{messageId}'} — Chat Detail
+
+- **API 目前開發文件連結:** https://documenter.getpostman.com/view/2s9YsMBC4o#b7e92d26-136f-474d-8be4-be3c3e726e1b
+
+`bsuid` is added to the message detail response for WhatsApp messages. The structure is the same as the chat history item above.
+
+### Updated JSON example
+
+```json
+{
+  "id": "663a1b2c3d4e5f6789abcdef",
+  "time": 1714300800000,
+  "senderName": "Bruce Ni",
+  "senderEmail": null,
+  "senderPhone": "886987654321",
+  "senderUserId": "8526543210",
+  "senderType": "customer",
+  "messageType": "text",
+  "message": "Hello, I need help with my order.",
+  "mediaUrl": null,
+  "channel": {
+    "platform": "whatsapp",
+    "channelId": "85298765432"
+  },
+  "roomId": "whatsapp_85298765432_8526543210",
+  "customerUserId": "8526543210",
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "messageStatus": "delivered"
+}
+```
+
+---
+
+## POST /v1/rooms/assign-agent — Assign Agent
+
+- **API 目前開發文件連結:** https://documenter.getpostman.com/view/2s9YsMBC4o#70f26131-973d-452d-922c-5cb90574f743
+
+`bsuid` is added as a request field. For WhatsApp platform, `userId` or `bsuid` must be provided (at least one).
+
+### Updated Request Object Structure
+
+| Field                 | Description                                                                                                     | Type       | Nullable |
+| :-------------------- | :-------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
+| platform              | Messaging Platform identifier. Possible values: `line`, `facebook`, `instagram`, `whatsapp`, `webchat`        | String     |          |
+| channelId             | Specific Messaging Platform Channel ID                                                                          | String     |          |
+| userId                | Specific Messaging Platform Channel User ID / User Phone Number (WhatsApp)                                      | String     | Yes      |
+| **bsuid**             | **WhatsApp Business-Scoped User ID. For WhatsApp: `userId` or `bsuid` must be provided (at least one).**      | **String** | **Yes**  |
+| agentEmail            | Agent login email in Omnichat                                                                                   | String     | Yes      |
+| agentPhone            | Agent login phone in Omnichat                                                                                   | String     | Yes      |
+| agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                           | String     | Yes      |
+| agentShopLocationCode | Agent shop location code                                                                                        | String     | Yes      |
+
+### Updated JSON example
+
+```json
+{
+  "platform": "whatsapp",
+  "channelId": "85298765432",
+  "userId": "8526543210",    // CHANGED: may be null when WhatsApp Username feature is enabled
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "agentEmail": "john.doe@example.com",
+  "agentEmployeeCode": "S0001"
+}
+```
+
+### Response
+
+`204 No Content`
+
+---
+
+## POST /v1/rooms/assign-collaborator — Assign Collaborator
+
+- **API 目前開發文件連結:** https://documenter.getpostman.com/view/2s9YsMBC4o#d5c19faf-ed5b-46d6-88f2-6ab3512625dc
+
+`bsuid` is added as a request field. For WhatsApp platform, `userId` or `bsuid` must be provided (at least one).
+
+### Updated Request Object Structure
+
+| Field                 | Description                                                                                                     | Type       | Nullable |
+| :-------------------- | :-------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
+| platform              | Messaging Platform identifier. Possible values: `line`, `facebook`, `instagram`, `whatsapp`, `webchat`        | String     |          |
+| channelId             | Specific Messaging Platform Channel ID                                                                          | String     |          |
+| userId                | Specific Messaging Platform Channel User ID / User Phone Number (WhatsApp)                                      | String     | Yes      |
+| **bsuid**             | **WhatsApp Business-Scoped User ID. For WhatsApp: `userId` or `bsuid` must be provided (at least one).**      | **String** | **Yes**  |
+| agentEmail            | Agent login email in Omnichat                                                                                   | String     | Yes      |
+| agentPhone            | Agent login phone in Omnichat                                                                                   | String     | Yes      |
+| agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                           | String     | Yes      |
+| agentShopLocationCode | Agent shop location code                                                                                        | String     | Yes      |
+
+### Updated JSON example
+
+```json
+{
+  "platform": "whatsapp",
+  "channelId": "85298765432",
+  "userId": null,    // CHANGED: may be null when WhatsApp Username feature is enabled
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "agentEmail": "john.doe@example.com"
+}
+```
+
+### Response
+
+`204 No Content`
+
+---
+
+## POST /v1/rooms/unassign-collaborator — Unassign Collaborator
+
+- **API 目前開發文件連結:** https://documenter.getpostman.com/view/2s9YsMBC4o#34bfee7a-c6bb-412a-81fa-90cf6d69b7a8
+
+`bsuid` is added as a request field for WhatsApp unsubscribe events.
+
+### Updated Request Object Structure
+
+| Field                 | Description                                                                                                     | Type       | Nullable |
+| :-------------------- | :-------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
+| platform              | Messaging Platform identifier. Possible values: `line`, `facebook`, `instagram`, `whatsapp`, `webchat`        | String     |          |
+| channelId             | Specific Messaging Platform Channel ID                                                                          | String     |          |
+| userId                | Specific Messaging Platform Channel User ID / User Phone Number (WhatsApp)                                      | String     | Yes      |
+| **bsuid**             | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes**  |
+| agentEmail            | Agent login email in Omnichat                                                                                   | String     | Yes      |
+| agentPhone            | Agent login phone in Omnichat                                                                                   | String     | Yes      |
+| agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                           | String     | Yes      |
+| agentShopLocationCode | Agent shop location code                                                                                        | String     | Yes      |
+
+### Updated JSON example
+
+```json
+{
+  "platform": "whatsapp",
+  "channelId": "85298765432",
+  "userId": "8526543210",    // CHANGED: may be null when WhatsApp Username feature is enabled
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "agentEmail": "john.doe@example.com"
+}
+```
+
+### Response
+
+`204 No Content`
+
+---
+
+## POST /v1/rooms/unassign-agent — Unassign Agent
+
+- **API 目前開發文件連結:** https://documenter.getpostman.com/view/2s9YsMBC4o#9ea26161-d084-48cc-9b6c-43a378562246
+
+`bsuid` is added as a request field for WhatsApp events.
+
+### Updated Request Object Structure
+
+| Field                 | Description                                                                                                     | Type       | Nullable |
+| :-------------------- | :-------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
+| platform              | Messaging Platform identifier. Possible values: `line`, `facebook`, `instagram`, `whatsapp`, `webchat`        | String     |          |
+| channelId             | Specific Messaging Platform Channel ID                                                                          | String     |          |
+| userId                | Specific Messaging Platform Channel User ID / User Phone Number (WhatsApp)                                      | String     | Yes      |
+| **bsuid**             | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes**  |
+| agentEmail            | Agent login email in Omnichat                                                                                   | String     | Yes      |
+| agentPhone            | Agent login phone in Omnichat                                                                                   | String     | Yes      |
+| agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                           | String     | Yes      |
+| agentShopLocationCode | Agent shop location code                                                                                        | String     | Yes      |
+
+### Updated JSON example
+
+```json
+{
+  "platform": "whatsapp",
+  "channelId": "85298765432",
+  "userId": "8526543210",    // CHANGED: may be null when WhatsApp Username feature is enabled
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "agentEmail": "john.doe@example.com"
+}
+```
+
+### Response
+
+`204 No Content`
+
+---
+
+## GET /v1/broadcast/{'{id}'}/recipients — Broadcast Recipients
+
+- **API 目前開發文件連結:** https://documenter.getpostman.com/view/2s9YsMBC4o#22901cfb-0713-40a8-bad1-a8fa15423ad3
+
+`bsuid` is added to each recipient item in the broadcast recipients response for WhatsApp contacts.
+
+### Updated Response Object Structure
+
+| Field       | Description                                                                                                     | Type       | Nullable |
+| :---------- | :-------------------------------------------------------------------------------------------------------------- | :--------- | :------- |
+| name        | Recipient's name                                                                                                | String     |          |
+| phone       | Recipient's phone number                                                                                        | String     | Yes      |
+| **bsuid**   | **WhatsApp Business-Scoped User ID. Only present for WhatsApp when the user has enabled the Username feature.** | **String** | **Yes**  |
+| success     | Whether the message was sent successfully                                                                       | Boolean    |          |
+| sentAt      | Sent time                                                                                                       | String     |          |
+| read        | Whether the message has been read                                                                               | Boolean    |          |
+| readAt      | Read time                                                                                                       | String     |          |
+| clicked     | Whether the message has been clicked                                                                            | Boolean    |          |
+| clickedAt   | Clicked time                                                                                                    | String     |          |
+| responded   | Whether the recipient has responded                                                                             | Boolean    |          |
+| respondedAt | Responded time                                                                                                  | String     |          |
+| messageId   | Message ID                                                                                                      | String     |          |
+| error       | Error message                                                                                                   | String     |          |
+
+### Updated JSON example
+
+```json
+{
+  "name": "Bruce Ni",
+  "phone": "8526543210",
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "success": true,
+  "sentAt": "2025-04-28T10:30:00.000+08:00",
+  "read": true,
+  "readAt": "2025-04-28T10:32:15.000+08:00",
+  "clicked": false,
+  "clickedAt": null,
+  "responded": false,
+  "respondedAt": null,
+  "messageId": "wamid.ABGGFlCGg0cvAgo-sJQh43L5Pe4W",
+  "error": null
+}
+```
+
 ## Webhooks Not Affected
 
 The following webhook topics are **not** affected by BSUID changes:
@@ -296,7 +577,7 @@ The following webhook topics are **not** affected by BSUID changes:
 ***
 
 ## Change Log
-
 | Date       | Change                                                                                                                                                                                                                                                         |
 | :--------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | 2026/05/06 | Added `bsuid` field to `customer/create`, `customer/update`, `customer/channel_subscribe`, `customer/channel_unsubscribe`, `customer/channel_omo_binding`, `direct_msg/status`, `whatsapp_flow/flow_create`, `ticket/create`, `ticket/update` webhook payloads |
+| 2026/06/01 | Added `bsuid` field to `GET /v1/messages`, `GET /v1/messages/{messageId}`, `POST /v1/rooms/assign-agent`, `POST /v1/rooms/assign-collaborator`, `POST /v1/rooms/unassign-collaborator`, `POST /v1/rooms/unassign-agent`, `GET /v1/broadcast/{id}/recipients` |
