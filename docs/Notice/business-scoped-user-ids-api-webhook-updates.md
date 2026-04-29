@@ -272,17 +272,6 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 
 <br />
 
-## Webhooks Not Affected
-
-The following webhook topics are **not** affected by BSUID changes:
-
-* `broadcast_msg/status`
-* `customer/channel_phone_binding`
-* `lon/send_sms`
-* `ticket/delete`
-
-<br />
-
 # Open API
 
 Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supported by June. All other APIs will be supported by mid-to-late May.
