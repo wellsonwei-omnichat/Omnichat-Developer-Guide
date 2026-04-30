@@ -280,9 +280,9 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 <br />
 
-## Contacts API
+# Contacts API
 
-### Get contacts
+## Get contacts request and response
 
 `bsuid` is added as a query parameter and response field for WhatsApp contacts. When querying by `bsuid`, `channelId` must also be provided.
 
@@ -329,7 +329,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 | agentLocationCode | Shop location code of the agent bound to the contact             | String     | Yes                  |
 | customAttributes  | Contact's custom attributes                                      | Array      |                      |
 
-#### Updated JSON example
+#### Updated response JSON example
 
 ```json
 {
@@ -367,7 +367,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 }
 ```
 
-### Upsert a Contact
+## Upsert a Contact request 
 
 `bsuid` is added as a query parameter for WhatsApp contacts.
 
@@ -380,7 +380,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 | userId    | Contact's user ID / User Phone Number (WhatsApp) (query param)     | String     |          |
 | **bsuid** | **WhatsApp Business-Scoped User ID (query param). WhatsApp only.** | **String** | **Yes**  |
 
-#### Updated example
+#### Updated request example
 
 ```
 PUT /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491208655302741918
@@ -396,7 +396,7 @@ PUT /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491208
 }
 ```
 
-### Delete Contact by User ID
+## Delete Contact by User ID request
 
 `bsuid` is added as a query parameter for WhatsApp contacts.
 
@@ -409,15 +409,15 @@ PUT /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491208
 | userId    | Contact's user ID / User Phone Number (WhatsApp) (query param)     | String     |          |
 | **bsuid** | **WhatsApp Business-Scoped User ID (query param). WhatsApp only.** | **String** | **Yes**  |
 
-#### Updated example
+#### Updated request example
 
 ```
 DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491208655302741918
 ```
 
-## Customers API
+# Customers API
 
-### Get customer detail by member ID
+## Get customer detail by member ID response
 
 `bsuid` is added inside each WhatsApp entry of the `linkedUsers` array.
 
@@ -434,7 +434,7 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 | roomId          | ID of chat room. Always `null` for `platform=webchat`.                                           | String     | Yes                  |
 | subscribed      | Whether the customer has subscribed to this channel                                              | Boolean    |                      |
 
-#### Updated JSON example
+#### Updated response JSON example
 
 ```json
 {
@@ -455,9 +455,9 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 }
 ```
 
-## Tag API
+# Tag API
 
-### Get tagging log records
+## Get tagging log records response
 
 `bsuid` is added as a response field for WhatsApp tag log entries.
 
@@ -474,7 +474,7 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 | source    | Source of the tag action                                         | String     |                      |
 | messageId | Associated message ID                                            | String     | Yes                  |
 
-#### Updated JSON example
+#### Updated response JSON example
 
 ```json
 {
@@ -496,9 +496,9 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 
 <br />
 
-## Rooms API
+# Rooms API
 
-### Assign follow up agent request
+## Assign follow up agent request
 
 **API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#70f26131-973d-452d-922c-5cb90574f743](https://documenter.getpostman.com/view/2s9YsMBC4o#70f26131-973d-452d-922c-5cb90574f743)
 
@@ -532,7 +532,7 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 
 <br />
 
-### Assign collaborator request
+## Assign collaborator request
 
 **API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#d5c19faf-ed5b-46d6-88f2-6ab3512625dc](https://documenter.getpostman.com/view/2s9YsMBC4o#d5c19faf-ed5b-46d6-88f2-6ab3512625dc)
 
@@ -557,15 +557,15 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 {
   "platform": "whatsapp",
   "channelId": "85298765432",
-  "userId": null,    // CHANGED: may be null when a WhatsApp user enables Username feature
+  "userId": null,    
   "bsuid": "US.13491208655302741918",    // ADDED
   "agentEmail": "john.doe@example.com"
 }
 ```
 
-###
+<br />
 
-### Unassign agent request
+## Unassign agent request
 
 **API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#9ea26161-d084-48cc-9b6c-43a378562246](https://documenter.getpostman.com/view/2s9YsMBC4o#9ea26161-d084-48cc-9b6c-43a378562246)
 
@@ -590,7 +590,7 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 {
   "platform": "whatsapp",
   "channelId": "85298765432",
-  "userId": "8526543210",    // CHANGED: may be null when a WhatsApp user enables Username feature
+  "userId": "8526543210",    
   "bsuid": "US.13491208655302741918",    // ADDED
   "agentEmail": "john.doe@example.com"
 }
@@ -598,7 +598,7 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 
 <br />
 
-### Unassign collaborator request
+## Unassign collaborator request
 
 **API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#34bfee7a-c6bb-412a-81fa-90cf6d69b7a8](https://documenter.getpostman.com/view/2s9YsMBC4o#34bfee7a-c6bb-412a-81fa-90cf6d69b7a8)
 
@@ -623,7 +623,7 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 {
   "platform": "whatsapp",
   "channelId": "85298765432",
-  "userId": "8526543210",    // CHANGED: may be null when a WhatsApp user enables Username feature
+  "userId": "8526543210",    
   "bsuid": "US.13491208655302741918",    // ADDED
   "agentEmail": "john.doe@example.com"
 }
@@ -631,9 +631,9 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 
 <br />
 
-## Messaging API
+# Messaging API
 
-### Get chat history response
+## Get chat history response
 
 **API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#a696226b-c319-4db3-a229-92cfdeba804d](https://documenter.getpostman.com/view/2s9YsMBC4o#a696226b-c319-4db3-a229-92cfdeba804d)
 
@@ -686,7 +686,7 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 }
 ```
 
-### Get message details response
+## Get message details response
 
 **API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#b7e92d26-136f-474d-8be4-be3c3e726e1b](https://documenter.getpostman.com/view/2s9YsMBC4o#b7e92d26-136f-474d-8be4-be3c3e726e1b)
 
@@ -739,15 +739,15 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 }
 ```
 
-### Send direct message
+## Send direct message reqeust
 
 Getting things ready
 
 <br />
 
-## Broadcast API
+# Broadcast API
 
-### Get broadcast recipient list response
+## Get broadcast recipient list response
 
 **API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#22901cfb-0713-40a8-bad1-a8fa15423ad3](https://documenter.getpostman.com/view/2s9YsMBC4o#22901cfb-0713-40a8-bad1-a8fa15423ad3)
 
@@ -793,7 +793,7 @@ Getting things ready
 
 <br />
 
-### Send broadcast
+## Send broadcast request
 
 Getting things ready
 
