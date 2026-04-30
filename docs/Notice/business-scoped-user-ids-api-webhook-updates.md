@@ -221,7 +221,7 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 
 `bsuid` is added as a top-level field for WhatsApp ticket events.
 
-### Updated Data Change Object Structure
+#### Updated Data Change Object Structure
 
 | Field               | Description                                                                        | Type       | Nullable             |
 | :------------------ | :--------------------------------------------------------------------------------- | :--------- | :------------------- |
@@ -241,7 +241,7 @@ BSUIDs will begin appearing in webhooks in early May 2026.
 | firstResponseAt     | The first response time of this ticket                                             | String     |                      |
 | agentLogs           | List of Agent Logs. Default is an empty array                                      | Array      |                      |
 
-### Updated JSON example — create
+#### Updated JSON example — create
 
 ```json
 {
@@ -342,7 +342,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 `bsuid` is added as a request field. For WhatsApp platform, `userId` or `bsuid` must be provided (at least one).
 
-#### Updated Request Object Structure 
+#### Updated Request Object Structure
 
 | Field                 | Description                                                                                              | Type       | Nullable             |
 | :-------------------- | :------------------------------------------------------------------------------------------------------- | :--------- | :------------------- |
@@ -495,6 +495,28 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 **API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#b7e92d26-136f-474d-8be4-be3c3e726e1b](https://documenter.getpostman.com/view/2s9YsMBC4o#b7e92d26-136f-474d-8be4-be3c3e726e1b)
 
 `bsuid` is added to the message detail response for WhatsApp messages. The structure is the same as the chat history item above.
+
+#### Updated Response Object Structure
+
+| Field             | Description                                                      | Type       | Nullable             |
+| :---------------- | :--------------------------------------------------------------- | :--------- | :------------------- |
+| id                | Message ID                                                       | String     |                      |
+| time              | Message creation time (epoch millis)                             | Long       |                      |
+| senderName        | Sender's name                                                    | String     | Yes                  |
+| senderEmail       | Sender's email                                                   | String     | Yes                  |
+| senderPhone       | Sender's phone                                                   | String     | Yes                  |
+| senderUserId      | Sender's user ID                                                 | String     |                      |
+| senderType        | Sender type. Possible values: `customer`, `agent`, `bot`         | String     |                      |
+| messageType       | Message type                                                     | String     |                      |
+| message           | Message text content                                             | String     | Yes                  |
+| mediaUrl          | Media URL                                                        | String     | Yes                  |
+| channel           | Channel information object                                       | Object     |                      |
+| channel.platform  | Platform name                                                    | String     |                      |
+| channel.channelId | Channel ID                                                       | String     |                      |
+| roomId            | Room ID                                                          | String     |                      |
+| customerUserId    | Customer user ID / User Phone Number (WhatsApp)                  | String     | **Yes for WhatsApp** |
+| **bsuid**         | **WhatsApp Business-Scoped User ID. Only present for WhatsApp.** | **String** | **Yes**              |
+| messageStatus     | Message status                                                   | String     |                      |
 
 #### Updated JSON example
 
