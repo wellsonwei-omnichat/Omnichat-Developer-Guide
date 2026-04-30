@@ -367,7 +367,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 }
 ```
 
-## Upsert a Contact request 
+## Upsert a Contact request
 
 `bsuid` is added as a query parameter for WhatsApp contacts.
 
@@ -739,7 +739,7 @@ DELETE /contacts/WHATSAPP?channelId=85298765432&userId=8526543210&bsuid=US.13491
 }
 ```
 
-## Send direct message reqeust
+## Send direct message request (not ready)
 
 Getting things ready
 
@@ -793,7 +793,7 @@ Getting things ready
 
 <br />
 
-## Send broadcast request
+## Send broadcast request(not ready)
 
 Getting things ready
 
