@@ -793,11 +793,11 @@ Getting things ready
 
 <br />
 
-## Send broadcast request(not ready)
+## Send broadcast request (not ready)
 
 Getting things ready
 
-## WhatsApp Headless API
+## WhatsApp Headless API (not ready)
 
 The format changes align with the official WhatsApp BSUID specifications. Please refer to this document for detailed information.
 
