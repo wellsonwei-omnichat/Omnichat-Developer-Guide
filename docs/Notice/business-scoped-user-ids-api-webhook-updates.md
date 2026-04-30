@@ -308,7 +308,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 `bsuid` is added as a request field. For WhatsApp platform, `userId` or `bsuid` must be provided (at least one).
 
-### Updated Request Object Structure
+#### Updated Request Object Structure
 
 | Field                 | Description                                                                                              | Type       | Nullable             |
 | :-------------------- | :------------------------------------------------------------------------------------------------------- | :--------- | :------------------- |
@@ -321,7 +321,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 | agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                    | String     | Yes                  |
 | agentShopLocationCode | Agent shop location code                                                                                 | String     | Yes                  |
 
-### Updated JSON example
+#### Updated JSON example
 
 ```json
 {
@@ -334,8 +334,6 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 }
 ```
 
-###
-
 <br />
 
 ### Assign collaborator request
@@ -344,7 +342,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 `bsuid` is added as a request field. For WhatsApp platform, `userId` or `bsuid` must be provided (at least one).
 
-### Updated Request Object Structure 
+#### Updated Request Object Structure 
 
 | Field                 | Description                                                                                              | Type       | Nullable             |
 | :-------------------- | :------------------------------------------------------------------------------------------------------- | :--------- | :------------------- |
@@ -357,7 +355,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 | agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                    | String     | Yes                  |
 | agentShopLocationCode | Agent shop location code                                                                                 | String     | Yes                  |
 
-### Updated JSON example
+#### Updated JSON example
 
 ```json
 {
@@ -377,7 +375,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 `bsuid` is added as a request field for WhatsApp events.
 
-### Updated Request Object Structure
+#### Updated Request Object Structure
 
 | Field                 | Description                                                                                            | Type       | Nullable             |
 | :-------------------- | :----------------------------------------------------------------------------------------------------- | :--------- | :------------------- |
@@ -390,7 +388,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 | agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                  | String     | Yes                  |
 | agentShopLocationCode | Agent shop location code                                                                               | String     | Yes                  |
 
-### Updated JSON example
+#### Updated JSON example
 
 ```json
 {
@@ -410,7 +408,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 `bsuid` is added as a request field for WhatsApp unsubscribe events.
 
-### Updated Request Object Structure
+#### Updated Request Object Structure
 
 | Field                 | Description                                                                                            | Type       | Nullable             |
 | :-------------------- | :----------------------------------------------------------------------------------------------------- | :--------- | :------------------- |
@@ -423,7 +421,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 | agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                  | String     | Yes                  |
 | agentShopLocationCode | Agent shop location code                                                                               | String     | Yes                  |
 
-### Updated JSON example
+#### Updated JSON example
 
 ```json
 {
@@ -445,7 +443,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 `bsuid` is added to each message item in the chat history response for WhatsApp messages.
 
-### Updated Response Object Structure
+#### Updated Response Object Structure
 
 | Field             | Description                                                      | Type       | Nullable             |
 | :---------------- | :--------------------------------------------------------------- | :--------- | :------------------- |
@@ -467,7 +465,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 | **bsuid**         | **WhatsApp Business-Scoped User ID. Only present for WhatsApp.** | **String** | **Yes**              |
 | messageStatus     | Message status                                                   | String     |                      |
 
-### Updated JSON example
+#### Updated JSON example
 
 ```json
 {
@@ -498,7 +496,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 `bsuid` is added to the message detail response for WhatsApp messages. The structure is the same as the chat history item above.
 
-### Updated JSON example
+#### Updated JSON example
 
 ```json
 {
@@ -524,6 +522,8 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 ```
 
 ### Send direct message
+
+Getting things ready
 
 <br />
 
@@ -577,7 +577,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 ### Send broadcast
 
-<br />
+Getting things ready
 
 ## WhatsApp Headless API
 
