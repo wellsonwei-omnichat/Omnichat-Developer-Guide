@@ -435,13 +435,93 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 }
 ```
 
-###
+<br />
 
 ## Messaging API
 
-### Get chat history
+### Get chat history response
 
-### Get message details
+**API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#a696226b-c319-4db3-a229-92cfdeba804d](https://documenter.getpostman.com/view/2s9YsMBC4o#a696226b-c319-4db3-a229-92cfdeba804d)
+
+`bsuid` is added to each message item in the chat history response for WhatsApp messages.
+
+### Updated Response Object Structure
+
+| Field             | Description                                                      | Type       | Nullable             |
+| :---------------- | :--------------------------------------------------------------- | :--------- | :------------------- |
+| id                | Message ID                                                       | String     |                      |
+| time              | Message creation time (epoch millis)                             | Long       |                      |
+| senderName        | Sender's name                                                    | String     | Yes                  |
+| senderEmail       | Sender's email                                                   | String     | Yes                  |
+| senderPhone       | Sender's phone                                                   | String     | Yes                  |
+| senderUserId      | Sender's user ID                                                 | String     |                      |
+| senderType        | Sender type. Possible values: `customer`, `agent`, `bot`         | String     |                      |
+| messageType       | Message type                                                     | String     |                      |
+| message           | Message text content                                             | String     | Yes                  |
+| mediaUrl          | Media URL                                                        | String     | Yes                  |
+| channel           | Channel information object                                       | Object     |                      |
+| channel.platform  | Platform name                                                    | String     |                      |
+| channel.channelId | Channel ID                                                       | String     |                      |
+| roomId            | Room ID                                                          | String     |                      |
+| customerUserId    | Customer user ID / User Phone Number (WhatsApp)                  | String     | **Yes for WhatsApp** |
+| **bsuid**         | **WhatsApp Business-Scoped User ID. Only present for WhatsApp.** | **String** | **Yes**              |
+| messageStatus     | Message status                                                   | String     |                      |
+
+### Updated JSON example
+
+```json
+{
+  "id": "663a1b2c3d4e5f6789abcdef",
+  "time": 1714300800000,
+  "senderName": "Bruce Ni",
+  "senderEmail": null,
+  "senderPhone": "886987654321",
+  "senderUserId": "8526543210",
+  "senderType": "customer",
+  "messageType": "text",
+  "message": "Hello, I need help with my order.",
+  "mediaUrl": null,
+  "channel": {
+    "platform": "whatsapp",
+    "channelId": "85298765432"
+  },
+  "roomId": "whatsapp_85298765432_8526543210",
+  "customerUserId": "8526543210",	// CHANGED: may be empty when a WhatsApp user enables Username 
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "messageStatus": "delivered"
+}
+```
+
+### Get message details response
+
+**API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#b7e92d26-136f-474d-8be4-be3c3e726e1b](https://documenter.getpostman.com/view/2s9YsMBC4o#b7e92d26-136f-474d-8be4-be3c3e726e1b)
+
+`bsuid` is added to the message detail response for WhatsApp messages. The structure is the same as the chat history item above.
+
+### Updated JSON example
+
+```json
+{
+  "id": "663a1b2c3d4e5f6789abcdef",
+  "time": 1714300800000,
+  "senderName": "Bruce Ni",
+  "senderEmail": null,
+  "senderPhone": "886987654321",
+  "senderUserId": "8526543210",
+  "senderType": "customer",
+  "messageType": "text",
+  "message": "Hello, I need help with my order.",
+  "mediaUrl": null,
+  "channel": {
+    "platform": "whatsapp",
+    "channelId": "85298765432"
+  },
+  "roomId": "whatsapp_85298765432_8526543210",
+  "customerUserId": "8526543210",	// CHANGED: may be empty when a WhatsApp user enables Username feature 
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "messageStatus": "delivered"
+}
+```
 
 ### Send direct message
 
@@ -478,7 +558,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 ```json
 {
   "name": "Bruce Ni",
-  "phone": "8526543210",	// CHANGED: may be null when a WhatsApp user enables Username feature 
+  "phone": "8526543210",	// CHANGED: may be empty when a WhatsApp user enables Username feature 
   "bsuid": "US.13491208655302741918",    // ADDED
   "success": true,
   "sentAt": "2025-04-28T10:30:00.000+08:00",
