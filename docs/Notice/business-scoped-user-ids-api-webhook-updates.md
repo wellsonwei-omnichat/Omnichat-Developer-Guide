@@ -308,6 +308,37 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 ### Unassign agent
 
+**API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#9ea26161-d084-48cc-9b6c-43a378562246](https://documenter.getpostman.com/view/2s9YsMBC4o#9ea26161-d084-48cc-9b6c-43a378562246)
+
+`bsuid` is added as a request field for WhatsApp events.
+
+### Updated Request Object Structure
+
+| Field                 | Description                                                                                            | Type       | Nullable             |
+| :-------------------- | :----------------------------------------------------------------------------------------------------- | :--------- | :------------------- |
+| platform              | Messaging Platform identifier. Possible values: `line`, `facebook`, `instagram`, `whatsapp`, `webchat` | String     |                      |
+| channelId             | Specific Messaging Platform Channel ID                                                                 | String     |                      |
+| userId                | Specific Messaging Platform Channel User ID / User Phone Number (WhatsApp)                             | String     | **Yes for WhatsApp** |
+| **bsuid**             | **WhatsApp Business-Scoped User ID. Only present for WhatsApp.**                                       | **String** | **Yes**              |
+| agentEmail            | Agent login email in Omnichat                                                                          | String     | Yes                  |
+| agentPhone            | Agent login phone in Omnichat                                                                          | String     | Yes                  |
+| agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                  | String     | Yes                  |
+| agentShopLocationCode | Agent shop location code                                                                               | String     | Yes                  |
+
+### Updated JSON example
+
+```json
+{
+  "platform": "whatsapp",
+  "channelId": "85298765432",
+  "userId": "8526543210",    // CHANGED: may be null when a WhatsApp user enables Username feature
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "agentEmail": "john.doe@example.com"
+}
+```
+
+<br />
+
 ### Unassign collaborator
 
 <br />
@@ -324,7 +355,51 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 ## Broadcast API
 
-### Get broadcast recipient list
+### Get broadcast recipient list response
+
+**API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#22901cfb-0713-40a8-bad1-a8fa15423ad3](https://documenter.getpostman.com/view/2s9YsMBC4o#22901cfb-0713-40a8-bad1-a8fa15423ad3)
+
+`bsuid` is added to each recipient item in the broadcast recipients response for WhatsApp contacts.
+
+### Updated Response Object Structure
+
+| Field       | Description                                                     | Type       | Nullable |
+| :---------- | :-------------------------------------------------------------- | :--------- | :------- |
+| name        | Recipient's name                                                | String     |          |
+| phone       | Recipient's phone number                                        | String     | Yes      |
+| **bsuid**   | **WhatsApp Business-Scoped User ID. Only present for WhatsApp** | **String** | **Yes**  |
+| success     | Whether the message was sent successfully                       | Boolean    |          |
+| sentAt      | Sent time                                                       | String     |          |
+| read        | Whether the message has been read                               | Boolean    |          |
+| readAt      | Read time                                                       | String     |          |
+| clicked     | Whether the message has been clicked                            | Boolean    |          |
+| clickedAt   | Clicked time                                                    | String     |          |
+| responded   | Whether the recipient has responded                             | Boolean    |          |
+| respondedAt | Responded time                                                  | String     |          |
+| messageId   | Message ID                                                      | String     |          |
+| error       | Error message                                                   | String     |          |
+
+### Updated JSON example
+
+```json
+{
+  "name": "Bruce Ni",
+  "phone": "8526543210",	// CHANGED: may be null when a WhatsApp user enables Username feature 
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "success": true,
+  "sentAt": "2025-04-28T10:30:00.000+08:00",
+  "read": true,
+  "readAt": "2025-04-28T10:32:15.000+08:00",
+  "clicked": false,
+  "clickedAt": null,
+  "responded": false,
+  "respondedAt": null,
+  "messageId": "wamid.ABGGFlCGg0cvAgo-sJQh43L5Pe4W",
+  "error": null
+}
+```
+
+<br />
 
 ### Send broadcast
 
