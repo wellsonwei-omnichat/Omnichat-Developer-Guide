@@ -302,11 +302,76 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 ## Rooms API
 
-### Assign follow up agent
+### Assign follow up agent request
 
-### Assign collaborator
+**API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#70f26131-973d-452d-922c-5cb90574f743](https://documenter.getpostman.com/view/2s9YsMBC4o#70f26131-973d-452d-922c-5cb90574f743)
 
-### Unassign agent
+`bsuid` is added as a request field. For WhatsApp platform, `userId` or `bsuid` must be provided (at least one).
+
+### Updated Request Object Structure
+
+| Field                 | Description                                                                                              | Type       | Nullable             |
+| :-------------------- | :------------------------------------------------------------------------------------------------------- | :--------- | :------------------- |
+| platform              | Messaging Platform identifier. Possible values: `line`, `facebook`, `instagram`, `whatsapp`, `webchat`   | String     |                      |
+| channelId             | Specific Messaging Platform Channel ID                                                                   | String     |                      |
+| userId                | Specific Messaging Platform Channel User ID / User Phone Number (WhatsApp)                               | String     | **Yes for WhatsApp** |
+| **bsuid**             | **WhatsApp Business-Scoped User ID. For WhatsApp: `userId` or `bsuid` must be provided (at least one).** | **String** | **Yes**              |
+| agentEmail            | Agent login email in Omnichat                                                                            | String     | Yes                  |
+| agentPhone            | Agent login phone in Omnichat                                                                            | String     | Yes                  |
+| agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                    | String     | Yes                  |
+| agentShopLocationCode | Agent shop location code                                                                                 | String     | Yes                  |
+
+### Updated JSON example
+
+```json
+{
+  "platform": "whatsapp",
+  "channelId": "85298765432",
+  "userId": "8526543210",    // CHANGED: may be null when a WhatsApp user enables Username feature
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "agentEmail": "john.doe@example.com",
+  "agentEmployeeCode": "S0001"
+}
+```
+
+###
+
+<br />
+
+### Assign collaborator request
+
+**API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#d5c19faf-ed5b-46d6-88f2-6ab3512625dc](https://documenter.getpostman.com/view/2s9YsMBC4o#d5c19faf-ed5b-46d6-88f2-6ab3512625dc)
+
+`bsuid` is added as a request field. For WhatsApp platform, `userId` or `bsuid` must be provided (at least one).
+
+### Updated Request Object Structure 
+
+| Field                 | Description                                                                                              | Type       | Nullable             |
+| :-------------------- | :------------------------------------------------------------------------------------------------------- | :--------- | :------------------- |
+| platform              | Messaging Platform identifier. Possible values: `line`, `facebook`, `instagram`, `whatsapp`, `webchat`   | String     |                      |
+| channelId             | Specific Messaging Platform Channel ID                                                                   | String     |                      |
+| userId                | Specific Messaging Platform Channel User ID / User Phone Number (WhatsApp)                               | String     | **Yes for WhatsApp** |
+| **bsuid**             | **WhatsApp Business-Scoped User ID. For WhatsApp: `userId` or `bsuid` must be provided (at least one).** | **String** | **Yes**              |
+| agentEmail            | Agent login email in Omnichat                                                                            | String     | Yes                  |
+| agentPhone            | Agent login phone in Omnichat                                                                            | String     | Yes                  |
+| agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                    | String     | Yes                  |
+| agentShopLocationCode | Agent shop location code                                                                                 | String     | Yes                  |
+
+### Updated JSON example
+
+```json
+{
+  "platform": "whatsapp",
+  "channelId": "85298765432",
+  "userId": null,    // CHANGED: may be null when a WhatsApp user enables Username feature
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "agentEmail": "john.doe@example.com"
+}
+```
+
+###
+
+### Unassign agent request
 
 **API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#9ea26161-d084-48cc-9b6c-43a378562246](https://documenter.getpostman.com/view/2s9YsMBC4o#9ea26161-d084-48cc-9b6c-43a378562246)
 
@@ -339,9 +404,38 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 <br />
 
-### Unassign collaborator
+### Unassign collaborator request
 
-<br />
+**API doc:** [https://documenter.getpostman.com/view/2s9YsMBC4o#34bfee7a-c6bb-412a-81fa-90cf6d69b7a8](https://documenter.getpostman.com/view/2s9YsMBC4o#34bfee7a-c6bb-412a-81fa-90cf6d69b7a8)
+
+`bsuid` is added as a request field for WhatsApp unsubscribe events.
+
+### Updated Request Object Structure
+
+| Field                 | Description                                                                                            | Type       | Nullable             |
+| :-------------------- | :----------------------------------------------------------------------------------------------------- | :--------- | :------------------- |
+| platform              | Messaging Platform identifier. Possible values: `line`, `facebook`, `instagram`, `whatsapp`, `webchat` | String     |                      |
+| channelId             | Specific Messaging Platform Channel ID                                                                 | String     |                      |
+| userId                | Specific Messaging Platform Channel User ID / User Phone Number (WhatsApp)                             | String     | **Yes for WhatsApp** |
+| **bsuid**             | **WhatsApp Business-Scoped User ID. Only present for WhatsApp.**                                       | **String** | **Yes**              |
+| agentEmail            | Agent login email in Omnichat                                                                          | String     | Yes                  |
+| agentPhone            | Agent login phone in Omnichat                                                                          | String     | Yes                  |
+| agentEmployeeCode     | Agent employee code (Only for salesperson / sales manager agent user)                                  | String     | Yes                  |
+| agentShopLocationCode | Agent shop location code                                                                               | String     | Yes                  |
+
+### Updated JSON example
+
+```json
+{
+  "platform": "whatsapp",
+  "channelId": "85298765432",
+  "userId": "8526543210",    // CHANGED: may be null when a WhatsApp user enables Username feature
+  "bsuid": "US.13491208655302741918",    // ADDED
+  "agentEmail": "john.doe@example.com"
+}
+```
+
+###
 
 ## Messaging API
 
