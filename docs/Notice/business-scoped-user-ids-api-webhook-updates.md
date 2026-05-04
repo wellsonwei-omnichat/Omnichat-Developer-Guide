@@ -437,7 +437,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
       </td>
 
       <td>
-        Contact's user ID / User Phone Number (WhatsApp) (query param)  
+        Contact's user ID / User Phone Number (WhatsApp) (query param)
 
         **Use either userId or bsuid, but not both.**
       </td>
@@ -457,7 +457,7 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
       </td>
 
       <td>
-        **WhatsApp Business-Scoped User ID (query param)**  
+        **WhatsApp Business-Scoped User ID (query param)**
 
         **WhatsApp only. Use either userId or bsuid, but not both.**
       </td>
@@ -472,6 +472,10 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
     </tr>
   </tbody>
 </Table>
+
+<br />
+
+> **For WhatsApp**, exactly one of `userId` or `bsuid` must be provided. Providing both or neither will result in an error.
 
 #### Updated request example
 
