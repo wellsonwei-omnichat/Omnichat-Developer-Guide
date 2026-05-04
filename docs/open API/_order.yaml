@@ -1,4 +1,5 @@
 - authorization
+- rate-limits
 - send-notification-messages-to-contacts
 - bulk-upsert-orders-api
 - line-rich-menu-api
