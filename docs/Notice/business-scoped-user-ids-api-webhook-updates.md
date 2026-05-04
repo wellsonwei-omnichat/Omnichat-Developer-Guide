@@ -373,12 +373,105 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 #### Updated Request Parameters
 
-| Field     | Description                                                        | Type       | Nullable |
-| :-------- | :----------------------------------------------------------------- | :--------- | :------- |
-| platform  | Contact's messaging platform (path variable)                       | String     |          |
-| channelId | Contact's channel ID (query param)                                 | String     |          |
-| userId    | Contact's user ID / User Phone Number (WhatsApp) (query param)     | String     |          |
-| **bsuid** | **WhatsApp Business-Scoped User ID (query param). WhatsApp only.** | **String** | **Yes**  |
+<Table align={["left","left","left","left"]}>
+  <thead>
+    <tr>
+      <th>
+        Field
+      </th>
+
+      <th>
+        Description
+      </th>
+
+      <th>
+        Type
+      </th>
+
+      <th>
+        Nullable
+      </th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr>
+      <td>
+        platform
+      </td>
+
+      <td>
+        Contact's messaging platform (path variable)
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        channelId
+      </td>
+
+      <td>
+        Contact's channel ID (query param)
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        userId
+      </td>
+
+      <td>
+        Contact's user ID / User Phone Number (WhatsApp) (query param)  
+
+        **Use either userId or bsuid, but not both.**
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        **bsuid**
+      </td>
+
+      <td>
+        **WhatsApp Business-Scoped User ID (query param)**  
+
+        **WhatsApp only. Use either userId or bsuid, but not both.**
+      </td>
+
+      <td>
+        **String**
+      </td>
+
+      <td>
+        **Yes**
+      </td>
+    </tr>
+  </tbody>
+</Table>
 
 #### Updated request example
 
