@@ -5,8 +5,6 @@ hidden: false
 metadata:
   robots: index
 ---
-<br />
-
 **Starting July 15, 2026, the API will return a 429 error code if the Open API rate limit is exceeded**
 
 * Past the limit, the API will return a 429 Too Many Requests error.
