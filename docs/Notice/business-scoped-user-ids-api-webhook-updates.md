@@ -304,30 +304,30 @@ Send Direct Message, Send Broadcast, and WhatsApp Headless APIs will be supporte
 
 #### Updated Response Object Structure (each item)
 
-| Field             | Description                                                      | Type       | Nullable             |
-| :---------------- | :--------------------------------------------------------------- | :--------- | :------------------- |
-| channel           | Channel information object                                       | Object     |                      |
-| channel.platform  | Messaging platform                                               | String     |                      |
-| channel.channelId | Channel identifier                                               | String     |                      |
-| id                | Contact's user ID                                                | String     |                      |
-| name              | Contact's name                                                   | String     |                      |
-| lastMessageTime   | Last message received time (epoch ms)                            | Long       |                      |
-| subscribedAt      | Subscription time (epoch ms)                                     | Long       |                      |
-| unsubscribedAt    | Un-subscription time (epoch ms)                                  | Long       | Yes                  |
-| updatedAt         | Information last updated time (epoch ms)                         | Long       |                      |
-| tags              | Contact's tags                                                   | Array      |                      |
-| status            | Subscription status                                              | Boolean    |                      |
-| note              | Contact's note                                                   | String     | Yes                  |
-| email             | Contact's email                                                  | String     | Yes                  |
-| phone             | Contact's phone / User Phone Number (WhatsApp)                   | String     | **Yes for WhatsApp** |
-| **bsuid**         | **WhatsApp Business-Scoped User ID. Only present for WhatsApp.** | **String** | **Yes**              |
-| memberId          | Contact's member ID                                              | String     | Yes                  |
-| agentName         | Name of the agent bound to the contact                           | String     | Yes                  |
-| agentEmployeeCode | Employee code of the agent bound to the contact                  | String     | Yes                  |
-| agentBindTime     | Time when the agent was bound to the contact (epoch ms)          | Long       | Yes                  |
-| agentLocationName | Shop location name of the agent bound to the contact             | String     | Yes                  |
-| agentLocationCode | Shop location code of the agent bound to the contact             | String     | Yes                  |
-| customAttributes  | Contact's custom attributes                                      | Array      |                      |
+| Field             | Description                                                      | Type       | Nullable |
+| :---------------- | :--------------------------------------------------------------- | :--------- | :------- |
+| channel           | Channel information object                                       | Object     |          |
+| channel.platform  | Messaging platform                                               | String     |          |
+| channel.channelId | Channel identifier                                               | String     |          |
+| id                | Contact's user ID                                                | String     |          |
+| name              | Contact's name                                                   | String     |          |
+| lastMessageTime   | Last message received time (epoch ms)                            | Long       |          |
+| subscribedAt      | Subscription time (epoch ms)                                     | Long       |          |
+| unsubscribedAt    | Un-subscription time (epoch ms)                                  | Long       | Yes      |
+| updatedAt         | Information last updated time (epoch ms)                         | Long       |          |
+| tags              | Contact's tags                                                   | Array      |          |
+| status            | Subscription status                                              | Boolean    |          |
+| note              | Contact's note                                                   | String     | Yes      |
+| email             | Contact's email                                                  | String     | Yes      |
+| phone             | Contact's phone / User Phone Number (WhatsApp)                   | String     | Yes      |
+| **bsuid**         | **WhatsApp Business-Scoped User ID. Only present for WhatsApp.** | **String** | **Yes**  |
+| memberId          | Contact's member ID                                              | String     | Yes      |
+| agentName         | Name of the agent bound to the contact                           | String     | Yes      |
+| agentEmployeeCode | Employee code of the agent bound to the contact                  | String     | Yes      |
+| agentBindTime     | Time when the agent was bound to the contact (epoch ms)          | Long       | Yes      |
+| agentLocationName | Shop location name of the agent bound to the contact             | String     | Yes      |
+| agentLocationCode | Shop location code of the agent bound to the contact             | String     | Yes      |
+| customAttributes  | Contact's custom attributes                                      | Array      |          |
 
 #### Updated response JSON example
 
