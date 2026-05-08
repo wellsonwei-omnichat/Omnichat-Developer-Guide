@@ -10,6 +10,8 @@ metadata:
 next:
   description: ''
 ---
+<br />
+
 This document will introduce various events related to the topics we provide, as well as the fields in the data change object that will be sent during event notifications.
 
 # customer/create and customer/update
@@ -77,8 +79,7 @@ Note: Bulk operations (e.g., importing customers) temporarily do not support sen
       </td>
 
       <td>
-        Platform name
-        Possible values: **line**, **facebook**, **instagram**, or **whatsapp**
+        Platform name Possible values: **line**, **facebook**, **instagram**, or **whatsapp**
       </td>
     </tr>
 
@@ -103,7 +104,17 @@ Note: Bulk operations (e.g., importing customers) temporarily do not support sen
         * LINE: LINE User ID
         * Facebook: Facebook PSID
         * Instagram: Instagram IGSID
-        * WhatsApp: User Phone Number
+        * WhatsApp: User Phone Number. May be `null` when the WhatsApp user enables the Username feature
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        bsuid
+      </td>
+
+      <td>
+        WhatsApp Business-Scoped User ID. Only present for WhatsApp contacts. May be `null`
       </td>
     </tr>
   </tbody>
@@ -131,9 +142,10 @@ Note: Bulk operations (e.g., importing customers) temporarily do not support sen
    ],
    "socialContacts": [
       {
-         "platform": "facebook",
-         "channelId": "101892172823806",
-         "userId": "6037142306382747"
+         "platform": "whatsapp",
+         "channelId": "85298765432",
+         "userId": "8526543210",
+         "bsuid": "US.13491208655302741918"
       }
    ],
    "createdAt": "2023-11-09T14:09:57.511+08:00",
@@ -160,92 +172,16 @@ Note: Bulk operations (e.g., importing customers) temporarily do not support sen
 
 ## Data Change Object Structure
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Field
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        memberId
-      </td>
-
-      <td>
-        Customer's unique ID
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        email
-      </td>
-
-      <td>
-        Customer's email
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        phone
-      </td>
-
-      <td>
-        Customer's phone
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        name
-      </td>
-
-      <td>
-        Customer's name
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        platform
-      </td>
-
-      <td>
-        Contact platform name
-        (The value could be one of **line**, **facebook**, **instagram**, or **whatsapp**)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        channelId
-      </td>
-
-      <td>
-        Contact channel ID / WABA Phone Number (Whatsapp)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        userId
-      </td>
-
-      <td>
-        Contact user ID / User Phone Number (Whatsapp)
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Field     | Description                                                                                                       |
+| :-------- | :---------------------------------------------------------------------------------------------------------------- |
+| memberId  | Customer's unique ID                                                                                              |
+| email     | Customer's email                                                                                                  |
+| phone     | Customer's phone                                                                                                  |
+| name      | Customer's name                                                                                                   |
+| platform  | Contact platform name (The value could be one of **line**, **facebook**, **instagram**, or **whatsapp**)          |
+| channelId | Contact channel ID / WABA Phone Number (Whatsapp)                                                                 |
+| userId    | Contact user ID / User Phone Number (Whatsapp). May be `null` when the WhatsApp user enables the Username feature |
+| bsuid     | WhatsApp Business-Scoped User ID. Only present for WhatsApp. May be `null`                                        |
 
 ## Data Change Object Example
 
@@ -255,9 +191,10 @@ Note: Bulk operations (e.g., importing customers) temporarily do not support sen
   "email": "bruce.ni@omnichat.ai",
   "phone": "886987654321",
   "name": "Bruce Ni",
-  "platform": "line",
-  "channelId": "1656935362",
-  "userId": "U36bd7222a92b5cb04e4716f0c9c0dea6"
+  "platform": "whatsapp",
+  "channelId": "85298765432",
+  "userId": "8526543210",
+  "bsuid": "US.13491208655302741918"
 }
 ```
 
@@ -267,62 +204,12 @@ Events related to this topic occur when customers within the social platform cha
 
 ## Data Change Object Structure
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Field
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        platform
-      </td>
-
-      <td>
-        Platform identifier
-        (Currently only support **line**)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        channelId
-      </td>
-
-      <td>
-        Contact channel ID
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        userId
-      </td>
-
-      <td>
-        Contact user ID
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        phone
-      </td>
-
-      <td>
-        Customer's phone
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Field     | Description                                           |
+| :-------- | :---------------------------------------------------- |
+| platform  | Platform identifier (Currently only support **line**) |
+| channelId | Contact channel ID                                    |
+| userId    | Contact user ID                                       |
+| phone     | Customer's phone                                      |
 
 ## Data Change Object Example
 
@@ -419,7 +306,7 @@ Events related to this topic occur when
         Customer's User ID.
 
         * For `line` → LINE User ID
-        * For `whatsapp` → WhatsApp Phone Number
+        * For `whatsapp` → WhatsApp Phone Number. May be `null` when the WhatsApp user enables the Username feature
       </td>
 
       <td>
@@ -427,7 +314,25 @@ Events related to this topic occur when
       </td>
 
       <td>
+        Nullable (WhatsApp only)
+      </td>
+    </tr>
 
+    <tr>
+      <td>
+        bsuid
+      </td>
+
+      <td>
+        WhatsApp Business-Scoped User ID. Only present for WhatsApp
+      </td>
+
+      <td>
+        String
+      </td>
+
+      <td>
+        Nullable
       </td>
     </tr>
 
@@ -638,6 +543,7 @@ Events related to this topic occur when
   "platform": "whatsapp",
   "channelId": "85298765432",
   "userId": "8526543210",
+  "bsuid": "US.13491208655302741918",
   "memberId": "bruce001",
   "email": "bruce.ni@omnichat.ai",
   "phone": "886987654321",
@@ -650,8 +556,6 @@ Events related to this topic occur when
   "agentPhotoUrl": "https://media-cdn.omnichat.ai/your_image.png"
 }
 ```
-
-<br />
 
 # direct_msg/status
 
@@ -667,112 +571,18 @@ The various **statuses** are explained below:
 
 ## Data Change Object Structure
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Field
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        trackId
-      </td>
-
-      <td>
-        Message track ID
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        messageIds
-      </td>
-
-      <td>
-        Message IDs
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        platform
-      </td>
-
-      <td>
-        Contact platform name
-        (The value could be one of **line**, **facebook**, **instagram**, or **whatsapp**)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        channelId
-      </td>
-
-      <td>
-        Contact channel ID / WABA Phone Number (Whatsapp)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        userId
-      </td>
-
-      <td>
-        Contact user ID / User Phone Number (Whatsapp)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        memberId
-      </td>
-
-      <td>
-        Customer's unique ID
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        email
-      </td>
-
-      <td>
-        Customer's email
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        phone
-      </td>
-
-      <td>
-        Customer's phone
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        status
-      </td>
-
-      <td>
-        Message status
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Field      | Description                                                                                                       |
+| :--------- | :---------------------------------------------------------------------------------------------------------------- |
+| trackId    | Message track ID                                                                                                  |
+| messageIds | Message IDs                                                                                                       |
+| platform   | Contact platform name (The value could be one of **line**, **facebook**, **instagram**, or **whatsapp**)          |
+| channelId  | Contact channel ID / WABA Phone Number (Whatsapp)                                                                 |
+| userId     | Contact user ID / User Phone Number (Whatsapp). May be `null` when the WhatsApp user enables the Username feature |
+| memberId   | Customer's unique ID                                                                                              |
+| email      | Customer's email                                                                                                  |
+| phone      | Customer's phone                                                                                                  |
+| status     | Message status                                                                                                    |
+| bsuid      | WhatsApp Business-Scoped User ID. Only present for WhatsApp. May be `null`                                        |
 
 ## Data Change Object Example
 
@@ -782,13 +592,14 @@ The various **statuses** are explained below:
   "messageIds": [
     "testing-message-id"
   ],
-  "platform": "line",
-  "channelId": "1656935362",
-  "userId": "U36bd7222a92b5cb04e4716f0c9c0dea6",
+  "platform": "whatsapp",
+  "channelId": "85298765432",
+  "userId": "8526543210",
   "memberId": "bruce001",
   "email": "bruce.ni@omnichat.ai",
   "phone": "886987654321",
-  "status": "read"
+  "status": "delivered",
+  "bsuid": "US.13491208655302741918"
 }
 ```
 
@@ -828,7 +639,17 @@ Events related to this topic occur when customers complete the WhatsApp Flow for
       </td>
 
       <td>
-        Customer's phone
+        Customer's phone. May be `null` when the WhatsApp user enables the Username feature
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        bsuid
+      </td>
+
+      <td>
+        WhatsApp Business-Scoped User ID. May be `null`
       </td>
     </tr>
 
@@ -868,12 +689,9 @@ Events related to this topic occur when customers complete the WhatsApp Flow for
       </td>
 
       <td>
-        The original response from WhatsApp
-        See **interactive.nfm_reply.response_json** in 
+        The original response from WhatsApp See **interactive.nfm_reply.response_json** in
 
         [Meta Offical Doc](https://developers.facebook.com/docs/whatsapp/flows/reference/flowswebhooks)
-
-
       </td>
     </tr>
   </tbody>
@@ -885,6 +703,7 @@ Events related to this topic occur when customers complete the WhatsApp Flow for
 {
   "name": "Omnichat",
   "phone": "85261234567",
+  "bsuid": "US.13491208655302741918",
   "flowId": "1234567890",
   "flowName": "Example Flow",
   "responseTime": "2024-07-01T17:42:24.333+08:00",
@@ -921,12 +740,9 @@ Events related to this topic occur when Omnichat fails to receive the LON webhoo
       </td>
 
       <td>
-        The ID of `Notification Message`, each call has 1 triggerId
-        See 
+        The ID of `Notification Message`, each call has 1 triggerId See
 
         [https://developers.omnichat.ai/docs/send-notification-messages-to-contacts](https://developers.omnichat.ai/docs/send-notification-messages-to-contacts)
-
-
       </td>
     </tr>
 
@@ -936,11 +752,9 @@ Events related to this topic occur when Omnichat fails to receive the LON webhoo
       </td>
 
       <td>
-        Please `Copy 'Setting ID'` in 
+        Please `Copy 'Setting ID'` in
 
         [LINE NotiPress](https://console.omnichat.ai/line-notipress)
-
-
       </td>
     </tr>
 
@@ -998,247 +812,32 @@ Events related to this topic occur when a chat-related ticket is updated.
 
 ## Data Change Object Structure
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Field
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        ticketId
-      </td>
-
-      <td>
-        A sequence number
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        subject
-      </td>
-
-      <td>
-        The subject of this ticket
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        customerName
-      </td>
-
-      <td>
-        Customer's name
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        isGroupChat
-      </td>
-
-      <td>
-        Flag used to determine if the ticket is related to a group chat
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        isCollaborationChat
-      </td>
-
-      <td>
-        Flag used to determine if the ticket is related to a collaboration chat
-        `This flag is editable`
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        platform
-      </td>
-
-      <td>
-        Supported values:
-        -`webchat`
-        -`line`
-        -`whatsapp`
-        -`wechat`
-        -`instagram`
-        -`facebook`
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        channelId
-      </td>
-
-      <td>
-        Contact channel ID / WABA Phone Number (Whatsapp)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        userId
-      </td>
-
-      <td>
-        Contact user ID / User Phone Number (Whatsapp)
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        status
-      </td>
-
-      <td>
-        Supported values:
-        -`Open`
-        -`InProgress`
-        -`Closed`
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        createdAt
-      </td>
-
-      <td>
-        Creation time
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        closedAt
-      </td>
-
-      <td>
-        Closed time when the ticket status is set to `Closed`.
-        Always be `null` for `ticket/create` webhook
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        firstFollowUpAt
-      </td>
-
-      <td>
-        Refer to these `actionType`
-        -`FOLLOW_UP_FROM_OPEN`
-        -`FOLLOW_UP_FROM_CHATBOT`
-        -`REOPEN`
-        -`NINEONEAPP_SYNC`
-        -`WHATSAPP_ADD_CONVERSATION`
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        firstResponseAt
-      </td>
-
-      <td>
-        The first response time of this ticket
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        agentLogs
-      </td>
-
-      <td>
-        List of `Agent Logs`
-        Default is an empty array
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Field               | Description                                                                                                                            |
+| :------------------ | :------------------------------------------------------------------------------------------------------------------------------------- |
+| ticketId            | A sequence number                                                                                                                      |
+| subject             | The subject of this ticket                                                                                                             |
+| customerName        | Customer's name                                                                                                                        |
+| isGroupChat         | Flag used to determine if the ticket is related to a group chat                                                                        |
+| isCollaborationChat | Flag used to determine if the ticket is related to a collaboration chat `This flag is editable`                                        |
+| platform            | Supported values: -`webchat` -`line` -`whatsapp` -`wechat` -`instagram` -`facebook`                                                    |
+| channelId           | Contact channel ID / WABA Phone Number (Whatsapp)                                                                                      |
+| userId              | Contact user ID / User Phone Number (Whatsapp). May be `null` when the WhatsApp user enables the Username feature                      |
+| bsuid               | WhatsApp Business-Scoped User ID. Only present for WhatsApp. May be `null`                                                             |
+| status              | Supported values: -`Open` -`InProgress` -`Closed`                                                                                      |
+| createdAt           | Creation time                                                                                                                          |
+| closedAt            | Closed time when the ticket status is set to `Closed`. Always be `null` for `ticket/create` webhook                                    |
+| firstFollowUpAt     | Refer to these `actionType` -`FOLLOW_UP_FROM_OPEN` -`FOLLOW_UP_FROM_CHATBOT` -`REOPEN` -`NINEONEAPP_SYNC` -`WHATSAPP_ADD_CONVERSATION` |
+| firstResponseAt     | The first response time of this ticket                                                                                                 |
+| agentLogs           | List of `Agent Logs` Default is an empty array                                                                                         |
 
 ### Agent Logs
 
-<Table align={["left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Field
-      </th>
-
-      <th>
-        Description
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        agentId
-      </td>
-
-      <td>
-        Agent's ID
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        agentName
-      </td>
-
-      <td>
-        Agent's name
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        actionType
-      </td>
-
-      <td>
-        `NEW_ROOM` : New conversation created
-        `FOLLOW_UP_FROM_OPEN` : Agent follows up the conversation from open case
-        `FOLLOW_UP_FROM_CHATBOT` : Agent follows up the conversation from open chatbot case
-        `TAKE_OVER` : Agent takes over the conversation from another agent
-        `PASS` : The conversation is passed to another agent
-        `REOPEN` : The conversation is reopened
-        `NINEONEAPP_SYNC` : Agent follows up via 91App data sync
-        `OMO_OVERWRITE` : Agent is changed due to users scan the OMO QRCode
-        `WHATSAPP_ADD_CONVERSATION` : A new WhatsApp conversation is created by the agent
-        `OMO_CLOSE_ASSIGN` : The bound sales agent becomes the follow-up agent when the conversation is closed
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        occurredAt
-      </td>
-
-      <td>
-        The time when action occurs
-      </td>
-    </tr>
-  </tbody>
-</Table>
-
-<br />
+| Field      | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
+| :--------- | :--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| agentId    | Agent's ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               |
+| agentName  | Agent's name                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             |
+| actionType | `NEW_ROOM` : New conversation created `FOLLOW_UP_FROM_OPEN` : Agent follows up the conversation from open case `FOLLOW_UP_FROM_CHATBOT` : Agent follows up the conversation from open chatbot case `TAKE_OVER` : Agent takes over the conversation from another agent `PASS` : The conversation is passed to another agent `REOPEN` : The conversation is reopened `NINEONEAPP_SYNC` : Agent follows up via 91App data sync `OMO_OVERWRITE` : Agent is changed due to users scan the OMO QRCode `WHATSAPP_ADD_CONVERSATION` : A new WhatsApp conversation is created by the agent `OMO_CLOSE_ASSIGN` : The bound sales agent becomes the follow-up agent when the conversation is closed |
+| occurredAt | The time when action occurs                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              |
 
 ## Data Change Object Example - create
 
@@ -1249,9 +848,10 @@ Events related to this topic occur when a chat-related ticket is updated.
     "customerName": "Omnichat",
     "isGroupChat": false,
     "isCollaborationChat": false,
-    "platform": "line",
-    "channelId": "e0c32549-e9b0-11ef-be98-029459aa0a08",
-    "userId": "Ued81902b3a32475898b6b16f970686af",
+    "platform": "whatsapp",
+    "channelId": "85298765432",
+    "userId": "8526543210",
+    "bsuid": "US.13491208655302741918",
     "status": "Open",
     "createdAt": "2025-02-13T13:54:56.848+08:00",
     "closedAt": null,
@@ -1268,8 +868,6 @@ Events related to this topic occur when a chat-related ticket is updated.
 }
 ```
 
-<br />
-
 ## Data Change Object Example - update
 
 ```json
@@ -1279,9 +877,10 @@ Events related to this topic occur when a chat-related ticket is updated.
     "customerName": "Omnichat",
     "isGroupChat": false,
     "isCollaborationChat": false,
-    "platform": "line",
-    "channelId": "e0c32549-e9b0-11ef-be98-029459aa0a08",
-    "userId": "Ued81902b3a32475898b6b16f970686af",
+    "platform": "whatsapp",
+    "channelId": "85298765432",
+    "userId": "8526543210",
+    "bsuid": "US.13491208655302741918",
     "status": "Closed",
     "createdAt": "2025-02-13T13:54:56.848+08:00",
     "closedAt": "2025-02-13T13:55:06.829+08:00",
@@ -1341,6 +940,19 @@ The various **statuses** are explained below:
 | status      | Message status                                            |
 
 ## Data Change Object Example
+
+```json
+{
+  "broadcastId": "b59b93d4-a179-4b32-ab75-dc573fae6004",
+  "platform": "line",
+  "channelId": "1656935362",
+  "userId": "U36bd7222a92b5cb04e4716f0c9c0dea6",
+  "memberId": "bruce001",
+  "email": "bruce.ni@omnichat.ai",
+  "phone": "886987654321",
+  "status": "read"
+}
+```
 
 ```json
 {
