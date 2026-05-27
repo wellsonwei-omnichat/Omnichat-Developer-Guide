@@ -58,6 +58,55 @@ next:
 | quantity  | Integer | Y        | Number of units of the item in the order                     |
 | price     | Float   | Y        | Price per unit of the item (before tax and discounts)        |
 
+## Request body example
+
+```json
+{
+  "orders": [
+    {
+      "memberId": "member-123",
+      "orderId": "order-001",
+      "orderName": "#10001",
+      "orderDate": "2025-04-11T15:30:00",
+      "orderAmount": 299.99,
+      "orderCurrency": "USD$",
+      "orderStatus": "Completed",
+      "paymentMethod": "Credit Card",
+      "paymentStatus": "Paid",
+      "paymentFee": 5.00,
+      "deliveryMethod": "Home Delivery",
+      "deliveryInfo": "Recipient: John Smith, Address: 123 Main St, New York, NY 10001",
+      "deliveryStatus": "Delivered",
+      "deliveryFee": 15.00,
+      "deliveryTrackingNumber": "TRACK123456",
+      "items": [
+        {
+          "productId": "prod-001",
+          "name": "Sports T-Shirt",
+          "brand": "Nike",
+          "category": "Apparel",
+          "variant": "Blue-L",
+          "quantity": 2,
+          "price": 49.99
+        },
+        {
+          "productId": "prod-002",
+          "name": "Running Shorts",
+          "brand": "Nike",
+          "category": "Apparel",
+          "variant": "Black-M",
+          "quantity": 1,
+          "price": 39.99
+        }
+      ],
+      "totalItemsAmount": 139.97,
+      "orderDiscount": 10.00,
+      "totalTaxFee": 12.60
+    }
+  ]
+}
+```
+
 # Response
 
 ## Response body
@@ -73,3 +122,17 @@ next:
 | matchedCount  | Integer | Number of orders found using `orderId` that match the query criteria             |
 | modifiedCount | Integer | Number of orders found using `orderId` that were modified (content updated)      |
 | insertedCount | Integer | Number of new orders inserted because no existing order was found with `orderId` |
+
+## Response body example
+
+```json
+{
+  "content": {
+    "matchedCount": 0,
+    "modifiedCount": 0,
+    "insertedCount": 1
+  }
+}
+```
+
+<br />
