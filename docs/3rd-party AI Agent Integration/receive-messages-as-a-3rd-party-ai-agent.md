@@ -114,9 +114,9 @@ metadata:
       <td>
         Possible values:
 
-        * `ai-session:open`: Start to chat with AI agent, message webhook will be sent upon receiving this event
-        * `message:new`: Customer / User sends a message
-        * `ai-session:close`:
+        - `ai-session:open`: Start to chat with AI agent, message webhook will be sent upon receiving this event
+        - `message:new`: Customer / User sends a message
+        - `ai-session:close`:
           End up chat with AI agent, no message webhooks will be sent until the next ai-session is open
       </td>
     </tr>
@@ -265,8 +265,7 @@ metadata:
       </td>
 
       <td>
-        Possible values:  
-        `webchat`
+        Possible values:<br />`webchat`
         `line`
       </td>
     </tr>
@@ -297,100 +296,11 @@ metadata:
 
 ### `Room` Object
 
-<Table align={["left","left","left","left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Field
-      </th>
-
-      <th>
-        Type
-      </th>
-
-      <th>
-        Nullable
-      </th>
-
-      <th>
-        Description
-      </th>
-
-      <th>
-        Remark
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        id
-      </td>
-
-      <td>
-        String
-      </td>
-
-      <td>
-        N
-      </td>
-
-      <td>
-        Room ID
-      </td>
-
-      <td>
-
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        type
-      </td>
-
-      <td>
-        String
-      </td>
-
-      <td>
-        N
-      </td>
-
-      <td>
-        Room type
-      </td>
-
-      <td>
-        Possible values:  
-        `individual`: 1-on-1 conversation
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        metadata
-      </td>
-
-      <td>
-        Object
-      </td>
-
-      <td>
-        N
-      </td>
-
-      <td>
-        Metadata
-      </td>
-
-      <td>
-        (Currently not available)
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Field    | Type   | Nullable | Description | Remark                                                  |
+| :------- | :----- | :------- | :---------- | :------------------------------------------------------ |
+| id       | String | N        | Room ID     |                                                         |
+| type     | String | N        | Room type   | Possible values:<br />`individual`: 1-on-1 conversation |
+| metadata | Object | N        | Metadata    | (Currently not available)                               |
 
 ### `Message` Object
 
@@ -404,146 +314,13 @@ metadata:
 
 ### `Sender` Object
 
-<Table align={["left","left","left","left","left"]}>
-  <thead>
-    <tr>
-      <th>
-        Field
-      </th>
-
-      <th>
-        Type
-      </th>
-
-      <th>
-        Nullable
-      </th>
-
-      <th>
-        Description
-      </th>
-
-      <th>
-        Remark
-      </th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <tr>
-      <td>
-        id
-      </td>
-
-      <td>
-        String
-      </td>
-
-      <td>
-        N
-      </td>
-
-      <td>
-        Sender ID
-      </td>
-
-      <td>
-
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        externalId
-      </td>
-
-      <td>
-        String
-      </td>
-
-      <td>
-        N
-      </td>
-
-      <td>
-        Sender's actual user ID in Omnichat.
-      </td>
-
-      <td>
-        Can be used for contact info query/update.
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        type
-      </td>
-
-      <td>
-        String
-      </td>
-
-      <td>
-        N
-      </td>
-
-      <td>
-        Sender type
-      </td>
-
-      <td>
-        Possible values:  
-        `customer`  
-        `agent`  
-        `bot`
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        senderName
-      </td>
-
-      <td>
-        String
-      </td>
-
-      <td>
-        N
-      </td>
-
-      <td>
-        Sender name
-      </td>
-
-      <td>
-
-      </td>
-    </tr>
-
-    <tr>
-      <td>
-        metadata
-      </td>
-
-      <td>
-        Object
-      </td>
-
-      <td>
-        N
-      </td>
-
-      <td>
-        Metadata
-      </td>
-
-      <td>
-
-      </td>
-    </tr>
-  </tbody>
-</Table>
+| Field      | Type   | Nullable | Description                          | Remark                                                   |
+| :--------- | :----- | :------- | :----------------------------------- | :------------------------------------------------------- |
+| id         | String | N        | Sender ID                            |                                                          |
+| externalId | String | N        | Sender's actual user ID in Omnichat. | Can be used for contact info query/update.               |
+| type       | String | N        | Sender type                          | Possible values:<br />`customer`<br />`agent`<br />`bot` |
+| senderName | String | N        | Sender name                          |                                                          |
+| metadata   | Object | N        | Metadata                             |                                                          |
 
 ### `Content` Object
 
@@ -593,8 +370,9 @@ metadata:
       <td>
         Possible values:
 
-        * `text`
-        * `image`
+        - `text`
+        - `image`
+        - `file`
       </td>
     </tr>
 
@@ -638,7 +416,7 @@ metadata:
       </td>
 
       <td>
-        not null if type = `image`
+        not null if type = `image` or `file`
       </td>
     </tr>
 
@@ -763,3 +541,5 @@ metadata:
     ]
 }
 ```
+
+<br />
