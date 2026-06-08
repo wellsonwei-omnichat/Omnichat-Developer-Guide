@@ -114,11 +114,7 @@ Get updated contacts by specific date range
         Contact's ID to manipulate.
 
         For LINE → LINE User ID  
-        For Facebook → Facebook PSID
-        For WhatsApp → WhatsApp Phone Number
-        For Instagram → Instagram User ID
-        For WeChat → WeChat User ID
-        For Webchat → Webchat User ID
+        For Facebook → Facebook PSID For WhatsApp → WhatsApp Phone Number For Instagram → Instagram User ID For WeChat → WeChat User ID For Webchat → Webchat User ID
       </td>
     </tr>
 
@@ -752,12 +748,7 @@ curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=line&memberId
       <td>
         type of the custom attribute
 
-        Possible values:
-        `text`: Text
-        `number`: Number
-        `date`: Date
-        `datetime`: Date time
-        `boolean`: Boolean
+        Possible values: `text`: Text `number`: Number `date`: Date `datetime`: Date time `boolean`: Boolean
       </td>
     </tr>
   </tbody>
@@ -951,7 +942,7 @@ curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=line&memberId
 
 ## Endpoint
 
-**POST** [https://open-api.omnichat.ai/v1/contacts/\{platform}?channelId=\{channelId}&userId=\{userId}](https://open-api.omnichat.ai/v1/contacts/\{platform}?channelId=\{channelId}\&userId=\{userId})
+**PUT** [https://open-api.omnichat.ai/v1/contacts/\{platform}?channelId=\{channelId}&userId=\{userId}](https://open-api.omnichat.ai/v1/contacts/\{platform}?channelId=\{channelId}\&userId=\{userId})
 
 ## Parameters
 
@@ -1048,11 +1039,7 @@ curl --location 'https://open-api.omnichat.ai/v1/contacts?platform=line&memberId
         Contact's ID to manipulate.
 
         For LINE → LINE User ID  
-        For Facebook → Facebook PSID
-        For WhatsApp → WhatsApp Phone Number
-        For Instagram → Instagram User ID
-        For WeChat → WeChat User ID
-        For Webchat → Webchat User ID
+        For Facebook → Facebook PSID For WhatsApp → WhatsApp Phone Number For Instagram → Instagram User ID For WeChat → WeChat User ID For Webchat → Webchat User ID
       </td>
     </tr>
   </tbody>
