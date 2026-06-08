@@ -7,8 +7,8 @@ metadata:
 ---
 # Subscription Required
 
-* Raccoon AI Add-on, or
-* Open API - 3rd-party AI Agent Module
+- Raccoon AI Add-on, or
+- Open API - 3rd-party AI Agent Module
 
 # Endpoint
 
@@ -89,8 +89,7 @@ metadata:
       </td>
 
       <td>
-        Messages to send.  
-        Max size for text and image: 5
+        Messages to send.<br />Max size for text and image: 5
       </td>
     </tr>
 
@@ -104,12 +103,11 @@ metadata:
       </td>
 
       <td>
-        Y*
+        Y\*
       </td>
 
       <td>
-        Reply token for LINE retrieved from the webhook  
-        Required for LINE messaging
+        Reply token for LINE retrieved from the webhook<br />Required for LINE messaging
       </td>
     </tr>
   </tbody>
@@ -117,7 +115,7 @@ metadata:
 
 ### `Message` Object
 
-<Table align={["left","left","left","left"]}>
+<Table align={["left","left","left","left",null]}>
   <thead>
     <tr>
       <th>
@@ -134,6 +132,10 @@ metadata:
 
       <th>
         Description
+      </th>
+
+      <th>
+
       </th>
     </tr>
   </thead>
@@ -157,14 +159,19 @@ metadata:
 
         Available types:
 
-        * `text`: Text message
-        * `image`: Image message
-        * `video`: Video message
-        * `audio`: Audio message (not supported on Webchat)
-        * `quick_reply`: Quick Reply message
-        * `google_map` : Google Map message (webchat only)
+        - `text`: Text message
+        - `image`: Image message
+        - `video`: Video message
+        - `audio`: Audio message (not supported on Webchat)
+        - `quick_reply`: Quick Reply message
+        - `product`: Product Carousel Message
+        - `google_map` : Google Map message (webchat only)
 
-        Max file size differs on different platforms.
+        File size limits vary depending on the platform being used.
+      </td>
+
+      <td>
+
       </td>
     </tr>
 
@@ -178,13 +185,17 @@ metadata:
       </td>
 
       <td>
-        Y*
+        Y\*
       </td>
 
       <td>
         Message content.
 
         Required if type is `text`
+      </td>
+
+      <td>
+
       </td>
     </tr>
 
@@ -198,14 +209,17 @@ metadata:
       </td>
 
       <td>
-        Y*
+        Y\*
       </td>
 
       <td>
-        URL to media-related resources  
-        Required if type is `image` or `audio`
+        URL to media-related resources<br />Required if type is `image` or `audio`
 
         Find a supported extension for different message types in our [official manuals](https://docs.omnichat.ai/features/omnichannel-messenger/chuan-song-tu-pian-ying-pian-yin-xun-dang-an).
+      </td>
+
+      <td>
+
       </td>
     </tr>
 
@@ -219,14 +233,17 @@ metadata:
       </td>
 
       <td>
-        Y*
+        Y\*
       </td>
 
       <td>
-        video-related resources.  
-        Required if type is video
+        video-related resources.<br />Required if type is video
 
         Find a supported extension for different message types in our [official manuals](https://docs.omnichat.ai/features/omnichannel-messenger/chuan-song-tu-pian-ying-pian-yin-xun-dang-an).
+      </td>
+
+      <td>
+
       </td>
     </tr>
 
@@ -240,12 +257,38 @@ metadata:
       </td>
 
       <td>
-        Y*
+        Y\*
       </td>
 
       <td>
         `QuickReply` Object
         Required if type is `quick_reply`
+      </td>
+
+      <td>
+
+      </td>
+    </tr>
+
+    <tr>
+      <td>
+        product
+      </td>
+
+      <td>
+        Product
+      </td>
+
+      <td>
+        Y\*
+      </td>
+
+      <td>
+        `Product` Array<br />Required if type is `product`
+      </td>
+
+      <td>
+
       </td>
     </tr>
 
@@ -259,12 +302,15 @@ metadata:
       </td>
 
       <td>
-        Y*
+        Y\*
       </td>
 
       <td>
-        GoogleMap Object  
-        Required if type is `google_map`
+        GoogleMap Object<br />Required if type is `google_map`
+      </td>
+
+      <td>
+
       </td>
     </tr>
   </tbody>
@@ -324,7 +370,7 @@ metadata:
       </td>
 
       <td>
-        Y*
+        Y\*
       </td>
 
       <td>
@@ -347,11 +393,29 @@ metadata:
 
 <br />
 
-#### `Reply` Object
+### `Replay` Object
 
 | Field | Type   | Required | Description         |
 | :---- | :----- | :------- | :------------------ |
 | text  | String | Y        | Quick reply content |
+
+<br />
+
+### `Product` Array
+
+| Field    | Type                   | Required | Description                |
+| -------- | ---------------------- | -------- | -------------------------- |
+| products | `Product` Object Array | Y        | Max. number of product: 10 |
+
+#### `Product` Object
+
+| Field       | Type   | Required | Description                                                              |
+| ----------- | ------ | -------- | ------------------------------------------------------------------------ |
+| name        | String | Y        | Product Name<br />Max length: 80                                         |
+| image       | String | Y        | Product Image URL                                                        |
+| url         | String | Y        | Product Link URL, which is used as the URL of the call-to-action button. |
+| price       | String | N        | Product Price with currency<br />Max length: 80                          |
+| buttonLabel | String | Y        | The text label of the call-to-action button<br />Max length: 20          |
 
 <br />
 
@@ -587,3 +651,5 @@ metadata:
     "message": "Invalid reply token"
 }
 ```
+
+<br />
