@@ -159,7 +159,7 @@ metadata:
 | :--------- | :----- | :------- | :----------------------------------------------- | :--------------------------------------------------------------------------- |
 | id         | String | N        | Channel ID                                       |                                                                              |
 | externalId | String | N        | Actual Channel ID to the platform                |                                                                              |
-| currentUrl | String | N        | URL to the current page that the user is viewing | Valid if platform is `webchat`                                               |
+| currentUrl | String | N        | URL to the current page that the user is viewing | Valid if the platform is `webchat`                                           |
 | platform   | String | N        | Platform name                                    | Possible values:<br />`webchat`<br />`line`<br />`facebook`<br />`instagram` |
 | metadata   | Object | N        | Metadata                                         | Currently not available                                                      |
 
